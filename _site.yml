@@ -1,0 +1,21 @@
+name: "山大集中講義2019.03.07-03.09"
+navbar: 
+  title: "山大集中講義2019.03.07-03.09"
+  left:
+    - text: "Day 1"
+      href: day1.html
+    - text: "Day 2"
+      href: day2.html
+    - text: "Day 3"
+      href: day3.html
+      
+output:
+  html_document:
+    theme: cosmo
+    highlight: textmate
+    toc: true
+    toc_float:
+      collapse: false
+    df_print: "kable"
+    css: site_style.css
+output_dir: "docs"
