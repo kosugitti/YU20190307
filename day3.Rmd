@@ -213,10 +213,9 @@ cor(FA.dat) %>% print(digits=2)
 
 #### 2-1.screeplot
 
-```{r parallel,eval=F}
+```{r parallel}
 psych::fa.parallel(FA.dat,fa="fa")
 ```
-
 
 #### 3.result
 
