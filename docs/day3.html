@@ -1,0 +1,2087 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>山大集中講義2019.03.09;Day 3-I</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="site_style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">山大集中講義2019.03.07-03.09</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="ready.html">Day 0</a>
+</li>
+<li>
+  <a href="day1.html">Day 1</a>
+</li>
+<li>
+  <a href="day2.html">Day 2</a>
+</li>
+<li>
+  <a href="day3.html">Day 3</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">山大集中講義2019.03.09;Day 3-I</h1>
+
+</div>
+
+
+<div id="day-3" class="section level2">
+<h2>Day 3</h2>
+<ul>
+<li>始めるにあたって，プロジェクトフォルダを置くこと</li>
+<li>下のコードを実行して，必要なパッケージを読み込んでおくこと</li>
+</ul>
+<pre class="r"><code>library(tidyverse)
+# マカーの呪文
+old = theme_set(theme_gray(base_family = &quot;HiraKakuProN-W3&quot;))
+library(brms)</code></pre>
+<div id="section" class="section level3">
+<h3>線形モデル5；階層線形モデル</h3>
+<p>こういうことがしたい。</p>
+<pre class="r"><code>read_csv(&#39;baseball2019.csv&#39;) %&gt;% 
+  # 野手のデータ
+  dplyr::filter(position!=&quot;投手&quot;) %&gt;% 
+  # 年俸データを調整
+  dplyr::mutate(salary = salary/1000) -&gt; baseball_dat10</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   .default = col_double(),
+##   Name = col_character(),
+##   team = col_character(),
+##   position = col_character(),
+##   bloodType = col_character(),
+##   throw.by = col_character(),
+##   batting.by = col_character(),
+##   birth.place = col_character(),
+##   birth.day = col_date(format = &quot;&quot;),
+##   背番号 = col_character()
+## )</code></pre>
+<pre><code>## See spec(...) for full column specifications.</code></pre>
+<pre class="r"><code>baseball_dat10 %&gt;% 
+  # 描画
+  ggplot(aes(x=安打,y=salary,color=team))+geom_point()+geom_smooth(method=&quot;lm&quot;,se=F)</code></pre>
+<pre><code>## Warning: Removed 125 rows containing non-finite values (stat_smooth).</code></pre>
+<pre><code>## Warning: Removed 125 rows containing missing values (geom_point).</code></pre>
+<p><img src="day3_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>つまり，切片や傾きがチームごとによって違うようなモデルです。</p>
+<div id="section-1" class="section level5">
+<h5>ランダム切片モデル</h5>
+<p>切片だけが違うのはランダム切片モデルと言います。</p>
+<pre class="r"><code># 年収のデータだから分布は対数正規分布
+baseball_dat10 %&gt;% 
+  dplyr::select(salary,安打,team) %&gt;% 
+  na.omit() %&gt;% 
+  brm(salary~安打+(1|team),data=.,family=&quot;lognormal&quot;) -&gt; result.hlm1</code></pre>
+<pre><code>## Compiling the C++ model</code></pre>
+<pre><code>## Start sampling</code></pre>
+<pre><code>## 
+## SAMPLING FOR MODEL &#39;aaf77108a5382a731933bf0a535b896a&#39; NOW (CHAIN 1).
+## Chain 1: 
+## Chain 1: Gradient evaluation took 0.000142 seconds
+## Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 1.42 seconds.
+## Chain 1: Adjust your expectations accordingly!
+## Chain 1: 
+## Chain 1: 
+## Chain 1: Iteration:    1 / 2000 [  0%]  (Warmup)
+## Chain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)
+## Chain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)
+## Chain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)
+## Chain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)
+## Chain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+## Chain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+## Chain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+## Chain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+## Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+## Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+## Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
+## Chain 1: 
+## Chain 1:  Elapsed Time: 3.00453 seconds (Warm-up)
+## Chain 1:                0.501237 seconds (Sampling)
+## Chain 1:                3.50576 seconds (Total)
+## Chain 1: 
+## 
+## SAMPLING FOR MODEL &#39;aaf77108a5382a731933bf0a535b896a&#39; NOW (CHAIN 2).
+## Chain 2: 
+## Chain 2: Gradient evaluation took 5.5e-05 seconds
+## Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.55 seconds.
+## Chain 2: Adjust your expectations accordingly!
+## Chain 2: 
+## Chain 2: 
+## Chain 2: Iteration:    1 / 2000 [  0%]  (Warmup)
+## Chain 2: Iteration:  200 / 2000 [ 10%]  (Warmup)
+## Chain 2: Iteration:  400 / 2000 [ 20%]  (Warmup)
+## Chain 2: Iteration:  600 / 2000 [ 30%]  (Warmup)
+## Chain 2: Iteration:  800 / 2000 [ 40%]  (Warmup)
+## Chain 2: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+## Chain 2: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+## Chain 2: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+## Chain 2: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+## Chain 2: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+## Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+## Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
+## Chain 2: 
+## Chain 2:  Elapsed Time: 2.5448 seconds (Warm-up)
+## Chain 2:                0.521325 seconds (Sampling)
+## Chain 2:                3.06613 seconds (Total)
+## Chain 2: 
+## 
+## SAMPLING FOR MODEL &#39;aaf77108a5382a731933bf0a535b896a&#39; NOW (CHAIN 3).
+## Chain 3: 
+## Chain 3: Gradient evaluation took 4.4e-05 seconds
+## Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.44 seconds.
+## Chain 3: Adjust your expectations accordingly!
+## Chain 3: 
+## Chain 3: 
+## Chain 3: Iteration:    1 / 2000 [  0%]  (Warmup)
+## Chain 3: Iteration:  200 / 2000 [ 10%]  (Warmup)
+## Chain 3: Iteration:  400 / 2000 [ 20%]  (Warmup)
+## Chain 3: Iteration:  600 / 2000 [ 30%]  (Warmup)
+## Chain 3: Iteration:  800 / 2000 [ 40%]  (Warmup)
+## Chain 3: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+## Chain 3: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+## Chain 3: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+## Chain 3: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+## Chain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+## Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+## Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
+## Chain 3: 
+## Chain 3:  Elapsed Time: 2.88205 seconds (Warm-up)
+## Chain 3:                0.516056 seconds (Sampling)
+## Chain 3:                3.39811 seconds (Total)
+## Chain 3: 
+## 
+## SAMPLING FOR MODEL &#39;aaf77108a5382a731933bf0a535b896a&#39; NOW (CHAIN 4).
+## Chain 4: 
+## Chain 4: Gradient evaluation took 7.5e-05 seconds
+## Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.75 seconds.
+## Chain 4: Adjust your expectations accordingly!
+## Chain 4: 
+## Chain 4: 
+## Chain 4: Iteration:    1 / 2000 [  0%]  (Warmup)
+## Chain 4: Iteration:  200 / 2000 [ 10%]  (Warmup)
+## Chain 4: Iteration:  400 / 2000 [ 20%]  (Warmup)
+## Chain 4: Iteration:  600 / 2000 [ 30%]  (Warmup)
+## Chain 4: Iteration:  800 / 2000 [ 40%]  (Warmup)
+## Chain 4: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+## Chain 4: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+## Chain 4: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+## Chain 4: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+## Chain 4: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+## Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+## Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
+## Chain 4: 
+## Chain 4:  Elapsed Time: 2.69894 seconds (Warm-up)
+## Chain 4:                0.50704 seconds (Sampling)
+## Chain 4:                3.20598 seconds (Total)
+## Chain 4:</code></pre>
+<pre class="r"><code>result.hlm1</code></pre>
+<pre><code>##  Family: lognormal 
+##   Links: mu = identity; sigma = identity 
+## Formula: salary ~ 安打 + (1 | team) 
+##    Data: . (Number of observations: 322) 
+## Samples: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;
+##          total post-warmup samples = 4000
+## 
+## Group-Level Effects: 
+## ~team (Number of levels: 12) 
+##               Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+## sd(Intercept)     0.09      0.07     0.00     0.25       2059 1.00
+## 
+## Population-Level Effects: 
+##           Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+## Intercept     0.24      0.08     0.09     0.39       3642 1.00
+## 安打          0.02      0.00     0.01     0.02       4239 1.00
+## 
+## Family Specific Parameters: 
+##       Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+## sigma     0.94      0.04     0.87     1.02       5729 1.00
+## 
+## Samples were drawn using sampling(NUTS). For each parameter, Eff.Sample 
+## is a crude measure of effective sample size, and Rhat is the potential 
+## scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
+<pre class="r"><code>plot(result.hlm1)</code></pre>
+<p><img src="day3_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre class="r"><code>pp_check(result.hlm1)</code></pre>
+<pre><code>## Using 10 posterior samples for ppc type &#39;dens_overlay&#39; by default.</code></pre>
+<p><img src="day3_files/figure-html/unnamed-chunk-3-2.png" width="672" /></p>
+<pre class="r"><code>baseball_dat10 %&gt;% 
+  dplyr::select(salary,安打,team) %&gt;% 
+  na.omit() %&gt;% 
+  # 予測値をデータに追加
+  cbind(fitted(result.hlm1)) %&gt;% 
+  ggplot(aes(安打, Estimate, color = team)) +
+  geom_smooth(method = &quot;lm&quot;, se = FALSE) +
+  geom_point(aes(y = salary))</code></pre>
+<p><img src="day3_files/figure-html/unnamed-chunk-3-3.png" width="672" /></p>
+</div>
+<div id="section-2" class="section level5">
+<h5>ランダム傾き・ランダム切片モデル</h5>
+<p>傾きもランダムにします。</p>
+<pre class="r"><code># 年収のデータだから分布は対数正規分布
+baseball_dat10 %&gt;% 
+  dplyr::select(salary,安打,team) %&gt;% 
+  na.omit() %&gt;% 
+  brm(salary~安打+(1+安打|team),data=.,family=&quot;lognormal&quot;) -&gt; result.hlm2</code></pre>
+<pre><code>## Compiling the C++ model</code></pre>
+<pre><code>## Start sampling</code></pre>
+<pre><code>## 
+## SAMPLING FOR MODEL &#39;3de93dbea09e0701426b1dcfaf30bf52&#39; NOW (CHAIN 1).
+## Chain 1: 
+## Chain 1: Gradient evaluation took 0.000137 seconds
+## Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 1.37 seconds.
+## Chain 1: Adjust your expectations accordingly!
+## Chain 1: 
+## Chain 1: 
+## Chain 1: Iteration:    1 / 2000 [  0%]  (Warmup)
+## Chain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)
+## Chain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)
+## Chain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)
+## Chain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)
+## Chain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+## Chain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+## Chain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+## Chain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+## Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+## Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+## Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
+## Chain 1: 
+## Chain 1:  Elapsed Time: 4.97627 seconds (Warm-up)
+## Chain 1:                0.97517 seconds (Sampling)
+## Chain 1:                5.95144 seconds (Total)
+## Chain 1: 
+## 
+## SAMPLING FOR MODEL &#39;3de93dbea09e0701426b1dcfaf30bf52&#39; NOW (CHAIN 2).
+## Chain 2: 
+## Chain 2: Gradient evaluation took 0.000115 seconds
+## Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 1.15 seconds.
+## Chain 2: Adjust your expectations accordingly!
+## Chain 2: 
+## Chain 2: 
+## Chain 2: Iteration:    1 / 2000 [  0%]  (Warmup)
+## Chain 2: Iteration:  200 / 2000 [ 10%]  (Warmup)
+## Chain 2: Iteration:  400 / 2000 [ 20%]  (Warmup)
+## Chain 2: Iteration:  600 / 2000 [ 30%]  (Warmup)
+## Chain 2: Iteration:  800 / 2000 [ 40%]  (Warmup)
+## Chain 2: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+## Chain 2: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+## Chain 2: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+## Chain 2: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+## Chain 2: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+## Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+## Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
+## Chain 2: 
+## Chain 2:  Elapsed Time: 5.62814 seconds (Warm-up)
+## Chain 2:                2.10072 seconds (Sampling)
+## Chain 2:                7.72887 seconds (Total)
+## Chain 2: 
+## 
+## SAMPLING FOR MODEL &#39;3de93dbea09e0701426b1dcfaf30bf52&#39; NOW (CHAIN 3).
+## Chain 3: 
+## Chain 3: Gradient evaluation took 8e-05 seconds
+## Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.8 seconds.
+## Chain 3: Adjust your expectations accordingly!
+## Chain 3: 
+## Chain 3: 
+## Chain 3: Iteration:    1 / 2000 [  0%]  (Warmup)
+## Chain 3: Iteration:  200 / 2000 [ 10%]  (Warmup)
+## Chain 3: Iteration:  400 / 2000 [ 20%]  (Warmup)
+## Chain 3: Iteration:  600 / 2000 [ 30%]  (Warmup)
+## Chain 3: Iteration:  800 / 2000 [ 40%]  (Warmup)
+## Chain 3: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+## Chain 3: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+## Chain 3: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+## Chain 3: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+## Chain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+## Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+## Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
+## Chain 3: 
+## Chain 3:  Elapsed Time: 8.02185 seconds (Warm-up)
+## Chain 3:                1.51136 seconds (Sampling)
+## Chain 3:                9.53321 seconds (Total)
+## Chain 3: 
+## 
+## SAMPLING FOR MODEL &#39;3de93dbea09e0701426b1dcfaf30bf52&#39; NOW (CHAIN 4).
+## Chain 4: 
+## Chain 4: Gradient evaluation took 0.000179 seconds
+## Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 1.79 seconds.
+## Chain 4: Adjust your expectations accordingly!
+## Chain 4: 
+## Chain 4: 
+## Chain 4: Iteration:    1 / 2000 [  0%]  (Warmup)
+## Chain 4: Iteration:  200 / 2000 [ 10%]  (Warmup)
+## Chain 4: Iteration:  400 / 2000 [ 20%]  (Warmup)
+## Chain 4: Iteration:  600 / 2000 [ 30%]  (Warmup)
+## Chain 4: Iteration:  800 / 2000 [ 40%]  (Warmup)
+## Chain 4: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+## Chain 4: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+## Chain 4: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+## Chain 4: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+## Chain 4: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+## Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+## Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
+## Chain 4: 
+## Chain 4:  Elapsed Time: 8.06645 seconds (Warm-up)
+## Chain 4:                1.01603 seconds (Sampling)
+## Chain 4:                9.08248 seconds (Total)
+## Chain 4:</code></pre>
+<pre><code>## Warning: There were 1 divergent transitions after warmup. Increasing adapt_delta above 0.8 may help. See
+## http://mc-stan.org/misc/warnings.html#divergent-transitions-after-warmup</code></pre>
+<pre><code>## Warning: Examine the pairs() plot to diagnose sampling problems</code></pre>
+<pre class="r"><code>result.hlm2</code></pre>
+<pre><code>## Warning: There were 1 divergent transitions after warmup. Increasing adapt_delta above 0.8 may help.
+## See http://mc-stan.org/misc/warnings.html#divergent-transitions-after-warmup</code></pre>
+<pre><code>##  Family: lognormal 
+##   Links: mu = identity; sigma = identity 
+## Formula: salary ~ 安打 + (1 + 安打 | team) 
+##    Data: . (Number of observations: 322) 
+## Samples: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;
+##          total post-warmup samples = 4000
+## 
+## Group-Level Effects: 
+## ~team (Number of levels: 12) 
+##                     Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+## sd(Intercept)           0.09      0.07     0.00     0.28       2378 1.00
+## sd(安打)                0.00      0.00     0.00     0.00       1489 1.00
+## cor(Intercept,安打)    -0.16      0.58    -0.97     0.92       1324 1.00
+## 
+## Population-Level Effects: 
+##           Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+## Intercept     0.24      0.08     0.08     0.39       4184 1.00
+## 安打          0.02      0.00     0.01     0.02       3410 1.00
+## 
+## Family Specific Parameters: 
+##       Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+## sigma     0.94      0.04     0.87     1.01       4608 1.00
+## 
+## Samples were drawn using sampling(NUTS). For each parameter, Eff.Sample 
+## is a crude measure of effective sample size, and Rhat is the potential 
+## scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
+<pre class="r"><code>plot(result.hlm2)</code></pre>
+<p><img src="day3_files/figure-html/unnamed-chunk-4-1.png" width="672" /><img src="day3_files/figure-html/unnamed-chunk-4-2.png" width="672" /></p>
+<pre class="r"><code>pp_check(result.hlm2)</code></pre>
+<pre><code>## Using 10 posterior samples for ppc type &#39;dens_overlay&#39; by default.</code></pre>
+<p><img src="day3_files/figure-html/unnamed-chunk-4-3.png" width="672" /></p>
+<pre class="r"><code>baseball_dat10 %&gt;% 
+  dplyr::select(salary,安打,team) %&gt;% 
+  na.omit() %&gt;% 
+  # 予測値をデータに追加
+  cbind(fitted(result.hlm2)) %&gt;% 
+  ggplot(aes(安打, Estimate, color = team)) +
+  geom_smooth(method = &quot;lm&quot;, se = FALSE) +
+  geom_point(aes(y = salary))</code></pre>
+<p><img src="day3_files/figure-html/unnamed-chunk-4-4.png" width="672" /></p>
+</div>
+</div>
+<div id="section-3" class="section level3">
+<h3>線形モデル6；分散分析と線形モデル</h3>
+<div id="between-design" class="section level4">
+<h4>Between Design</h4>
+<p>「とあるスナック菓子を三人のこどもそれぞれに買い与えたが，お菓子の長さに差があると言って喧嘩を始めた。彼らの主張が妥当かどうか検証するために，それぞれの菓子袋から棒状のお菓子10本ずつをサンプリンングし，長さを測定した。三つの菓子袋に含まれるお菓子の長さに差があると言って良いかどうか，統計的に検定しなさい。」</p>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="right">id</th>
+<th align="left">group</th>
+<th align="right">L</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">A</td>
+<td align="right">9</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">A</td>
+<td align="right">7</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">A</td>
+<td align="right">8</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">A</td>
+<td align="right">5</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="left">A</td>
+<td align="right">9</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="left">B</td>
+<td align="right">12</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="left">B</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="left">B</td>
+<td align="right">23</td>
+</tr>
+<tr class="odd">
+<td align="right">9</td>
+<td align="left">B</td>
+<td align="right">19</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="left">B</td>
+<td align="right">16</td>
+</tr>
+<tr class="odd">
+<td align="right">11</td>
+<td align="left">C</td>
+<td align="right">9</td>
+</tr>
+<tr class="even">
+<td align="right">12</td>
+<td align="left">C</td>
+<td align="right">16</td>
+</tr>
+<tr class="odd">
+<td align="right">13</td>
+<td align="left">C</td>
+<td align="right">16</td>
+</tr>
+<tr class="even">
+<td align="right">14</td>
+<td align="left">C</td>
+<td align="right">14</td>
+</tr>
+<tr class="odd">
+<td align="right">15</td>
+<td align="left">C</td>
+<td align="right">5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre><code>## 
+## [ As-Type Design ]
+## 
+## This output was generated by anovakun 4.8.2 under R version 3.5.2.
+## It was executed on Thu Mar  7 06:33:01 2019.
+## 
+##  
+## &lt;&lt; DESCRIPTIVE STATISTICS &gt;&gt;
+## 
+## ---------------------------
+##   A   n     Mean    S.D. 
+## ---------------------------
+##  a1   5   7.6000  1.6733 
+##  a2   5  16.0000  5.2440 
+##  a3   5  12.0000  4.8477 
+## ---------------------------
+## 
+## 
+## &lt;&lt; ANOVA TABLE &gt;&gt;
+## 
+## -------------------------------------------------------
+##  Source        SS  df       MS  F-ratio  p-value     
+## -------------------------------------------------------
+##       A  176.5333   2  88.2667   4.9219   0.0275 *   
+##   Error  215.2000  12  17.9333                       
+## -------------------------------------------------------
+##   Total  391.7333  14  27.9810                       
+##            +p &lt; .10, *p &lt; .05, **p &lt; .01, ***p &lt; .001
+## 
+## 
+## &lt;&lt; POST ANALYSES &gt;&gt;
+## 
+## &lt; MULTIPLE COMPARISON for &quot;A&quot; &gt;
+## 
+## == Shaffer&#39;s Modified Sequentially Rejective Bonferroni Procedure ==
+## == The factor &lt; A &gt; is analysed as independent means. == 
+## == Alpha level is 0.05. == 
+##  
+## ---------------------------
+##   A   n     Mean    S.D. 
+## ---------------------------
+##  a1   5   7.6000  1.6733 
+##  a2   5  16.0000  5.2440 
+##  a3   5  12.0000  4.8477 
+## ---------------------------
+## 
+## ----------------------------------------------------------
+##   Pair     Diff  t-value  df       p   adj.p            
+## ----------------------------------------------------------
+##  a1-a2  -8.4000   3.1363  12  0.0086  0.0258  a1 &lt; a2 * 
+##  a1-a3  -4.4000   1.6428  12  0.1263  0.1263  a1 = a3   
+##  a2-a3   4.0000   1.4935  12  0.1611  0.1611  a2 = a3   
+## ----------------------------------------------------------
+## 
+## 
+## output is over --------------------///</code></pre>
+<p>線形モデルの文脈で。</p>
+<pre class="r"><code>result.anova1 &lt;- brm(L~group,data=dat)</code></pre>
+<pre><code>## Compiling the C++ model</code></pre>
+<pre><code>## Start sampling</code></pre>
+<pre><code>## 
+## SAMPLING FOR MODEL &#39;d8d7c25c08bf7eeac588d635c6649298&#39; NOW (CHAIN 1).
+## Chain 1: 
+## Chain 1: Gradient evaluation took 5.7e-05 seconds
+## Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.57 seconds.
+## Chain 1: Adjust your expectations accordingly!
+## Chain 1: 
+## Chain 1: 
+## Chain 1: Iteration:    1 / 2000 [  0%]  (Warmup)
+## Chain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)
+## Chain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)
+## Chain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)
+## Chain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)
+## Chain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+## Chain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+## Chain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+## Chain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+## Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+## Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+## Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
+## Chain 1: 
+## Chain 1:  Elapsed Time: 0.068073 seconds (Warm-up)
+## Chain 1:                0.046104 seconds (Sampling)
+## Chain 1:                0.114177 seconds (Total)
+## Chain 1: 
+## 
+## SAMPLING FOR MODEL &#39;d8d7c25c08bf7eeac588d635c6649298&#39; NOW (CHAIN 2).
+## Chain 2: 
+## Chain 2: Gradient evaluation took 1.1e-05 seconds
+## Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.11 seconds.
+## Chain 2: Adjust your expectations accordingly!
+## Chain 2: 
+## Chain 2: 
+## Chain 2: Iteration:    1 / 2000 [  0%]  (Warmup)
+## Chain 2: Iteration:  200 / 2000 [ 10%]  (Warmup)
+## Chain 2: Iteration:  400 / 2000 [ 20%]  (Warmup)
+## Chain 2: Iteration:  600 / 2000 [ 30%]  (Warmup)
+## Chain 2: Iteration:  800 / 2000 [ 40%]  (Warmup)
+## Chain 2: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+## Chain 2: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+## Chain 2: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+## Chain 2: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+## Chain 2: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+## Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+## Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
+## Chain 2: 
+## Chain 2:  Elapsed Time: 0.064473 seconds (Warm-up)
+## Chain 2:                0.045573 seconds (Sampling)
+## Chain 2:                0.110046 seconds (Total)
+## Chain 2: 
+## 
+## SAMPLING FOR MODEL &#39;d8d7c25c08bf7eeac588d635c6649298&#39; NOW (CHAIN 3).
+## Chain 3: 
+## Chain 3: Gradient evaluation took 1.1e-05 seconds
+## Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.11 seconds.
+## Chain 3: Adjust your expectations accordingly!
+## Chain 3: 
+## Chain 3: 
+## Chain 3: Iteration:    1 / 2000 [  0%]  (Warmup)
+## Chain 3: Iteration:  200 / 2000 [ 10%]  (Warmup)
+## Chain 3: Iteration:  400 / 2000 [ 20%]  (Warmup)
+## Chain 3: Iteration:  600 / 2000 [ 30%]  (Warmup)
+## Chain 3: Iteration:  800 / 2000 [ 40%]  (Warmup)
+## Chain 3: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+## Chain 3: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+## Chain 3: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+## Chain 3: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+## Chain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+## Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+## Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
+## Chain 3: 
+## Chain 3:  Elapsed Time: 0.07463 seconds (Warm-up)
+## Chain 3:                0.045694 seconds (Sampling)
+## Chain 3:                0.120324 seconds (Total)
+## Chain 3: 
+## 
+## SAMPLING FOR MODEL &#39;d8d7c25c08bf7eeac588d635c6649298&#39; NOW (CHAIN 4).
+## Chain 4: 
+## Chain 4: Gradient evaluation took 1.7e-05 seconds
+## Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.17 seconds.
+## Chain 4: Adjust your expectations accordingly!
+## Chain 4: 
+## Chain 4: 
+## Chain 4: Iteration:    1 / 2000 [  0%]  (Warmup)
+## Chain 4: Iteration:  200 / 2000 [ 10%]  (Warmup)
+## Chain 4: Iteration:  400 / 2000 [ 20%]  (Warmup)
+## Chain 4: Iteration:  600 / 2000 [ 30%]  (Warmup)
+## Chain 4: Iteration:  800 / 2000 [ 40%]  (Warmup)
+## Chain 4: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+## Chain 4: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+## Chain 4: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+## Chain 4: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+## Chain 4: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+## Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+## Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
+## Chain 4: 
+## Chain 4:  Elapsed Time: 0.080497 seconds (Warm-up)
+## Chain 4:                0.058235 seconds (Sampling)
+## Chain 4:                0.138732 seconds (Total)
+## Chain 4:</code></pre>
+<pre class="r"><code>result.anova1</code></pre>
+<pre><code>##  Family: gaussian 
+##   Links: mu = identity; sigma = identity 
+## Formula: L ~ group 
+##    Data: dat (Number of observations: 15) 
+## Samples: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;
+##          total post-warmup samples = 4000
+## 
+## Population-Level Effects: 
+##           Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+## Intercept     7.56      2.19     3.32    12.00       3028 1.00
+## groupB        8.43      3.08     2.29    14.49       3382 1.00
+## groupC        4.35      2.99    -1.65    10.48       3125 1.00
+## 
+## Family Specific Parameters: 
+##       Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+## sigma     4.67      1.04     3.21     7.15       2310 1.00
+## 
+## Samples were drawn using sampling(NUTS). For each parameter, Eff.Sample 
+## is a crude measure of effective sample size, and Rhat is the potential 
+## scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
+<pre class="r"><code>plot(marginal_effects(result.anova1))</code></pre>
+<p><img src="day3_files/figure-html/unnamed-chunk-5-1.png" width="672" /> ##### モデル比較</p>
+<pre class="r"><code>result.anova1.null &lt;- brm(L~1,data=dat)</code></pre>
+<pre><code>## Compiling the C++ model</code></pre>
+<pre><code>## Start sampling</code></pre>
+<pre><code>## 
+## SAMPLING FOR MODEL &#39;65e149dd8c76fca577ab92d97eef3fd8&#39; NOW (CHAIN 1).
+## Chain 1: 
+## Chain 1: Gradient evaluation took 1.8e-05 seconds
+## Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.18 seconds.
+## Chain 1: Adjust your expectations accordingly!
+## Chain 1: 
+## Chain 1: 
+## Chain 1: Iteration:    1 / 2000 [  0%]  (Warmup)
+## Chain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)
+## Chain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)
+## Chain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)
+## Chain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)
+## Chain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+## Chain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+## Chain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+## Chain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+## Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+## Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+## Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
+## Chain 1: 
+## Chain 1:  Elapsed Time: 0.029705 seconds (Warm-up)
+## Chain 1:                0.036721 seconds (Sampling)
+## Chain 1:                0.066426 seconds (Total)
+## Chain 1: 
+## 
+## SAMPLING FOR MODEL &#39;65e149dd8c76fca577ab92d97eef3fd8&#39; NOW (CHAIN 2).
+## Chain 2: 
+## Chain 2: Gradient evaluation took 8e-06 seconds
+## Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.08 seconds.
+## Chain 2: Adjust your expectations accordingly!
+## Chain 2: 
+## Chain 2: 
+## Chain 2: Iteration:    1 / 2000 [  0%]  (Warmup)
+## Chain 2: Iteration:  200 / 2000 [ 10%]  (Warmup)
+## Chain 2: Iteration:  400 / 2000 [ 20%]  (Warmup)
+## Chain 2: Iteration:  600 / 2000 [ 30%]  (Warmup)
+## Chain 2: Iteration:  800 / 2000 [ 40%]  (Warmup)
+## Chain 2: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+## Chain 2: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+## Chain 2: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+## Chain 2: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+## Chain 2: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+## Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+## Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
+## Chain 2: 
+## Chain 2:  Elapsed Time: 0.029911 seconds (Warm-up)
+## Chain 2:                0.0267 seconds (Sampling)
+## Chain 2:                0.056611 seconds (Total)
+## Chain 2: 
+## 
+## SAMPLING FOR MODEL &#39;65e149dd8c76fca577ab92d97eef3fd8&#39; NOW (CHAIN 3).
+## Chain 3: 
+## Chain 3: Gradient evaluation took 8e-06 seconds
+## Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.08 seconds.
+## Chain 3: Adjust your expectations accordingly!
+## Chain 3: 
+## Chain 3: 
+## Chain 3: Iteration:    1 / 2000 [  0%]  (Warmup)
+## Chain 3: Iteration:  200 / 2000 [ 10%]  (Warmup)
+## Chain 3: Iteration:  400 / 2000 [ 20%]  (Warmup)
+## Chain 3: Iteration:  600 / 2000 [ 30%]  (Warmup)
+## Chain 3: Iteration:  800 / 2000 [ 40%]  (Warmup)
+## Chain 3: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+## Chain 3: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+## Chain 3: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+## Chain 3: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+## Chain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+## Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+## Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
+## Chain 3: 
+## Chain 3:  Elapsed Time: 0.030021 seconds (Warm-up)
+## Chain 3:                0.026292 seconds (Sampling)
+## Chain 3:                0.056313 seconds (Total)
+## Chain 3: 
+## 
+## SAMPLING FOR MODEL &#39;65e149dd8c76fca577ab92d97eef3fd8&#39; NOW (CHAIN 4).
+## Chain 4: 
+## Chain 4: Gradient evaluation took 8e-06 seconds
+## Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.08 seconds.
+## Chain 4: Adjust your expectations accordingly!
+## Chain 4: 
+## Chain 4: 
+## Chain 4: Iteration:    1 / 2000 [  0%]  (Warmup)
+## Chain 4: Iteration:  200 / 2000 [ 10%]  (Warmup)
+## Chain 4: Iteration:  400 / 2000 [ 20%]  (Warmup)
+## Chain 4: Iteration:  600 / 2000 [ 30%]  (Warmup)
+## Chain 4: Iteration:  800 / 2000 [ 40%]  (Warmup)
+## Chain 4: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+## Chain 4: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+## Chain 4: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+## Chain 4: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+## Chain 4: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+## Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+## Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
+## Chain 4: 
+## Chain 4:  Elapsed Time: 0.029363 seconds (Warm-up)
+## Chain 4:                0.024929 seconds (Sampling)
+## Chain 4:                0.054292 seconds (Total)
+## Chain 4:</code></pre>
+<pre class="r"><code>result.anova1.null</code></pre>
+<pre><code>##  Family: gaussian 
+##   Links: mu = identity; sigma = identity 
+## Formula: L ~ 1 
+##    Data: dat (Number of observations: 15) 
+## Samples: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;
+##          total post-warmup samples = 4000
+## 
+## Population-Level Effects: 
+##           Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+## Intercept    11.79      1.45     8.89    14.62       2633 1.00
+## 
+## Family Specific Parameters: 
+##       Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+## sigma     5.70      1.15     4.01     8.33       2515 1.00
+## 
+## Samples were drawn using sampling(NUTS). For each parameter, Eff.Sample 
+## is a crude measure of effective sample size, and Rhat is the potential 
+## scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
+<pre class="r"><code># モデル比較
+brms::WAIC(result.anova1,result.anova1.null)</code></pre>
+<pre><code>##                                     WAIC   SE
+## result.anova1                      90.83 4.28
+## result.anova1.null                 95.32 4.99
+## result.anova1 - result.anova1.null -4.49 4.17</code></pre>
+</div>
+<div id="within-design" class="section level4">
+<h4>Within Design</h4>
+<p>内要因のデータは，個人で階層化されてるモデルと同じこと。</p>
+<p>「自分の学級で前期，中期，後期に学力テストを行った。三回の学力テストは異なる設問だが難易度は同じぐらいであったとする。三つの時期で学力に違いがあると言って良いか，統計的に検定しなさい。」</p>
+<pre><code>## 
+## [ sA-Type Design ]
+## 
+## This output was generated by anovakun 4.8.2 under R version 3.5.2.
+## It was executed on Thu Mar  7 06:35:05 2019.
+## 
+##  
+## &lt;&lt; DESCRIPTIVE STATISTICS &gt;&gt;
+## 
+## ------------------------------
+##    key   n     Mean    S.D. 
+## ------------------------------
+##  Time1  10  60.0000  7.4536 
+##  Time2  10  67.6000  6.7528 
+##  Time3  10  79.0000  6.2716 
+## ------------------------------
+## 
+## 
+## &lt;&lt; SPHERICITY INDICES &gt;&gt;
+## 
+## == Mendoza&#39;s Multisample Sphericity Test and Epsilons ==
+## 
+## -------------------------------------------------------------------------
+##  Effect  Lambda  approx.Chi  df      p         LB     GG     HF     CM 
+## -------------------------------------------------------------------------
+##     key  0.3100      2.0824   2 0.3530 ns  0.5000 0.8136 0.9678 0.8398 
+## -------------------------------------------------------------------------
+##                               LB = lower.bound, GG = Greenhouse-Geisser
+##                              HF = Huynh-Feldt-Lecoutre, CM = Chi-Muller
+## 
+## 
+## &lt;&lt; ANOVA TABLE &gt;&gt;
+## 
+## ----------------------------------------------------------------
+##  Source        SS  df       MS  F-ratio  p-value      p.eta^2 
+## ----------------------------------------------------------------
+##       s  771.4667   9  85.7185                                
+## ----------------------------------------------------------------
+##     key 1829.0667   2 914.5333  33.3952   0.0000 ***   0.7877 
+## s x key  492.9333  18  27.3852                                
+## ----------------------------------------------------------------
+##   Total 3093.4667  29 106.6713                                
+##                     +p &lt; .10, *p &lt; .05, **p &lt; .01, ***p &lt; .001
+## 
+## 
+## &lt;&lt; POST ANALYSES &gt;&gt;
+## 
+## &lt; MULTIPLE COMPARISON for &quot;key&quot; &gt;
+## 
+## == Shaffer&#39;s Modified Sequentially Rejective Bonferroni Procedure ==
+## == The factor &lt; key &gt; is analysed as dependent means. == 
+## == Alpha level is 0.05. == 
+##  
+## ------------------------------
+##    key   n     Mean    S.D. 
+## ------------------------------
+##  Time1  10  60.0000  7.4536 
+##  Time2  10  67.6000  6.7528 
+##  Time3  10  79.0000  6.2716 
+## ------------------------------
+## 
+## -----------------------------------------------------------------------
+##         Pair      Diff  t-value  df       p   adj.p                  
+## -----------------------------------------------------------------------
+##  Time1-Time3  -19.0000   7.1028   9  0.0001  0.0002  Time1 &lt; Time3 * 
+##  Time2-Time3  -11.4000   6.7020   9  0.0001  0.0002  Time2 &lt; Time3 * 
+##  Time1-Time2   -7.6000   3.0083   9  0.0148  0.0148  Time1 &lt; Time2 * 
+## -----------------------------------------------------------------------
+## 
+## 
+## output is over --------------------///</code></pre>
+<p>線形モデルとして。</p>
+<pre class="r"><code>result.anova2 &lt;- brm(val~key+(1|ID),data=dat2)</code></pre>
+<pre><code>## Compiling the C++ model</code></pre>
+<pre><code>## Start sampling</code></pre>
+<pre><code>## 
+## SAMPLING FOR MODEL &#39;84ff5f2d33abf7805a23213a9b4357f4&#39; NOW (CHAIN 1).
+## Chain 1: 
+## Chain 1: Gradient evaluation took 7e-05 seconds
+## Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.7 seconds.
+## Chain 1: Adjust your expectations accordingly!
+## Chain 1: 
+## Chain 1: 
+## Chain 1: Iteration:    1 / 2000 [  0%]  (Warmup)
+## Chain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)
+## Chain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)
+## Chain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)
+## Chain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)
+## Chain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+## Chain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+## Chain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+## Chain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+## Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+## Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+## Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
+## Chain 1: 
+## Chain 1:  Elapsed Time: 0.239137 seconds (Warm-up)
+## Chain 1:                0.19516 seconds (Sampling)
+## Chain 1:                0.434297 seconds (Total)
+## Chain 1: 
+## 
+## SAMPLING FOR MODEL &#39;84ff5f2d33abf7805a23213a9b4357f4&#39; NOW (CHAIN 2).
+## Chain 2: 
+## Chain 2: Gradient evaluation took 1.6e-05 seconds
+## Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.16 seconds.
+## Chain 2: Adjust your expectations accordingly!
+## Chain 2: 
+## Chain 2: 
+## Chain 2: Iteration:    1 / 2000 [  0%]  (Warmup)
+## Chain 2: Iteration:  200 / 2000 [ 10%]  (Warmup)
+## Chain 2: Iteration:  400 / 2000 [ 20%]  (Warmup)
+## Chain 2: Iteration:  600 / 2000 [ 30%]  (Warmup)
+## Chain 2: Iteration:  800 / 2000 [ 40%]  (Warmup)
+## Chain 2: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+## Chain 2: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+## Chain 2: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+## Chain 2: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+## Chain 2: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+## Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+## Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
+## Chain 2: 
+## Chain 2:  Elapsed Time: 0.296004 seconds (Warm-up)
+## Chain 2:                0.135893 seconds (Sampling)
+## Chain 2:                0.431897 seconds (Total)
+## Chain 2: 
+## 
+## SAMPLING FOR MODEL &#39;84ff5f2d33abf7805a23213a9b4357f4&#39; NOW (CHAIN 3).
+## Chain 3: 
+## Chain 3: Gradient evaluation took 4e-05 seconds
+## Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.4 seconds.
+## Chain 3: Adjust your expectations accordingly!
+## Chain 3: 
+## Chain 3: 
+## Chain 3: Iteration:    1 / 2000 [  0%]  (Warmup)
+## Chain 3: Iteration:  200 / 2000 [ 10%]  (Warmup)
+## Chain 3: Iteration:  400 / 2000 [ 20%]  (Warmup)
+## Chain 3: Iteration:  600 / 2000 [ 30%]  (Warmup)
+## Chain 3: Iteration:  800 / 2000 [ 40%]  (Warmup)
+## Chain 3: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+## Chain 3: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+## Chain 3: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+## Chain 3: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+## Chain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+## Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+## Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
+## Chain 3: 
+## Chain 3:  Elapsed Time: 0.217401 seconds (Warm-up)
+## Chain 3:                0.17928 seconds (Sampling)
+## Chain 3:                0.396681 seconds (Total)
+## Chain 3: 
+## 
+## SAMPLING FOR MODEL &#39;84ff5f2d33abf7805a23213a9b4357f4&#39; NOW (CHAIN 4).
+## Chain 4: 
+## Chain 4: Gradient evaluation took 1.7e-05 seconds
+## Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.17 seconds.
+## Chain 4: Adjust your expectations accordingly!
+## Chain 4: 
+## Chain 4: 
+## Chain 4: Iteration:    1 / 2000 [  0%]  (Warmup)
+## Chain 4: Iteration:  200 / 2000 [ 10%]  (Warmup)
+## Chain 4: Iteration:  400 / 2000 [ 20%]  (Warmup)
+## Chain 4: Iteration:  600 / 2000 [ 30%]  (Warmup)
+## Chain 4: Iteration:  800 / 2000 [ 40%]  (Warmup)
+## Chain 4: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+## Chain 4: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+## Chain 4: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+## Chain 4: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+## Chain 4: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+## Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+## Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
+## Chain 4: 
+## Chain 4:  Elapsed Time: 0.258447 seconds (Warm-up)
+## Chain 4:                0.157157 seconds (Sampling)
+## Chain 4:                0.415604 seconds (Total)
+## Chain 4:</code></pre>
+<pre><code>## Warning: There were 1 divergent transitions after warmup. Increasing adapt_delta above 0.8 may help. See
+## http://mc-stan.org/misc/warnings.html#divergent-transitions-after-warmup</code></pre>
+<pre><code>## Warning: Examine the pairs() plot to diagnose sampling problems</code></pre>
+<pre class="r"><code>result.anova2</code></pre>
+<pre><code>## Warning: There were 1 divergent transitions after warmup. Increasing adapt_delta above 0.8 may help.
+## See http://mc-stan.org/misc/warnings.html#divergent-transitions-after-warmup</code></pre>
+<pre><code>##  Family: gaussian 
+##   Links: mu = identity; sigma = identity 
+## Formula: val ~ key + (1 | ID) 
+##    Data: dat2 (Number of observations: 30) 
+## Samples: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;
+##          total post-warmup samples = 4000
+## 
+## Group-Level Effects: 
+## ~ID (Number of levels: 10) 
+##               Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+## sd(Intercept)     4.77      2.09     0.97     9.56        821 1.01
+## 
+## Population-Level Effects: 
+##           Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+## Intercept    60.07      2.34    55.34    64.67       1548 1.00
+## keyTime2      7.54      2.53     2.39    12.43       3191 1.00
+## keyTime3     18.93      2.49    14.04    23.84       3099 1.00
+## 
+## Family Specific Parameters: 
+##       Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+## sigma     5.65      1.03     4.00     7.93       1296 1.00
+## 
+## Samples were drawn using sampling(NUTS). For each parameter, Eff.Sample 
+## is a crude measure of effective sample size, and Rhat is the potential 
+## scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
+<pre class="r"><code>plot(marginal_effects(result.anova2))</code></pre>
+<p><img src="day3_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(dat2,aes(x=key,y=val,color=ID,group=ID))+geom_point()+
+  geom_smooth(method=&quot;lm&quot;,se=F)</code></pre>
+<p><img src="day3_files/figure-html/unnamed-chunk-7-2.png" width="672" /></p>
+</div>
+<div id="mixed-design" class="section level4">
+<h4>Mixed Design</h4>
+<p>「ある学校では二種類のテキストを使って，どちらが成績に良い影響を与えるか検証した。テキストはA1,A2の二種類であり，成績は前後の二回で比較する。５人ずつの学級で検証した。テキストの効果，成績の上昇はあると言って良いか統計的に検定せよ」</p>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="right">ID</th>
+<th align="left">Text</th>
+<th align="right">pre</th>
+<th align="right">post</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">A1</td>
+<td align="right">78</td>
+<td align="right">45</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">A1</td>
+<td align="right">76</td>
+<td align="right">47</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">A1</td>
+<td align="right">72</td>
+<td align="right">31</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">A1</td>
+<td align="right">61</td>
+<td align="right">36</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="left">A1</td>
+<td align="right">69</td>
+<td align="right">44</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="left">A2</td>
+<td align="right">24</td>
+<td align="right">60</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="left">A2</td>
+<td align="right">44</td>
+<td align="right">86</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="left">A2</td>
+<td align="right">29</td>
+<td align="right">58</td>
+</tr>
+<tr class="odd">
+<td align="right">9</td>
+<td align="left">A2</td>
+<td align="right">24</td>
+<td align="right">60</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="left">A2</td>
+<td align="right">37</td>
+<td align="right">68</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre><code>## 
+## [ AsB-Type Design ]
+## 
+## This output was generated by anovakun 4.8.2 under R version 3.5.2.
+## It was executed on Thu Mar  7 06:36:02 2019.
+## 
+##  
+## &lt;&lt; DESCRIPTIVE STATISTICS &gt;&gt;
+## 
+## --------------------------------
+##   A   B   n     Mean     S.D. 
+## --------------------------------
+##  a1  b1   5  71.2000   6.6858 
+##  a1  b2   5  40.6000   6.8044 
+##  a2  b1   5  31.6000   8.7350 
+##  a2  b2   5  66.4000  11.6103 
+## --------------------------------
+## 
+## 
+## &lt;&lt; SPHERICITY INDICES &gt;&gt;
+## 
+## == Mendoza&#39;s Multisample Sphericity Test and Epsilons ==
+## 
+## -------------------------------------------------------------------------
+##  Effect  Lambda  approx.Chi  df      p         LB     GG     HF     CM 
+## -------------------------------------------------------------------------
+##       B  0.8586      0.2668   1 0.6055 ns  1.0000 1.0000 1.0000 1.0000 
+## -------------------------------------------------------------------------
+##                               LB = lower.bound, GG = Greenhouse-Geisser
+##                              HF = Huynh-Feldt-Lecoutre, CM = Chi-Muller
+## 
+## 
+## &lt;&lt; ANOVA TABLE &gt;&gt;
+## 
+## ---------------------------------------------------------------
+##     Source         SS  df         MS   F-ratio  p-value      
+## ---------------------------------------------------------------
+##          A   238.0500   1   238.0500    1.7841   0.2184 ns   
+##      s x A  1067.4000   8   133.4250                         
+## ---------------------------------------------------------------
+##          B    22.0500   1    22.0500    1.2511   0.2958 ns   
+##      A x B  5346.4500   1  5346.4500  303.3447   0.0000 ***  
+##  s x A x B   141.0000   8    17.6250                         
+## ---------------------------------------------------------------
+##      Total  6814.9500  19   358.6816                         
+##                    +p &lt; .10, *p &lt; .05, **p &lt; .01, ***p &lt; .001
+## 
+## 
+## &lt;&lt; POST ANALYSES &gt;&gt;
+## 
+## &lt; SIMPLE EFFECTS for &quot;A x B&quot; INTERACTION &gt;
+## 
+## -----------------------------------------------------------------------
+##   Effect  Lambda  approx.Chi  df   p         LB     GG     HF     CM 
+## -----------------------------------------------------------------------
+##  B at a1  1.0000     -0.0000   0         1.0000 1.0000 1.0000 1.0000 
+##  B at a2  1.0000     -0.0000   0         1.0000 1.0000 1.0000 1.0000 
+## -----------------------------------------------------------------------
+##                             LB = lower.bound, GG = Greenhouse-Geisser
+##                            HF = Huynh-Feldt-Lecoutre, CM = Chi-Muller
+## 
+## -----------------------------------------------------------------
+##       Source         SS  df         MS   F-ratio  p-value      
+## -----------------------------------------------------------------
+##      A at b1  3920.4000   1  3920.4000   64.8000   0.0000 ***  
+##     Er at b1   484.0000   8    60.5000                         
+## -----------------------------------------------------------------
+##      A at b2  1664.1000   1  1664.1000   18.3777   0.0027 **   
+##     Er at b2   724.4000   8    90.5500                         
+## -----------------------------------------------------------------
+##      B at a1  2340.9000   1  2340.9000  104.5045   0.0005 ***  
+##  s x B at a1    89.6000   4    22.4000                         
+## -----------------------------------------------------------------
+##      B at a2  3027.6000   1  3027.6000  235.6109   0.0001 ***  
+##  s x B at a2    51.4000   4    12.8500                         
+## -----------------------------------------------------------------
+##                      +p &lt; .10, *p &lt; .05, **p &lt; .01, ***p &lt; .001
+## 
+## output is over --------------------///</code></pre>
+<p>線形モデルとして。</p>
+<pre class="r"><code>dat %&gt;% 
+  tidyr::gather(key,val,-ID,-Text,factor_key=TRUE) -&gt; dat3
+
+result.anova3 &lt;- brm(val~Text*key + (1|ID),data=dat3)</code></pre>
+<pre><code>## Compiling the C++ model</code></pre>
+<pre><code>## Start sampling</code></pre>
+<pre><code>## 
+## SAMPLING FOR MODEL &#39;be967cbea7bb3bc2f2e9f7b9c0e66a66&#39; NOW (CHAIN 1).
+## Chain 1: 
+## Chain 1: Gradient evaluation took 5.3e-05 seconds
+## Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.53 seconds.
+## Chain 1: Adjust your expectations accordingly!
+## Chain 1: 
+## Chain 1: 
+## Chain 1: Iteration:    1 / 2000 [  0%]  (Warmup)
+## Chain 1: Iteration:  200 / 2000 [ 10%]  (Warmup)
+## Chain 1: Iteration:  400 / 2000 [ 20%]  (Warmup)
+## Chain 1: Iteration:  600 / 2000 [ 30%]  (Warmup)
+## Chain 1: Iteration:  800 / 2000 [ 40%]  (Warmup)
+## Chain 1: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+## Chain 1: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+## Chain 1: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+## Chain 1: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+## Chain 1: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+## Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+## Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
+## Chain 1: 
+## Chain 1:  Elapsed Time: 0.323217 seconds (Warm-up)
+## Chain 1:                0.17589 seconds (Sampling)
+## Chain 1:                0.499107 seconds (Total)
+## Chain 1: 
+## 
+## SAMPLING FOR MODEL &#39;be967cbea7bb3bc2f2e9f7b9c0e66a66&#39; NOW (CHAIN 2).
+## Chain 2: 
+## Chain 2: Gradient evaluation took 2.2e-05 seconds
+## Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.22 seconds.
+## Chain 2: Adjust your expectations accordingly!
+## Chain 2: 
+## Chain 2: 
+## Chain 2: Iteration:    1 / 2000 [  0%]  (Warmup)
+## Chain 2: Iteration:  200 / 2000 [ 10%]  (Warmup)
+## Chain 2: Iteration:  400 / 2000 [ 20%]  (Warmup)
+## Chain 2: Iteration:  600 / 2000 [ 30%]  (Warmup)
+## Chain 2: Iteration:  800 / 2000 [ 40%]  (Warmup)
+## Chain 2: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+## Chain 2: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+## Chain 2: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+## Chain 2: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+## Chain 2: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+## Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+## Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
+## Chain 2: 
+## Chain 2:  Elapsed Time: 0.321393 seconds (Warm-up)
+## Chain 2:                0.274788 seconds (Sampling)
+## Chain 2:                0.596181 seconds (Total)
+## Chain 2: 
+## 
+## SAMPLING FOR MODEL &#39;be967cbea7bb3bc2f2e9f7b9c0e66a66&#39; NOW (CHAIN 3).
+## Chain 3: 
+## Chain 3: Gradient evaluation took 2.4e-05 seconds
+## Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.24 seconds.
+## Chain 3: Adjust your expectations accordingly!
+## Chain 3: 
+## Chain 3: 
+## Chain 3: Iteration:    1 / 2000 [  0%]  (Warmup)
+## Chain 3: Iteration:  200 / 2000 [ 10%]  (Warmup)
+## Chain 3: Iteration:  400 / 2000 [ 20%]  (Warmup)
+## Chain 3: Iteration:  600 / 2000 [ 30%]  (Warmup)
+## Chain 3: Iteration:  800 / 2000 [ 40%]  (Warmup)
+## Chain 3: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+## Chain 3: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+## Chain 3: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+## Chain 3: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+## Chain 3: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+## Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+## Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
+## Chain 3: 
+## Chain 3:  Elapsed Time: 0.350806 seconds (Warm-up)
+## Chain 3:                0.241286 seconds (Sampling)
+## Chain 3:                0.592092 seconds (Total)
+## Chain 3: 
+## 
+## SAMPLING FOR MODEL &#39;be967cbea7bb3bc2f2e9f7b9c0e66a66&#39; NOW (CHAIN 4).
+## Chain 4: 
+## Chain 4: Gradient evaluation took 2.4e-05 seconds
+## Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 0.24 seconds.
+## Chain 4: Adjust your expectations accordingly!
+## Chain 4: 
+## Chain 4: 
+## Chain 4: Iteration:    1 / 2000 [  0%]  (Warmup)
+## Chain 4: Iteration:  200 / 2000 [ 10%]  (Warmup)
+## Chain 4: Iteration:  400 / 2000 [ 20%]  (Warmup)
+## Chain 4: Iteration:  600 / 2000 [ 30%]  (Warmup)
+## Chain 4: Iteration:  800 / 2000 [ 40%]  (Warmup)
+## Chain 4: Iteration: 1000 / 2000 [ 50%]  (Warmup)
+## Chain 4: Iteration: 1001 / 2000 [ 50%]  (Sampling)
+## Chain 4: Iteration: 1200 / 2000 [ 60%]  (Sampling)
+## Chain 4: Iteration: 1400 / 2000 [ 70%]  (Sampling)
+## Chain 4: Iteration: 1600 / 2000 [ 80%]  (Sampling)
+## Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
+## Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
+## Chain 4: 
+## Chain 4:  Elapsed Time: 0.332694 seconds (Warm-up)
+## Chain 4:                0.243638 seconds (Sampling)
+## Chain 4:                0.576332 seconds (Total)
+## Chain 4:</code></pre>
+<pre><code>## Warning: There were 3 divergent transitions after warmup. Increasing adapt_delta above 0.8 may help. See
+## http://mc-stan.org/misc/warnings.html#divergent-transitions-after-warmup</code></pre>
+<pre><code>## Warning: Examine the pairs() plot to diagnose sampling problems</code></pre>
+<pre class="r"><code>result.anova3</code></pre>
+<pre><code>## Warning: There were 3 divergent transitions after warmup. Increasing adapt_delta above 0.8 may help.
+## See http://mc-stan.org/misc/warnings.html#divergent-transitions-after-warmup</code></pre>
+<pre><code>##  Family: gaussian 
+##   Links: mu = identity; sigma = identity 
+## Formula: val ~ Text * key + (1 | ID) 
+##    Data: dat3 (Number of observations: 20) 
+## Samples: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;
+##          total post-warmup samples = 4000
+## 
+## Group-Level Effects: 
+## ~ID (Number of levels: 10) 
+##               Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+## sd(Intercept)     8.30      3.17     2.92    15.50        698 1.00
+## 
+## Population-Level Effects: 
+##                Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+## Intercept         71.20      4.74    61.92    80.47       1217 1.00
+## TextA2           -39.71      6.79   -53.01   -26.81       1279 1.00
+## keypost          -30.59      3.49   -37.72   -23.36       2409 1.00
+## TextA2:keypost    65.30      5.10    54.42    75.73       2386 1.00
+## 
+## Family Specific Parameters: 
+##       Estimate Est.Error l-95% CI u-95% CI Eff.Sample Rhat
+## sigma     5.28      1.75     3.00     9.83        624 1.00
+## 
+## Samples were drawn using sampling(NUTS). For each parameter, Eff.Sample 
+## is a crude measure of effective sample size, and Rhat is the potential 
+## scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
+<pre class="r"><code>plot(marginal_effects(result.anova3,effects=&quot;key&quot;))</code></pre>
+<p><img src="day3_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<pre class="r"><code>plot(marginal_effects(result.anova3,effects=&quot;Text&quot;))</code></pre>
+<p><img src="day3_files/figure-html/unnamed-chunk-8-2.png" width="672" /></p>
+<pre class="r"><code>plot(marginal_effects(result.anova3,effects=&quot;key:Text&quot;))</code></pre>
+<p><img src="day3_files/figure-html/unnamed-chunk-8-3.png" width="672" /></p>
+</div>
+</div>
+<div id="section-4" class="section level3">
+<h3>因子分析モデル</h3>
+<p><a href="CATB50.csv">こちらから</a>データをダウンロードしてください(出典；<a href="https://www1.doshisha.ac.jp/~mjin/R/Chap_25/25.html" class="uri">https://www1.doshisha.ac.jp/~mjin/R/Chap_25/25.html</a>)。</p>
+<pre class="r"><code>library(psych)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;psych&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:brms&#39;:
+## 
+##     cs</code></pre>
+<pre><code>## The following objects are masked from &#39;package:ggplot2&#39;:
+## 
+##     %+%, alpha</code></pre>
+<pre class="r"><code>Items &lt;- c(&quot;円打点&quot;,&quot;記号記入&quot;,&quot;形態照合&quot;,&quot;名詞比較&quot;,&quot;図柄照合&quot;,
+             &quot;平面図判断&quot;,&quot;計算&quot;,&quot;語彙&quot;,&quot;立体図判断&quot;,&quot;文章完成&quot;,&quot;算数応用&quot;)
+FA.dat &lt;- read_csv(&quot;CATB50.csv&quot;) %&gt;% dplyr::select(-X1) %&gt;% setNames(Items)</code></pre>
+<pre><code>## Warning: Missing column names filled in: &#39;X1&#39; [1]</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   X1 = col_double(),
+##   A = col_double(),
+##   B = col_double(),
+##   C = col_double(),
+##   D = col_double(),
+##   E = col_double(),
+##   F = col_double(),
+##   G = col_double(),
+##   H = col_double(),
+##   I = col_double(),
+##   J = col_double(),
+##   K = col_double()
+## )</code></pre>
+<div id="section-5" class="section level4">
+<h4>相関行列</h4>
+<pre class="r"><code>cor(FA.dat) %&gt;% print(digits=2)</code></pre>
+<pre><code>##            円打点 記号記入 形態照合 名詞比較 図柄照合 平面図判断    計算
+## 円打点      1.000    0.387   0.1781    0.046    0.070      0.139  0.0719
+## 記号記入    0.387    1.000   0.1476    0.255    0.084      0.274  0.2823
+## 形態照合    0.178    0.148   1.0000    0.306    0.424      0.446 -0.0095
+## 名詞比較    0.046    0.255   0.3056    1.000    0.479      0.412  0.2328
+## 図柄照合    0.070    0.084   0.4235    0.479    1.000      0.397 -0.1914
+## 平面図判断  0.139    0.274   0.4456    0.412    0.397      1.000 -0.0539
+## 計算        0.072    0.282  -0.0095    0.233   -0.191     -0.054  1.0000
+## 語彙        0.050    0.296   0.3017    0.525    0.372      0.323  0.1919
+## 立体図判断  0.010    0.223   0.2834    0.409    0.276      0.612  0.0746
+## 文章完成   -0.173    0.078   0.2075    0.579    0.413      0.246  0.0545
+## 算数応用   -0.147    0.173   0.0470    0.411    0.056      0.265  0.3977
+##            語彙 立体図判断 文章完成 算数応用
+## 円打点     0.05      0.010   -0.173   -0.147
+## 記号記入   0.30      0.223    0.078    0.173
+## 形態照合   0.30      0.283    0.207    0.047
+## 名詞比較   0.52      0.409    0.579    0.411
+## 図柄照合   0.37      0.276    0.413    0.056
+## 平面図判断 0.32      0.612    0.246    0.265
+## 計算       0.19      0.075    0.055    0.398
+## 語彙       1.00      0.233    0.626    0.405
+## 立体図判断 0.23      1.000    0.394    0.456
+## 文章完成   0.63      0.394    1.000    0.356
+## 算数応用   0.41      0.456    0.356    1.000</code></pre>
+</div>
+<div id="screeplot" class="section level4">
+<h4>2-1.screeplot</h4>
+<pre class="r"><code>psych::fa.parallel(FA.dat,fa=&quot;fa&quot;)</code></pre>
+</div>
+<div id="result" class="section level4">
+<h4>3.result</h4>
+<pre class="r"><code>fa.result &lt;- fa(FA.dat,4,rotate=&#39;none&#39;)
+print(fa.result,digits=3)</code></pre>
+<pre><code>## Factor Analysis using method =  minres
+## Call: fa(r = FA.dat, nfactors = 4, rotate = &quot;none&quot;)
+## Standardized loadings (pattern matrix) based upon correlation matrix
+##              MR1    MR2    MR3    MR4    h2    u2  com
+## 円打点     0.085 -0.278  0.587  0.201 0.470 0.530 1.74
+## 記号記入   0.368  0.034  0.548  0.126 0.453 0.547 1.88
+## 形態照合   0.458 -0.342  0.069  0.037 0.333 0.667 1.92
+## 名詞比較   0.745  0.075 -0.051  0.144 0.584 0.416 1.10
+## 図柄照合   0.559 -0.421 -0.219  0.176 0.569 0.431 2.44
+## 平面図判断 0.664 -0.343  0.141 -0.354 0.705 0.295 2.21
+## 計算       0.196  0.539  0.350  0.075 0.458 0.542 2.07
+## 語彙       0.691  0.140 -0.056  0.338 0.615 0.385 1.56
+## 立体図判断 0.653 -0.028  0.035 -0.477 0.656 0.344 1.84
+## 文章完成   0.683  0.145 -0.403  0.203 0.692 0.308 1.94
+## 算数応用   0.544  0.537  0.012 -0.233 0.638 0.362 2.35
+## 
+##                         MR1   MR2   MR3   MR4
+## SS loadings           3.368 1.117 1.010 0.677
+## Proportion Var        0.306 0.102 0.092 0.062
+## Cumulative Var        0.306 0.408 0.500 0.561
+## Proportion Explained  0.546 0.181 0.164 0.110
+## Cumulative Proportion 0.546 0.727 0.890 1.000
+## 
+## Mean item complexity =  1.9
+## Test of the hypothesis that 4 factors are sufficient.
+## 
+## The degrees of freedom for the null model are  55  and the objective function was  3.895 with Chi Square of  173.329
+## The degrees of freedom for the model are 17  and the objective function was  0.275 
+## 
+## The root mean square of the residuals (RMSR) is  0.028 
+## The df corrected root mean square of the residuals is  0.05 
+## 
+## The harmonic number of observations is  50 with the empirical chi square  4.252  with prob &lt;  0.999 
+## The total number of observations was  50  with Likelihood Chi Square =  11.506  with prob &lt;  0.829 
+## 
+## Tucker Lewis Index of factoring reliability =  1.1647
+## RMSEA index =  0  and the 90 % confidence intervals are  0 0.0788
+## BIC =  -54.999
+## Fit based upon off diagonal values = 0.992
+## Measures of factor score adequacy             
+##                                                     MR1   MR2   MR3   MR4
+## Correlation of (regression) scores with factors   0.948 0.851 0.825 0.807
+## Multiple R square of scores with factors          0.899 0.724 0.680 0.651
+## Minimum correlation of possible factor scores     0.799 0.447 0.360 0.303</code></pre>
+<pre class="r"><code>fa.result &lt;- fa(FA.dat,4,rotate=&#39;geominQ&#39;)</code></pre>
+<pre><code>## Loading required namespace: GPArotation</code></pre>
+<pre class="r"><code>print(fa.result,digits=3,cut=0.3)</code></pre>
+<pre><code>## Factor Analysis using method =  minres
+## Call: fa(r = FA.dat, nfactors = 4, rotate = &quot;geominQ&quot;)
+## Standardized loadings (pattern matrix) based upon correlation matrix
+##               MR1    MR4    MR2    MR3    h2    u2  com
+## 円打点                           0.633 0.470 0.530 1.36
+## 記号記入                         0.605 0.453 0.547 1.15
+## 形態照合    0.301         0.371        0.333 0.667 2.80
+## 名詞比較    0.633                      0.584 0.416 1.19
+## 図柄照合    0.648         0.513        0.569 0.431 1.94
+## 平面図判断         0.761  0.301        0.705 0.295 1.32
+## 計算                     -0.553  0.390 0.458 0.542 1.82
+## 語彙        0.786                      0.615 0.385 1.11
+## 立体図判断         0.857               0.656 0.344 1.03
+## 文章完成    0.827                      0.692 0.308 1.14
+## 算数応用           0.494 -0.554        0.638 0.362 2.04
+## 
+##                         MR1   MR4   MR2   MR3
+## SS loadings           2.254 1.763 1.106 1.048
+## Proportion Var        0.205 0.160 0.101 0.095
+## Cumulative Var        0.205 0.365 0.466 0.561
+## Proportion Explained  0.365 0.286 0.179 0.170
+## Cumulative Proportion 0.365 0.651 0.830 1.000
+## 
+##  With factor correlations of 
+##        MR1    MR4    MR2   MR3
+## MR1  1.000  0.574 -0.199 0.126
+## MR4  0.574  1.000 -0.008 0.212
+## MR2 -0.199 -0.008  1.000 0.028
+## MR3  0.126  0.212  0.028 1.000
+## 
+## Mean item complexity =  1.5
+## Test of the hypothesis that 4 factors are sufficient.
+## 
+## The degrees of freedom for the null model are  55  and the objective function was  3.895 with Chi Square of  173.329
+## The degrees of freedom for the model are 17  and the objective function was  0.275 
+## 
+## The root mean square of the residuals (RMSR) is  0.028 
+## The df corrected root mean square of the residuals is  0.05 
+## 
+## The harmonic number of observations is  50 with the empirical chi square  4.252  with prob &lt;  0.999 
+## The total number of observations was  50  with Likelihood Chi Square =  11.506  with prob &lt;  0.829 
+## 
+## Tucker Lewis Index of factoring reliability =  1.1647
+## RMSEA index =  0  and the 90 % confidence intervals are  0 0.0788
+## BIC =  -54.999
+## Fit based upon off diagonal values = 0.992
+## Measures of factor score adequacy             
+##                                                     MR1   MR4   MR2   MR3
+## Correlation of (regression) scores with factors   0.928 0.920 0.851 0.821
+## Multiple R square of scores with factors          0.861 0.846 0.724 0.674
+## Minimum correlation of possible factor scores     0.723 0.692 0.449 0.347</code></pre>
+</div>
+<div id="plot" class="section level4">
+<h4>plot</h4>
+<pre class="r"><code>fa.result$loadings %&gt;% as.matrix() %&gt;% c() %&gt;% matrix(ncol=4) %&gt;% data.frame() %&gt;% 
+  rename(FA1=X1,FA2=X2,FA3=X3,FA4=X4)  %&gt;% 
+  mutate(items=Items) %&gt;% 
+  tidyr::gather(key,val,-items,factor_key=T) %&gt;% 
+  ggplot(aes(x=items,y=val,fill=items))+geom_bar(stat=&#39;identity&#39;)+facet_wrap(~key)+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))</code></pre>
+<p><img src="day3_files/figure-html/fa3-1.png" width="672" /></p>
+<pre class="r"><code>fa.result$scores %&gt;% as.data.frame %&gt;%
+  tidyr::gather(key,val,factor_key=TRUE) %&gt;% 
+  mutate(因子=factor(key,labels=c(&quot;語彙&quot;,&quot;空間&quot;,&quot;計算&quot;,&quot;運動&quot;))) %&gt;% 
+  ggplot(aes(x=val,fill=因子))+geom_histogram(binwidth=0.2) + facet_wrap(~因子)</code></pre>
+<p><img src="day3_files/figure-html/fa4-1.png" width="672" /></p>
+</div>
+</div>
+<div id="section-6" class="section level3">
+<h3>項目反応理論</h3>
+<p><a href="YUtest.csv">こちらから</a>データをダウンロードしてください。</p>
+<div id="pl-model" class="section level4">
+<h4>1PL model</h4>
+<pre class="r"><code>library(ltm)</code></pre>
+<pre><code>## Loading required package: msm</code></pre>
+<pre><code>## Loading required package: polycor</code></pre>
+<pre><code>## 
+## Attaching package: &#39;polycor&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:psych&#39;:
+## 
+##     polyserial</code></pre>
+<pre><code>## 
+## Attaching package: &#39;ltm&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:psych&#39;:
+## 
+##     factor.scores</code></pre>
+<pre class="r"><code>dat &lt;- read_csv(&quot;YUtest.csv&quot;) %&gt;% 
+  dplyr::select(Q4,Q5,Q6,Q7,Q8,Q9,Q10)</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   .default = col_double()
+## )</code></pre>
+<pre><code>## See spec(...) for full column specifications.</code></pre>
+<pre class="r"><code>result.ltm1 &lt;- rasch(dat)
+summary(result.ltm1)</code></pre>
+<pre><code>## 
+## Call:
+## rasch(data = dat)
+## 
+## Model Summary:
+##    log.Lik     AIC      BIC
+##  -51.61251 119.225 127.1909
+## 
+## Coefficients:
+##              value std.err  z.vals
+## Dffclt.Q4  -0.2175  0.3397 -0.6402
+## Dffclt.Q5  -0.7099  0.3477 -2.0418
+## Dffclt.Q6  -0.8839  0.3623 -2.4398
+## Dffclt.Q7  -1.8979  0.6007 -3.1594
+## Dffclt.Q8  -1.8980  0.6008 -3.1593
+## Dffclt.Q9  -0.7100  0.3477 -2.0420
+## Dffclt.Q10 -1.5343  0.4698 -3.2658
+## Dscrmn      2.6777  0.9014  2.9706
+## 
+## Integration:
+## method: Gauss-Hermite
+## quadrature points: 21 
+## 
+## Optimization:
+## Convergence: 0 
+## max(|grad|): 0.00028 
+## quasi-Newton: BFGS</code></pre>
+<pre class="r"><code>plot(result.ltm1,type=&quot;ICC&quot;,items = c(1,3,5))</code></pre>
+<p><img src="day3_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<pre class="r"><code>plot(result.ltm1,type=&quot;IIC&quot;,items = c(1,3,5))</code></pre>
+<p><img src="day3_files/figure-html/unnamed-chunk-9-2.png" width="672" /></p>
+<pre class="r"><code>plot(result.ltm1,type=&quot;IIC&quot;,items = 0)</code></pre>
+<p><img src="day3_files/figure-html/unnamed-chunk-9-3.png" width="672" /></p>
+</div>
+<div id="pl-model-1" class="section level4">
+<h4>2PL model</h4>
+<pre class="r"><code>result.ltm2 &lt;- ltm(dat~z1)
+summary(result.ltm2)</code></pre>
+<pre><code>## 
+## Call:
+## ltm(formula = dat ~ z1)
+## 
+## Model Summary:
+##    log.Lik      AIC      BIC
+##  -49.13463 126.2693 140.2095
+## 
+## Coefficients:
+##              value   std.err  z.vals
+## Dffclt.Q4  -0.3040    0.2954 -1.0291
+## Dffclt.Q5  -0.6871    0.7125 -0.9643
+## Dffclt.Q6  -0.8090    0.6888 -1.1746
+## Dffclt.Q7  -2.5026    2.2305 -1.1220
+## Dffclt.Q8  -8.2500   26.7117 -0.3089
+## Dffclt.Q9  -0.7623    0.3072 -2.4812
+## Dffclt.Q10 -2.1862    1.4812 -1.4759
+## Dscrmn.Q4   3.8676    2.9880  1.2944
+## Dscrmn.Q5  22.1274 1736.8956  0.0127
+## Dscrmn.Q6   7.5818   41.3155  0.1835
+## Dscrmn.Q7   1.6349    2.4491  0.6675
+## Dscrmn.Q8   0.3686    1.2518  0.2945
+## Dscrmn.Q9   2.8784    1.9777  1.4554
+## Dscrmn.Q10  1.3471    1.3926  0.9674
+## 
+## Integration:
+## method: Gauss-Hermite
+## quadrature points: 21 
+## 
+## Optimization:
+## Convergence: 0 
+## max(|grad|): 0.00011 
+## quasi-Newton: BFGS</code></pre>
+<pre class="r"><code>plot(result.ltm2,type=&quot;ICC&quot;,items = c(1,3,5))</code></pre>
+<p><img src="day3_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<pre class="r"><code>plot(result.ltm2,type=&quot;IIC&quot;,items = c(1,3,5))</code></pre>
+<p><img src="day3_files/figure-html/unnamed-chunk-10-2.png" width="672" /></p>
+<pre class="r"><code>plot(result.ltm2,type=&quot;IIC&quot;,items = 0)</code></pre>
+<p><img src="day3_files/figure-html/unnamed-chunk-10-3.png" width="672" /></p>
+</div>
+</div>
+<div id="section-7" class="section level3">
+<h3>課題7</h3>
+<ul>
+<li><a href="pokemon_status.csv">ここから</a>ポケモンのデータ(出典；<a href="http://rikapoke.hatenablog.jp/entry/pokemon_datasheet_gne7)をダウンロードし" class="uri">http://rikapoke.hatenablog.jp/entry/pokemon_datasheet_gne7)をダウンロードし</a>，</li>
+<li>次のいずれかの分析をやって遊んでください。
+<ul>
+<li>様々な能力値の類似性から，MDSかクラスター分析をする</li>
+<li>様々な能力値がタイプや特性によって違いがあるか線形モデルで分析する</li>
+<li>様々な能力値を因子分析し，潜在能力がどの程度に分割されるか分析する</li>
+</ul></li>
+</ul>
+<pre class="r"><code>pockemon &lt;- read_csv(&quot;pokemon_status.csv&quot;) %&gt;% 
+  dplyr::mutate(ID=row.names(.),
+                name=as.factor(ポケモン名),
+                type1=as.factor(タイプ１),
+                type2=as.factor(タイプ２),
+                property1 = as.factor(通常特性１),
+                property2 = as.factor(通常特性２),
+                propertyD = as.factor(夢特性))</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   図鑑番号 = col_character(),
+##   ポケモン名 = col_character(),
+##   タイプ１ = col_character(),
+##   タイプ２ = col_character(),
+##   通常特性１ = col_character(),
+##   通常特性２ = col_character(),
+##   夢特性 = col_character(),
+##   HP = col_double(),
+##   こうげき = col_double(),
+##   ぼうぎょ = col_double(),
+##   とくこう = col_double(),
+##   とくぼう = col_double(),
+##   すばやさ = col_double(),
+##   合計 = col_double()
+## )</code></pre>
+<pre class="r"><code>summary(pockemon)</code></pre>
+<pre><code>##    図鑑番号          ポケモン名          タイプ１        
+##  Length:909         Length:909         Length:909        
+##  Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character  
+##                                                          
+##                                                          
+##                                                          
+##                                                          
+##    タイプ２          通常特性１         通常特性２       
+##  Length:909         Length:909         Length:909        
+##  Class :character   Class :character   Class :character  
+##  Mode  :character   Mode  :character   Mode  :character  
+##                                                          
+##                                                          
+##                                                          
+##                                                          
+##     夢特性                HP           こうげき         ぼうぎょ     
+##  Length:909         Min.   :  1.0   Min.   :  5.00   Min.   :  5.00  
+##  Class :character   1st Qu.: 50.0   1st Qu.: 55.00   1st Qu.: 50.00  
+##  Mode  :character   Median : 66.0   Median : 75.00   Median : 70.00  
+##                     Mean   : 69.5   Mean   : 79.59   Mean   : 74.24  
+##                     3rd Qu.: 80.0   3rd Qu.:100.00   3rd Qu.: 90.00  
+##                     Max.   :255.0   Max.   :190.00   Max.   :230.00  
+##                                                                      
+##     とくこう         とくぼう         すばやさ           合計      
+##  Min.   : 10.00   Min.   : 20.00   Min.   :  5.00   Min.   :175.0  
+##  1st Qu.: 50.00   1st Qu.: 50.00   1st Qu.: 45.00   1st Qu.:330.0  
+##  Median : 65.00   Median : 70.00   Median : 65.00   Median :455.0  
+##  Mean   : 72.84   Mean   : 72.23   Mean   : 69.19   Mean   :436.3  
+##  3rd Qu.: 95.00   3rd Qu.: 90.00   3rd Qu.: 90.00   3rd Qu.:515.0  
+##  Max.   :194.00   Max.   :230.00   Max.   :600.00   Max.   :780.0  
+##                                                     NA&#39;s   :2      
+##       ID                    name          type1            type2    
+##  Length:909         アーケオス:  1   みず    :123   ひこう    :109  
+##  Class :character   アーケン  :  1   ノーマル:110   じめん    : 39  
+##  Mode  :character   アーボ    :  1   くさ    : 83   エスパー  : 36  
+##                     アーボック:  1   むし    : 78   どく      : 35  
+##                     アーマルド:  1   エスパー: 64   フェアリー: 35  
+##                     アイアント:  1   ほのお  : 58   (Other)   :233  
+##                     (Other)   :903   (Other) :393   NA&#39;s      :422  
+##         property1            property2            propertyD  
+##  ふゆう      : 40   がんじょう    : 14   ちからずく    : 18  
+##  すいすい    : 28   おみとおし    : 13   テレパシー    : 17  
+##  するどいめ  : 26   シェルアーマー: 11   ぼうじん      : 17  
+##  ようりょくそ: 25   せいしんりょく: 10   きんちょうかん: 16  
+##  プレッシャー: 23   テクニシャン  : 10   くだけるよろい: 15  
+##  いかく      : 22   (Other)       :400   (Other)       :646  
+##  (Other)     :745   NA&#39;s          :451   NA&#39;s          :180</code></pre>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

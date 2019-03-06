@@ -1,0 +1,471 @@
+---
+title: "山大集中講義2019.03.07;Day 1"
+output: html_document
+---
+
+## Day 1
+
+### RとRStudio環境の準備
+
+[準備サイト](ready.html) を参考に，必要なプログラム，パッケージを準備しましょう。
+
+### Rの関数とデータの型
+
+#### 四則演算
+```{r}
+1+3
+3-5
+5*7
+8/2
+```
+
+
+#### 関数を使おう
+```{r}
+sqrt(4)
+help(sqrt)
+```
+
+#### 代入
+
+```{r}
+obj <- 2
+obj
+obj2 <- 2
+obj3 <- 3
+obj2 + obj3
+obj <- 1:10
+obj
+obj * 2
+obj <- matrix(c(1:10),nrow=5)
+obj
+```
+
+##### 代入したものの操作
+```{r}
+obj * 2
+
+obj[1,]
+obj[,2]
+```
+
+#### なんでも入れれるlist型
+
+```{r}
+obj<-list(name=c("kosugi","tanaka","suzuki"),
+          gender=c("male","female","male"),
+          height=c(170,160),
+          weight=c(70.6,80.9,90.6,40.3))
+obj
+```
+
+
+##### 代入したものの操作
+```{r}
+obj$name
+```
+
+
+#### データの型
+```{r}
+str(obj)
+```
+
+##### 数字，文字，factor型
+```{r}
+obj$gender <- as.factor(obj$gender)
+str(obj)
+```
+
+#### データフレーム型
+```{r}
+obj<-data.frame(
+  list(name=c("kosugi","tanaka","suzuki"),
+       gender=c(1,2,1),
+       hight=c(170,160,170),
+       weight=c(70.6,80.9,90.6)
+  )
+)
+```
+
+##### 代入したものの操作
+```{r}
+str(obj)
+obj$gender<-factor(obj$gender,labels=c("male","female"))
+obj
+```
+
+##### パッケージの利用
+```{r}
+library(tidyverse)
+```
+
+#### ファイルの読み込み
+```{r}
+M1 <- read_csv("M1score.csv",na=".")
+head(M1)
+```
+
+```{r}
+summary(M1)
+str(M1)
+```
+
+#### データの操作1；列選択
+```{r}
+M1 %>% dplyr::select(松本人志,富澤たけし) %>% head()
+```
+
+#### データの操作2；行選択
+
+```{r}
+M1 %>% dplyr::filter(年代==18) %>% head()
+```
+
+```{r}
+M1 %>% dplyr::filter(年代<10) %>% head()
+```
+
+```{r}
+M1 %>% dplyr::filter(年代<10) %>% dplyr::select(年代,演者,松本人志) %>% head()
+```
+#### データの操作3；変数の作成
+```{r}
+M1 %>% mutate(松本上沼=松本人志+上沼恵美子) %>% head()
+```
+
+#### データの操作4；LONG型への変換
+
+とにかく二列にする関数。
+```{r}
+M1 %>% tidyr::gather(key,val) %>% head()
+```
+
+二列にしてほしくないところはマイナス。
+```{r}
+M1 %>% tidyr::gather(key,val,-年代,-演者,-ネタ順) %>% head()
+```
+
+欠損値を除く。
+```{r}
+M1 %>% tidyr::gather(key,val,-年代,-演者,-ネタ順) %>% na.omit %>% head()
+```
+#### データの操作5；グループ化と要約
+
+```{r}
+M1 %>% tidyr::gather(key,val,-年代,-演者,-ネタ順) %>% 
+  group_by(key) %>% head()
+```
+
+
+```{r}
+M1 %>% tidyr::gather(key,val,-年代,-演者,-ネタ順) %>% na.omit %>% 
+  group_by(key) %>% summarise(mean(val)) %>% head()
+```
+
+### Rによるグラフィックス
+
+「キャンバスに重ね描きする」という考え方をベースにした，グラフィックスの文法を学ぼう。
+
+#### キャンバスの準備
+```{r}
+g <- ggplot()
+
+print(g)
+```
+
+#### サンプルデータセットの活用
+```{r}
+iris %>% head()
+```
+
+#### 書き方の例2
+```{r}
+iris %>% ggplot()  + geom_point(data = iris,
+                                mapping = aes(x = Sepal.Length, y = Sepal.Width))
+```
+#### 書き方の例3
+
+こちらはキャンパスをirisデータ，x軸をSepal.Length,y軸をSepal.Widthに固定しているので，縦・横軸が異なる図を重ねることができない。
+```{r}
+iris %>% ggplot( aes(x = Sepal.Length, y = Sepal.Width))  + geom_point()
+```
+
+あまり使うシーンはないかもしれないが，`geom_`の中で軸を指定しておくと，異なる軸データをプロットすることもできる。
+```{r}
+iris %>% ggplot()  + geom_point( aes(x = Sepal.Length, y = Sepal.Width))　+
+   geom_point(aes(x = Petal.Length, y = Petal.Width,color="red"))
+```
+
+#### 色分け
+
+色を分ける変数を指定する。
+
+```{r}
+iris %>% ggplot() + geom_point(aes(x = Sepal.Length, y = Sepal.Width, color=Species))
+```
+
+連続値だとグラデーションになる。
+```{r}
+iris %>% ggplot() + geom_point(aes(x = Sepal.Length, y = Sepal.Width, color=Sepal.Length))
+```
+
+aesで表現するのは`変数`である。つまり，値に応じて変わる場合はaesで指定する。そうでない場合は，aesの外で指定する。
+```{r}
+iris %>% ggplot(aes(x = Sepal.Length, y = Sepal.Width)) + 
+  geom_point(colour = "blue", size = 3, shape = 5)
+```
+
+#### 実験・調査などで使いそうなデータプロット
+
+##### ヒストグラム
+
+データ全体の分布を見るためにはヒストグラムを使う。y軸の指定はいらない。
+```{r}
+iris %>% ggplot(aes(x = Sepal.Width)) +geom_histogram()
+```
+
+binwidthで幅を決める。
+```{r}
+iris %>% ggplot(aes(x = Sepal.Width)) +geom_histogram(binwidth=1)
+```
+
+##### 群ごとのデータをポイントする
+
+横軸がfactor型だと，群ごとのデータになる。
+```{r}
+iris %>% ggplot(aes(x = Species, y = Sepal.Width)) + geom_point()
+```
+
+少し装飾。
+```{r}
+iris %>% ggplot(aes(x = Species, y = Sepal.Width)) + 
+  geom_point(aes(color=Species,alpha=0.3,size=3))
+```
+
+##### boxplotはわかりやすい
+
+```{r}
+iris %>% ggplot(aes(x = Species, y = Sepal.Width,fill=Species)) + geom_boxplot()
+```
+
+##### violin plotは分布が見れるよ
+
+```{r}
+iris %>% ggplot(aes(x = Species, y = Sepal.Width,fill=Species)) + geom_violin()
+```
+
+##### 棒グラフをかいてみよう
+
+```{r}
+iris %>% ggplot(aes(x = Species, y = Sepal.Width,fill=Species)) + 
+  geom_bar(stat = "summary", fun.y = mean)
+```
+
+別解
+
+```{r}
+iris %>% ggplot(aes(x = Species, y = Sepal.Width,fill=Species)) + 
+  stat_summary(geom="bar",fun.y=mean)
+```
+
+##### かき分ける；ファセット
+グラフを分割するときはファセットを使う。
+```{r}
+iris %>% ggplot(aes(x = Sepal.Width,y=Petal.Length)) +geom_point()+
+  facet_wrap(~Species)
+```
+
+##### データが集計済みだったら？or集計した後でプロットする技術
+
+実験などでありがちな，平均値に標準偏差のバーをつけて表示する方法などがこちら。
+```{r}
+iris %>% 
+  # データを縦長にする
+  tidyr::gather(key,val,-Species) %>% print %>% 
+  # グルーピングしておく
+  group_by(Species,key) %>% 
+  # 平均値などの統計量を計算する
+  summarise(M=mean(val),U95=quantile(val,probs=0.975),L95=quantile(val,probs=0.025)) %>% 
+  print() %>% 
+  # 変数を限定する
+  dplyr::filter(key=='Sepal.Length') %>% 
+  # キャンパスの準備
+  ggplot(aes(x=Species,y=M,fill=Species)) +
+    # 棒グラフに点をつけて
+    geom_bar(stat='identity') + geom_point(stat='identity') +
+    # エラーバーを描く
+    geom_errorbar(stat='identity',aes(ymin=L95,ymax=U95,width=0.2))
+  
+```
+
+
+### 課題1
+
+1. [こちら](baseball2019.csv)からデータセットファイルをダウンロードし，プロジェクトフォルダに保存し，
+2. 野球選手に関するデータセットファイル(baseball2019.csv)を読み込み，
+3. ピッチャーの身長・体重データを選び出し，
+4. BMIを計算して
+5. 12球団ごとのBMIの平均値を棒グラフで表しなさい
+
+```{r,echo=F,message=F}
+read_csv('baseball2019.csv') %>% 
+  dplyr::filter(position=="投手") %>% 
+  dplyr::select(team,height,weight) %>% 
+  dplyr::mutate(BMI=weight/(height/100)^2) %>% 
+  ggplot(aes(x=team,y=BMI,fill=team)) + geom_bar(stat = "summary", fun.y = mean)
+```
+
+
+
+### 多次元尺度構成法
+
+ヨーロッパ都市間の距離データ(Rのデフォルト)を使います
+
+```{r}
+eurodist
+```
+
+メトリックなMDSで分析
+
+```{r}
+#描画に使うパッケージの読み込み
+library(ggrepel)
+
+# MDSの関数
+result.MDS1 <- cmdscale(eurodist,k=3)
+# 結果と描画
+result.MDS1 %>% as.data.frame %>% 
+  dplyr::mutate(label=rownames(.)) %>% 
+  ggplot(aes(x=V1,y=V2,label=label))+geom_point()+geom_text_repel()+
+  xlim(-2500,2500)+ylim(-2500,2500)+xlab("dim 1")+ylab("dim2")
+```
+
+
+南北反転？
+
+```{r}
+# y軸反転
+result.MDS1 %>% as.data.frame %>% 
+  dplyr::mutate(label=rownames(.)) %>% 
+  ggplot(aes(x=V1,y=V2,label=label))+geom_point()+geom_text_repel()+
+  xlim(-2500,2500)+ylim(2500,-2500)+xlab("dim 1")+ylab("dim2")
+```
+
+
+#### 距離の関数
+
+サンプルデータ（あやめ）
+```{r}
+iris[,-5] %>% head()
+```
+
+```{r}
+# ユークリッド距離
+iris[,-5] %>% head() %>% dist()
+```
+
+```{r}
+# マンハッタン距離
+iris[,-5] %>% head() %>% dist(method="manhattan")
+```
+```{r}
+# ミンコフスキー距離
+iris[,-5] %>% head() %>% dist(method="minkowski",p=3)
+```
+
+#### 非計量MDSの例
+
+##### データ；M-1グランプリ2019の採点結果より
+
++　[こちら](M1score.csv)からデータファイルをダウンロードし，プロジェクトフォルダに保存してください。
+
+```{r}
+read_csv("M1score.csv",na=".") %>% dplyr::filter(年代==18) %>% 
+  dplyr::select("立川志らく","塙宣之","上沼恵美子","松本人志","中川礼二","オール巨人","富澤たけし") %>% 
+  as.matrix() -> M1_2018
+
+row.names(M1_2018) <- c("見取り図",
+                        "スーパーマラドーナ",
+                        "かまいたち",
+                        "ジャルジャル",
+                        "ギャロップ",
+                        "ゆにばーす",
+                        "ミキ",
+                        "トム・ブラウン",
+                        "霜降り明星",
+                        "和牛")
+
+M1_2018
+
+# 距離データ表示
+(dist_M1 <- dist(M1_2018))
+```
+
+##### 分析；isoMDS関数の例
+```{r}
+library(MASS)
+result.MDS2 <- isoMDS(dist_M1,k=2)
+```
+
+##### 結果
+```{r}
+result.MDS2$points %>% as.data.frame %>% 
+  dplyr::mutate(label=rownames(.)) %>% 
+  ggplot(aes(x=V1,y=V2,label=label))+geom_point()+
+  geom_text_repel(family = "HiraKakuProN-W3")+
+  xlim(-15,15) + ylim(-15,15)+
+  xlab("dim 1")+ylab("dim2") 
+```
+
+
+##### 列データのMDS
+```{r}
+result.MDS3 <- dist(t(M1_2018)) %>% isoMDS()
+result.MDS3$points %>% as.data.frame %>% 
+  dplyr::mutate(label=rownames(.)) %>% 
+  ggplot(aes(x=V1,y=V2,label=label))+geom_point()+
+  geom_text_repel(family = "HiraKakuProN-W3")+
+  xlim(-12,12) + ylim(-12,12)+
+  xlab("dim 1")+ylab("dim2") 
+```
+
+### クラスター分析
+
+同じ距離データからの分類でも，クラスター分析という方法もある。
+クラスター分析は階層的な方法と非階層的な方法の二種類がある。
+
+#### 階層的クラスター分析
+```{r}
+result.hcl <- hclust(dist_M1)
+par(family = "HiraKakuProN-W3")
+plot(result.hcl)
+```
+好きな数に切り分ければ良い。
+```{r}
+cutree(result.hcl,3)
+```
+#### 非階層的クラスター分析
+
+k-means法が代表的。
+```{r}
+set.seed(123)
+kmeans(dist_M1,3) 
+```
+
+###  課題2
+
+1. 野球選手に関するデータセットファイル(baseball2019.csv)を読み込み，
+2. バッター(投手以外)のデータに限定し，
+3. 年俸(saraly)と打数のデータを選び出し，
+4. 欠損値が含まれているのでna.omit関数でそれらのデータを除外した上で，
+5. 階層的クラスタリングを行い，デンドログラムを描画しなさい。
+
+
+```{r,echo=F}
+read_csv('baseball2019.csv') %>% 
+  dplyr::filter(position!="投手") %>% 
+  dplyr::select(salary,打数) %>% 
+  na.omit() %>% 
+  dist() %>% hclust() %>% plot()
+```

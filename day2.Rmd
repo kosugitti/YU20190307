@@ -1,0 +1,411 @@
+---
+title: "山大集中講義2019.03.08;Day 2"
+output: html_document
+---
+
+## Day 2
+
++ 始めるにあたって，プロジェクトフォルダを置くこと
++ 下のコードを実行して，必要なパッケージを読み込んでおくこと
+
+```{r}
+library(tidyverse)
+# マカーの呪文
+old = theme_set(theme_gray(base_family = "HiraKakuProN-W3"))
+library(brms)
+```
+
+### 線形モデル1；回帰分析
+
+#### データセットの確認
+```{r}
+read_csv('baseball2019.csv') %>% 
+  dplyr::select(height,weight) %>% 
+  na.omit() %>% 
+  ggplot(aes(x=weight,y=height))+geom_point()
+```
+
+```{r}
+read_csv('baseball2019.csv') %>% 
+  dplyr::select(height,weight) %>% 
+  na.omit() %>% 
+  ggplot(aes(x=weight,y=height))+geom_point()+geom_smooth(method='lm',se=FALSE)
+```
+
+#### 推定方法1；最尤推定
+
+```{r}
+read_csv('baseball2019.csv') %>% 
+  dplyr::select(height,weight) %>% 
+  na.omit() -> baseball_dat
+result.lm <- lm(height~weight,data=baseball_dat)
+summary(result.lm)
+```
+
+##### オブジェクトの中身を見てみる
+```{r}
+result.lm$coefficients
+```
+```{r}
+result.lm$residuals %>% head()
+```
+```{r}
+result.lm$fitted.values %>% head()
+```
+
+#### 重回帰分析
+```{r}
+read_csv('baseball2019.csv') %>% 
+  dplyr::select(height,weight,years) %>% 
+  na.omit() -> baseball_dat2
+
+result.lm2 <- lm(height~weight+years,baseball_dat2)
+summary(result.lm2)
+```
+
+#### 標準化偏回帰係数
+
+データを標準化する。
+```{r}
+baseball_dat2 %>% scale %>% as.data.frame -> baseball_dat2z
+baseball_dat2z %>% head()
+baseball_dat2z %>% summary()
+```
+
+標準化するということがどういうことか，確認しておこう。
+
+```{r}
+result.lm3 <- lm(height~weight+years,data=baseball_dat2z)
+summary(result.lm3)
+```
+### 線形モデル2；(重)回帰分析の特徴
+
+#### 残差の平均値
+```{r}
+result.lm$residuals %>% mean
+```
+
+#### 説明変数と残差の共分散
+```{r}
+cov(baseball_dat$weight,result.lm$residuals)
+data.frame(pred=baseball_dat$weight,resid=result.lm$residuals) %>% 
+  ggplot(aes(x=pred,y=resid))+geom_point()
+```
+#### 予測値と残差の共分散
+```{r}
+cov(result.lm$fitted.values,result.lm$residuals)
+data.frame(predicted=result.lm$fitted.values,resid=result.lm$residuals) %>% 
+  ggplot(aes(x=predicted,y=resid))+geom_point()
+```
+
+#### 予測値と残差の共分散
+```{r}
+var(baseball_dat$height)
+var(result.lm$fitted.values)+var(result.lm$residuals)
+```
+
+#### 予測値と被説明変数の共分散
+```{r}
+cov(result.lm$fitted.values,baseball_dat$height)
+var(result.lm$fitted.values)
+```
+
+### 課題3
+
++ 野球データセットのうち，巨人群のデータだけ抽出して
++ 体重を身長で予測する回帰分析を行い
++ 回帰係数を報告しなさい。
+
+```{r,echo=F,message=F}
+read_csv('baseball2019.csv') %>% 
+  dplyr::filter(team=="Giants") %>% 
+  dplyr::select(height,weight) %>% 
+  lm(weight ~ height,data=.) %>% summary()
+
+```
+
+
+### 線形モデル2；ベイズ推定
+```{r}
+result.brms1 <- brm(height~weight,data=baseball_dat)
+result.brms1
+```
+
+##### 推定後のチェック
+```{r}
+plot(result.brms1)
+```
+
+##### MCMCサンプルを見てみる
+```{r}
+rstan::extract(result.brms1$fit) %>% data.frame %>% head()
+```
+
+##### 回帰直線
+```{r}
+plot(marginal_effects(result.brms1))
+```
+
+##### 推定値
+```{r}
+result.brms1 %>% fitted() %>% head()
+```
+
+##### 事後予測分布
+```{r}
+pp_check(result.brms1)
+```
+##### 事後予測分布のサンプル
+```{r}
+predict(result.brms1) %>% head(10)
+```
+
+##### チェックしておこう
+
++ MCMCサンプルの数，チェイン数などMCMC推定オプション
++ 事前分布の設定の仕方。
+
+```{r eval=F}
+brm(height~weight,
+    data=baseball_dat,
+    iter = 2000,
+    warmup = 1000,
+    seed = 1234,
+    chain = 4)
+
+?brms::set_prior
+```
+### 課題4
+
++ 課題3と同じ分析をベイズ推定しなさい
+
+```{r,echo=F,message=F}
+read_csv('baseball2019.csv') %>% 
+  dplyr::filter(team=="Giants") %>% 
+  dplyr::select(height,weight) %>% 
+  brm(weight ~ height,data=.) %>% summary()
+```
+
+### 線形モデル3；一般線形モデル
+
+利き腕の違いを考慮したいとする。
+```{r}
+read_csv('baseball2019.csv') %>% 
+  dplyr::select(height,weight,throw.by) %>% 
+  na.omit() %>% 
+  dplyr::mutate(throw.by=as.factor(throw.by)) -> baseball_dat3
+
+baseball_dat3 %>% 
+  ggplot(aes(x=throw.by,y=height))+geom_point()+stat_summary(fun.y=mean,geom='line',group=1)
+```
+
+回帰分析でOK。t検定の別解でもある。
+
+```{r}
+result.lm4 <- lm(height~throw.by,baseball_dat3)
+summary(result.lm4)
+```
+
+##### ちなみに検定では
+
+```{r}
+t.test(height~throw.by,data=baseball_dat3)
+```
+
+##### ベイズ推定では
+
+こっちのほうがわかりやすい。
+```{r}
+result.brms2 <- brm(height~throw.by,baseball_dat3)
+result.brms2
+plot(marginal_effects(result.brms2))
+```
+
+##### 二要因の場合(間・間計画)
+利き手は投げる時と打つときがあるので・・・
+
+```{r}
+read_csv("baseball2019.csv") %>% 
+  dplyr::select(height,weight,throw.by,batting.by) %>% 
+  na.omit() %>% 
+  dplyr::mutate(throw.by=as.factor(throw.by),
+                batting.by = as.factor(batting.by)) -> baseball_dat4
+result.brms4 <- brm(height ~ throw.by*batting.by,data=baseball_dat4)
+result.brms4
+plot(marginal_effects(result.brms4,effects="throw.by"))
+plot(marginal_effects(result.brms4,effects="batting.by"))
+plot(marginal_effects(result.brms4,effects="throw.by:batting.by"))
+```
+
+### 課題5
+
++ 野球選手の体重について，利き腕の違いによる差があるかどうかを検証するため，
++ t検定，最尤推定，ベイズ推定，それぞれの分析結果を出しなさい。
+
+```{r,echo=F,message=F}
+t.test(weight~throw.by,data=baseball_dat3)
+summary(lm(weight~throw.by,data=baseball_dat3))
+brm(weight~throw.by,data=baseball_dat3) ->result.brms3
+result.brms3
+plot(marginal_effects(result.brms3))
+```
+
+### 線形モデル4；一般化線形モデル
+
+#### 対数正規分布
+
+年俸のデータは正規分布しない。
+
+```{r}
+read_csv('baseball2019.csv') %>% 
+  # 野手のデータ
+  dplyr::filter(position!="投手") %>% 
+  ggplot(aes(x=salary))+geom_histogram(binwidth = 1000)
+```
+
+こういうデータに回帰線を当てるのはよくない。
+```{r}
+read_csv('baseball2019.csv') %>% 
+  # 野手のデータ
+  dplyr::filter(position!="投手") %>% 
+  ggplot(aes(x=安打,y=salary))+geom_point()+geom_smooth(method='lm',se=F)
+```
+
+分布にあった分析をする。この場合は対数正規分布が良い。
+
+```{r}
+ggplot(data.frame(x=c(0, 10)), aes(x=x)) + stat_function(fun = dlnorm)
+```
+
+分析のコード
+```{r}
+read_csv('baseball2019.csv') %>% 
+  # 野手のデータ
+  dplyr::filter(position!="投手") %>% 
+  # 年収の単位を少し落とす（見にくいので）
+  dplyr::mutate(salary=salary/1000) %>% 
+  brm(salary~安打,data=.,family="lognormal") -> result.brms6
+pp_check(result.brms6)
+```
+正規分布のままだとおかしいのは目に見えてわかる。
+```{r}
+read_csv('baseball2019.csv') %>% 
+  # 野手のデータ
+  dplyr::filter(position!="投手") %>% 
+  # 年収の単位を少し落とす（見にくいので）
+  dplyr::mutate(salary=salary/1000) %>% 
+  brm(salary~安打,data=.)  %>% 
+  pp_check()
+```
+
+分析は分布に合わせないといけないことを肝に命じておいてほしい。
+
+#### ポアソン分布
+
+```{r}
+ggplot(data.frame(x=c(0:10)), aes(x)) +
+    stat_function(geom="point", n=11, fun=dpois, args=list(1),color="black") + 
+    stat_function(geom="point", n=11, fun=dpois, args=list(3),color="red") +
+    stat_function(geom="point", n=11, fun=dpois, args=list(5),color="blue")
+```
+
+カウントデータに使う。
+```{r}
+read_csv('baseball2019.csv') %>% 
+  # 野手のデータ
+  dplyr::filter(position!="投手") %>% 
+  dplyr::select(本塁打,weight) %>% 
+  na.omit() -> baseball_dat6
+
+baseball_dat6 %>% 
+  ggplot(aes(x=本塁打))+geom_histogram(binwidth=3)
+```
+
+線形モデルの例。
+```{r}
+result.brms7 <- brm(本塁打~weight,data=baseball_dat6,family="poisson")
+result.brms7
+pp_check(result.brms7)
+```
+
+
+#### 二項分布
+
+```{r}
+ggplot(data.frame(x=c(0, 10)), aes(x=x)) + 
+  stat_function(geom = "point",n=11,fun = dbinom,args=list(size=10,prob=0.5),color="black")+
+  stat_function(geom = "point",n=11,fun = dbinom,args=list(size=10,prob=0.3),color="red")+
+  stat_function(geom = "point",n=11,fun = dbinom,args=list(size=10,prob=0.7),color="blue")
+```
+
+割合のデータに使う。
+```{r}
+read_csv('baseball2019.csv') %>% 
+  # 野手のデータ
+  dplyr::filter(position!="投手") %>% 
+  dplyr::select(打率,安打,打数,weight) %>% 
+  # 日本語名を直しておく
+  dplyr::rename(BA=打率,HIT=安打,AB=打数) %>% 
+  # 欠損値は除外
+  na.omit() %>% 
+  # 打席に立っていない人のデータも除外
+  dplyr::filter(BA!=0)  -> baseball_dat7
+
+baseball_dat7 %>% 
+  ggplot(aes(x=BA))+geom_histogram(binwidth=0.01)
+```
+
+線形モデルの例。
+```{r}
+# 書き方に注意
+result.brms8 <- brm(HIT|trials(AB)~weight,data=baseball_dat7,family="binomial")
+result.brms8
+pp_check(result.brms8)
+```
+
+#### ロジスティック回帰
+
+0/1データが従属変数の時は，特にロジスティック回帰という。
+```{r}
+read_csv('baseball2019.csv') %>% 
+    # 野手のデータ
+  dplyr::filter(position!="投手") %>% 
+  dplyr::select(throw.by,weight) %>% 
+  # 0/1データにする
+  dplyr::mutate(throw.01=ifelse(throw.by=="右",1,0)) -> baseball_dat8
+```
+
+
+当てはめる回帰直線はロジスティックカーブを使う。
+```{r}
+ggplot(data=data.frame(X=c(-10,10)), aes(x=X))+
+  stat_function(fun=function(x) 1/(1+exp(-x)))
+```
+
+線形モデルの例。
+```{r}
+result.brms9 <- brm(throw.01~weight,data=baseball_dat8,family="bernoulli")
+result.brms9
+pp_check(result.brms9)
+```
+
+
+### 課題6
+
++ 野球データの投手のデータを用いて，
++ 勝利投手になった回数(変数名「勝利」)を契約年数(「years」）で予測する回帰分析と，
++ 勝率（「試合」のうち，「勝利」の回数）を契約年数(「years」）予測する回帰分析を行うコードを書きなさい。
+
+```{r,echo=F,message=F}
+read_csv('baseball2019.csv') %>% 
+    # 投手のデータ
+  dplyr::filter(position=="投手") %>% 
+  dplyr::select("years","勝利","被本塁打","試合") %>% 
+  na.omit() %>% 
+  dplyr::rename(win=勝利, HR=被本塁打, Times=試合)-> baseball_dat9
+
+result.brm10 <- brm(win~years,data=baseball_dat9,family="poisson")
+pp_check(result.brm10)
+result.brm11 <- brm(win|trials(Times)~years,data=baseball_dat9,family="binomial")
+pp_check(result.brm11)
+```

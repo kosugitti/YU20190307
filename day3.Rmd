@@ -1,0 +1,296 @@
+---
+title: "山大集中講義2019.03.09;Day 3-I"
+output: html_document
+---
+
+## Day 3
+
++ 始めるにあたって，プロジェクトフォルダを置くこと
++ 下のコードを実行して，必要なパッケージを読み込んでおくこと
+
+```{r}
+library(tidyverse)
+# マカーの呪文
+old = theme_set(theme_gray(base_family = "HiraKakuProN-W3"))
+library(brms)
+```
+
+### 線形モデル5；階層線形モデル
+
+こういうことがしたい。
+
+```{r}
+read_csv('baseball2019.csv') %>% 
+  # 野手のデータ
+  dplyr::filter(position!="投手") %>% 
+  # 年俸データを調整
+  dplyr::mutate(salary = salary/1000) -> baseball_dat10
+
+baseball_dat10 %>% 
+  # 描画
+  ggplot(aes(x=安打,y=salary,color=team))+geom_point()+geom_smooth(method="lm",se=F)
+```
+
+つまり，切片や傾きがチームごとによって違うようなモデルです。
+
+##### ランダム切片モデル
+切片だけが違うのはランダム切片モデルと言います。
+```{r}
+# 年収のデータだから分布は対数正規分布
+baseball_dat10 %>% 
+  dplyr::select(salary,安打,team) %>% 
+  na.omit() %>% 
+  brm(salary~安打+(1|team),data=.,family="lognormal") -> result.hlm1
+result.hlm1
+plot(result.hlm1)
+pp_check(result.hlm1)
+
+baseball_dat10 %>% 
+  dplyr::select(salary,安打,team) %>% 
+  na.omit() %>% 
+  # 予測値をデータに追加
+  cbind(fitted(result.hlm1)) %>% 
+  ggplot(aes(安打, Estimate, color = team)) +
+  geom_smooth(method = "lm", se = FALSE) +
+  geom_point(aes(y = salary))
+```
+
+##### ランダム傾き・ランダム切片モデル
+
+傾きもランダムにします。
+
+```{r}
+# 年収のデータだから分布は対数正規分布
+baseball_dat10 %>% 
+  dplyr::select(salary,安打,team) %>% 
+  na.omit() %>% 
+  brm(salary~安打+(1+安打|team),data=.,family="lognormal") -> result.hlm2
+result.hlm2
+plot(result.hlm2)
+pp_check(result.hlm2)
+
+baseball_dat10 %>% 
+  dplyr::select(salary,安打,team) %>% 
+  na.omit() %>% 
+  # 予測値をデータに追加
+  cbind(fitted(result.hlm2)) %>% 
+  ggplot(aes(安打, Estimate, color = team)) +
+  geom_smooth(method = "lm", se = FALSE) +
+  geom_point(aes(y = salary))
+```
+
+### 線形モデル6；分散分析と線形モデル
+
+#### Between Design
+
+「とあるスナック菓子を三人のこどもそれぞれに買い与えたが，お菓子の長さに差があると言って喧嘩を始めた。彼らの主張が妥当かどうか検証するために，それぞれの菓子袋から棒状のお菓子10本ずつをサンプリンングし，長さを測定した。三つの菓子袋に含まれるお菓子の長さに差があると言って良いかどうか，統計的に検定しなさい。」
+
+```{r anova1,echo=F}
+set.seed(54321)
+# As
+n <- 5
+x1 <- round(rnorm(n,10,3))
+x2 <- round(rnorm(n,15,3))
+x3 <- round(rnorm(n,12,3))
+dat <- data.frame(id=1:(3*n),
+                  group=c(rep("A",n),rep("B",n),rep("C",n)),
+                  L=c(x1,x2,x3)) %>% 
+      dplyr::mutate(group = as.factor(group))
+# データの表示
+dat
+# anovakun!
+source("http://riseki.php.xdomain.jp/index.php?plugin=attach&refer=ANOVA君&openfile=anovakun_482.txt",encoding = "CP932")
+anovakun(dat[,-1],"As",3)
+```
+線形モデルの文脈で。
+```{r}
+result.anova1 <- brm(L~group,data=dat)
+result.anova1
+plot(marginal_effects(result.anova1))
+```
+##### モデル比較
+```{r}
+result.anova1.null <- brm(L~1,data=dat)
+result.anova1.null
+# モデル比較
+brms::WAIC(result.anova1,result.anova1.null)
+```
+
+#### Within Design
+
+内要因のデータは，個人で階層化されてるモデルと同じこと。
+
+「自分の学級で前期，中期，後期に学力テストを行った。三回の学力テストは異なる設問だが難易度は同じぐらいであったとする。三つの時期で学力に違いがあると言って良いか，統計的に検定しなさい。」
+
+```{r anova2,echo=F}
+set.seed(12345)
+library(MASS)
+# sA
+n <- 10
+mu <- c(60,70,80)
+sd <- c(10,8,5)
+cor = 0.3
+cov <- sd %*% t(sd) * cor
+diag(cov) <- sd^2
+dat <- round(mvrnorm(n,mu,cov))
+rownames(dat) <- 1:n
+colnames(dat) <- c("Time1","Time2","Time3")
+dat %>% data.frame %>% 
+  dplyr::mutate(ID=row.names(.)) %>% 
+  tidyr::gather(key,val,-ID,factor_key=TRUE) -> dat2
+anovakun(dat2,"sA",3,peta=T,long=T)
+```
+
+
+線形モデルとして。
+```{r}
+result.anova2 <- brm(val~key+(1|ID),data=dat2)
+result.anova2
+plot(marginal_effects(result.anova2))
+ggplot(dat2,aes(x=key,y=val,color=ID,group=ID))+geom_point()+
+  geom_smooth(method="lm",se=F)
+```
+
+#### Mixed Design
+
+「ある学校では二種類のテキストを使って，どちらが成績に良い影響を与えるか検証した。テキストはA1,A2の二種類であり，成績は前後の二回で比較する。５人ずつの学級で検証した。テキストの効果，成績の上昇はあると言って良いか統計的に検定せよ」
+
+```{r anova3,echo=F}
+#AsB
+n <- 5
+mu <- c(50,50)
+sd <- c(10,10)
+cor <- 0.5
+cov <- sd %*% t(sd) * cor
+diag(cov) <- sd^2
+effectA <- 0
+effectB <- 0
+effectAB <- 15
+mu[1] <- mu[1] + effectB
+mu[2] <- mu[2] - effectB
+dat1 <- mvrnorm(n,mu,cov)+effectA
+dat1[1:n] <- dat1[1:n] + effectAB
+dat1[(n+1):(n*2)] <- dat1[(n+1):(n*2)]  - effectAB
+dat2 <- mvrnorm(n,mu,cov)-effectA
+dat2[1:n] <- dat2[1:n] - effectAB
+dat2[(n+1):(n*2)] <- dat2[(n+1):(n*2)] + effectAB
+dat <- rbind(dat1,dat2)
+
+dat <- round(dat)
+colnames(dat) <- c("pre","post")
+dat <- data.frame(ID=1:(n*2),Text=c(rep("A1",n),rep("A2",n)),dat)
+dat
+anovakun(dat[,-1],"AsB",2,2)
+```
+線形モデルとして。
+```{r}
+dat %>% 
+  tidyr::gather(key,val,-ID,-Text,factor_key=TRUE) -> dat3
+
+result.anova3 <- brm(val~Text*key + (1|ID),data=dat3)
+result.anova3
+plot(marginal_effects(result.anova3,effects="key"))
+plot(marginal_effects(result.anova3,effects="Text"))
+plot(marginal_effects(result.anova3,effects="key:Text"))
+```
+
+### 因子分析モデル
+
+[こちらから](CATB50.csv)データをダウンロードしてください(出典；https://www1.doshisha.ac.jp/~mjin/R/Chap_25/25.html)。
+
+```{r junbi}
+library(psych)
+Items <- c("円打点","記号記入","形態照合","名詞比較","図柄照合",
+             "平面図判断","計算","語彙","立体図判断","文章完成","算数応用")
+FA.dat <- read_csv("CATB50.csv") %>% dplyr::select(-X1) %>% setNames(Items)
+```
+
+####  相関行列
+
+```{r corr}
+cor(FA.dat) %>% print(digits=2)
+```
+
+#### 2-1.screeplot
+
+```{r parallel,eval=F}
+psych::fa.parallel(FA.dat,fa="fa")
+```
+
+
+#### 3.result
+
+```{r fa}
+fa.result <- fa(FA.dat,4,rotate='none')
+print(fa.result,digits=3)
+```
+
+```{r fa2}
+fa.result <- fa(FA.dat,4,rotate='geominQ')
+print(fa.result,digits=3,cut=0.3)
+```
+
+#### plot
+
+```{r fa3}
+fa.result$loadings %>% as.matrix() %>% c() %>% matrix(ncol=4) %>% data.frame() %>% 
+  rename(FA1=X1,FA2=X2,FA3=X3,FA4=X4)  %>% 
+  mutate(items=Items) %>% 
+  tidyr::gather(key,val,-items,factor_key=T) %>% 
+  ggplot(aes(x=items,y=val,fill=items))+geom_bar(stat='identity')+facet_wrap(~key)+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+
+```{r fa4}
+fa.result$scores %>% as.data.frame %>%
+  tidyr::gather(key,val,factor_key=TRUE) %>% 
+  mutate(因子=factor(key,labels=c("語彙","空間","計算","運動"))) %>% 
+  ggplot(aes(x=val,fill=因子))+geom_histogram(binwidth=0.2) + facet_wrap(~因子)
+```
+
+
+### 項目反応理論
+
+[こちらから](YUtest.csv)データをダウンロードしてください。
+
+#### 1PL model
+```{r}
+library(ltm)
+dat <- read_csv("YUtest.csv") %>% 
+  dplyr::select(Q4,Q5,Q6,Q7,Q8,Q9,Q10)
+result.ltm1 <- rasch(dat)
+summary(result.ltm1)
+plot(result.ltm1,type="ICC",items = c(1,3,5))
+plot(result.ltm1,type="IIC",items = c(1,3,5))
+plot(result.ltm1,type="IIC",items = 0)
+```
+
+#### 2PL model
+```{r}
+result.ltm2 <- ltm(dat~z1)
+summary(result.ltm2)
+plot(result.ltm2,type="ICC",items = c(1,3,5))
+plot(result.ltm2,type="IIC",items = c(1,3,5))
+plot(result.ltm2,type="IIC",items = 0)
+```
+
+### 課題7
+
++ [ここから](pokemon_status.csv)ポケモンのデータ(出典；http://rikapoke.hatenablog.jp/entry/pokemon_datasheet_gne7)をダウンロードし，
++ 次のいずれかの分析をやって遊んでください。
+  + 様々な能力値の類似性から，MDSかクラスター分析をする
+  + 様々な能力値がタイプや特性によって違いがあるか線形モデルで分析する
+  + 様々な能力値を因子分析し，潜在能力がどの程度に分割されるか分析する
+  
+```{r}
+pockemon <- read_csv("pokemon_status.csv") %>% 
+  dplyr::mutate(ID=row.names(.),
+                name=as.factor(ポケモン名),
+                type1=as.factor(タイプ１),
+                type2=as.factor(タイプ２),
+                property1 = as.factor(通常特性１),
+                property2 = as.factor(通常特性２),
+                propertyD = as.factor(夢特性))
+summary(pockemon)
+```

@@ -1,0 +1,3279 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>山大集中講義2019.03.07;Day 1</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="site_style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">山大集中講義2019.03.07-03.09</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="ready.html">Day 0</a>
+</li>
+<li>
+  <a href="day1.html">Day 1</a>
+</li>
+<li>
+  <a href="day2.html">Day 2</a>
+</li>
+<li>
+  <a href="day3.html">Day 3</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">山大集中講義2019.03.07;Day 1</h1>
+
+</div>
+
+
+<div id="day-1" class="section level2">
+<h2>Day 1</h2>
+<div id="rrstudio" class="section level3">
+<h3>RとRStudio環境の準備</h3>
+<p><a href="ready.html">準備サイト</a> を参考に，必要なプログラム，パッケージを準備しましょう。</p>
+</div>
+<div id="r" class="section level3">
+<h3>Rの関数とデータの型</h3>
+<div id="section" class="section level4">
+<h4>四則演算</h4>
+<pre class="r"><code>1+3</code></pre>
+<pre><code>## [1] 4</code></pre>
+<pre class="r"><code>3-5</code></pre>
+<pre><code>## [1] -2</code></pre>
+<pre class="r"><code>5*7</code></pre>
+<pre><code>## [1] 35</code></pre>
+<pre class="r"><code>8/2</code></pre>
+<pre><code>## [1] 4</code></pre>
+</div>
+<div id="section-1" class="section level4">
+<h4>関数を使おう</h4>
+<pre class="r"><code>sqrt(4)</code></pre>
+<pre><code>## [1] 2</code></pre>
+<pre class="r"><code>help(sqrt)</code></pre>
+</div>
+<div id="section-2" class="section level4">
+<h4>代入</h4>
+<pre class="r"><code>obj &lt;- 2
+obj</code></pre>
+<pre><code>## [1] 2</code></pre>
+<pre class="r"><code>obj2 &lt;- 2
+obj3 &lt;- 3
+obj2 + obj3</code></pre>
+<pre><code>## [1] 5</code></pre>
+<pre class="r"><code>obj &lt;- 1:10
+obj</code></pre>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<pre class="r"><code>obj * 2</code></pre>
+<pre><code>##  [1]  2  4  6  8 10 12 14 16 18 20</code></pre>
+<pre class="r"><code>obj &lt;- matrix(c(1:10),nrow=5)
+obj</code></pre>
+<pre><code>##      [,1] [,2]
+## [1,]    1    6
+## [2,]    2    7
+## [3,]    3    8
+## [4,]    4    9
+## [5,]    5   10</code></pre>
+<div id="section-3" class="section level5">
+<h5>代入したものの操作</h5>
+<pre class="r"><code>obj * 2</code></pre>
+<pre><code>##      [,1] [,2]
+## [1,]    2   12
+## [2,]    4   14
+## [3,]    6   16
+## [4,]    8   18
+## [5,]   10   20</code></pre>
+<pre class="r"><code>obj[1,]</code></pre>
+<pre><code>## [1] 1 6</code></pre>
+<pre class="r"><code>obj[,2]</code></pre>
+<pre><code>## [1]  6  7  8  9 10</code></pre>
+</div>
+</div>
+<div id="list" class="section level4">
+<h4>なんでも入れれるlist型</h4>
+<pre class="r"><code>obj&lt;-list(name=c(&quot;kosugi&quot;,&quot;tanaka&quot;,&quot;suzuki&quot;),
+          gender=c(&quot;male&quot;,&quot;female&quot;,&quot;male&quot;),
+          height=c(170,160),
+          weight=c(70.6,80.9,90.6,40.3))
+obj</code></pre>
+<pre><code>## $name
+## [1] &quot;kosugi&quot; &quot;tanaka&quot; &quot;suzuki&quot;
+## 
+## $gender
+## [1] &quot;male&quot;   &quot;female&quot; &quot;male&quot;  
+## 
+## $height
+## [1] 170 160
+## 
+## $weight
+## [1] 70.6 80.9 90.6 40.3</code></pre>
+<div id="section-4" class="section level5">
+<h5>代入したものの操作</h5>
+<pre class="r"><code>obj$name</code></pre>
+<pre><code>## [1] &quot;kosugi&quot; &quot;tanaka&quot; &quot;suzuki&quot;</code></pre>
+</div>
+</div>
+<div id="section-5" class="section level4">
+<h4>データの型</h4>
+<pre class="r"><code>str(obj)</code></pre>
+<pre><code>## List of 4
+##  $ name  : chr [1:3] &quot;kosugi&quot; &quot;tanaka&quot; &quot;suzuki&quot;
+##  $ gender: chr [1:3] &quot;male&quot; &quot;female&quot; &quot;male&quot;
+##  $ height: num [1:2] 170 160
+##  $ weight: num [1:4] 70.6 80.9 90.6 40.3</code></pre>
+<div id="factor" class="section level5">
+<h5>数字，文字，factor型</h5>
+<pre class="r"><code>obj$gender &lt;- as.factor(obj$gender)
+str(obj)</code></pre>
+<pre><code>## List of 4
+##  $ name  : chr [1:3] &quot;kosugi&quot; &quot;tanaka&quot; &quot;suzuki&quot;
+##  $ gender: Factor w/ 2 levels &quot;female&quot;,&quot;male&quot;: 2 1 2
+##  $ height: num [1:2] 170 160
+##  $ weight: num [1:4] 70.6 80.9 90.6 40.3</code></pre>
+</div>
+</div>
+<div id="section-6" class="section level4">
+<h4>データフレーム型</h4>
+<pre class="r"><code>obj&lt;-data.frame(
+  list(name=c(&quot;kosugi&quot;,&quot;tanaka&quot;,&quot;suzuki&quot;),
+       gender=c(1,2,1),
+       hight=c(170,160,170),
+       weight=c(70.6,80.9,90.6)
+  )
+)</code></pre>
+<div id="section-7" class="section level5">
+<h5>代入したものの操作</h5>
+<pre class="r"><code>str(obj)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    3 obs. of  4 variables:
+##  $ name  : Factor w/ 3 levels &quot;kosugi&quot;,&quot;suzuki&quot;,..: 1 3 2
+##  $ gender: num  1 2 1
+##  $ hight : num  170 160 170
+##  $ weight: num  70.6 80.9 90.6</code></pre>
+<pre class="r"><code>obj$gender&lt;-factor(obj$gender,labels=c(&quot;male&quot;,&quot;female&quot;))
+obj</code></pre>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">gender</th>
+<th align="right">hight</th>
+<th align="right">weight</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">kosugi</td>
+<td align="left">male</td>
+<td align="right">170</td>
+<td align="right">70.6</td>
+</tr>
+<tr class="even">
+<td align="left">tanaka</td>
+<td align="left">female</td>
+<td align="right">160</td>
+<td align="right">80.9</td>
+</tr>
+<tr class="odd">
+<td align="left">suzuki</td>
+<td align="left">male</td>
+<td align="right">170</td>
+<td align="right">90.6</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="section-8" class="section level5">
+<h5>パッケージの利用</h5>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## ─ Attaching packages ────</code></pre>
+<pre><code>## ✔ ggplot2 3.1.0       ✔ purrr   0.3.1  
+## ✔ tibble  2.0.1       ✔ dplyr   0.8.0.1
+## ✔ tidyr   0.8.3       ✔ stringr 1.4.0  
+## ✔ readr   1.3.1       ✔ forcats 0.4.0</code></pre>
+<pre><code>## ─ Conflicts ─────────
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()</code></pre>
+</div>
+</div>
+<div id="section-9" class="section level4">
+<h4>ファイルの読み込み</h4>
+<pre class="r"><code>M1 &lt;- read_csv(&quot;M1score.csv&quot;,na=&quot;.&quot;)</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   .default = col_double(),
+##   演者 = col_character()
+## )</code></pre>
+<pre><code>## See spec(...) for full column specifications.</code></pre>
+<pre class="r"><code>head(M1)</code></pre>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="center">年代</th>
+<th align="left">演者</th>
+<th align="center">ネタ順</th>
+<th align="center">立川志らく</th>
+<th align="center">塙宣之</th>
+<th align="center">上沼恵美子</th>
+<th align="center">松本人志</th>
+<th align="center">博多大吉</th>
+<th align="center">春風亭小朝</th>
+<th align="center">中川礼二</th>
+<th align="center">渡辺正行</th>
+<th align="center">オール巨人</th>
+<th align="center">増田英彦</th>
+<th align="center">岩尾望</th>
+<th align="center">吉田敬</th>
+<th align="center">徳井義実</th>
+<th align="center">富澤たけし</th>
+<th align="center">石田明</th>
+<th align="center">佐藤哲夫</th>
+<th align="center">哲夫</th>
+<th align="center">島田紳助</th>
+<th align="center">南原清隆</th>
+<th align="center">大竹まこと</th>
+<th align="center">宮迫博之</th>
+<th align="center">中田カウス</th>
+<th align="center">東国原英夫</th>
+<th align="center">ラサール石井</th>
+<th align="center">島田洋七</th>
+<th align="center">西川きよし</th>
+<th align="center">立川談志</th>
+<th align="center">鴻上尚史</th>
+<th align="center">青島幸男</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">18</td>
+<td align="left">見取り図</td>
+<td align="center">1</td>
+<td align="center">85</td>
+<td align="center">85</td>
+<td align="center">88</td>
+<td align="center">83</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">91</td>
+<td align="center">NA</td>
+<td align="center">88</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">86</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+</tr>
+<tr class="even">
+<td align="center">18</td>
+<td align="left">スーパーマラドーナ</td>
+<td align="center">2</td>
+<td align="center">88</td>
+<td align="center">89</td>
+<td align="center">89</td>
+<td align="center">85</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">90</td>
+<td align="center">NA</td>
+<td align="center">87</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">89</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+</tr>
+<tr class="odd">
+<td align="center">18</td>
+<td align="left">かまいたち</td>
+<td align="center">3</td>
+<td align="center">88</td>
+<td align="center">92</td>
+<td align="center">94</td>
+<td align="center">90</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">92</td>
+<td align="center">NA</td>
+<td align="center">89</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">91</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+</tr>
+<tr class="even">
+<td align="center">18</td>
+<td align="left">ジャルジャル</td>
+<td align="center">4</td>
+<td align="center">99</td>
+<td align="center">93</td>
+<td align="center">88</td>
+<td align="center">92</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">93</td>
+<td align="center">NA</td>
+<td align="center">93</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">90</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+</tr>
+<tr class="odd">
+<td align="center">18</td>
+<td align="left">ギャロップ</td>
+<td align="center">5</td>
+<td align="center">86</td>
+<td align="center">89</td>
+<td align="center">89</td>
+<td align="center">86</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">90</td>
+<td align="center">NA</td>
+<td align="center">87</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">87</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+</tr>
+<tr class="even">
+<td align="center">18</td>
+<td align="left">ゆにばーす</td>
+<td align="center">6</td>
+<td align="center">87</td>
+<td align="center">82</td>
+<td align="center">84</td>
+<td align="center">80</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">91</td>
+<td align="center">NA</td>
+<td align="center">84</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">86</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre class="r"><code>summary(M1)</code></pre>
+<pre><code>##       年代            演者               ネタ順         立川志らく   
+##  Min.   : 1.000   Length:129         Min.   : 1.000   Min.   :85.00  
+##  1st Qu.: 4.000   Class :character   1st Qu.: 3.000   1st Qu.:87.25  
+##  Median : 8.000   Mode  :character   Median : 5.000   Median :88.50  
+##  Mean   : 8.721                      Mean   : 5.093   Mean   :90.50  
+##  3rd Qu.:15.000                      3rd Qu.: 7.000   3rd Qu.:93.00  
+##  Max.   :18.000                      Max.   :10.000   Max.   :99.00  
+##                                                       NA&#39;s   :119    
+##      塙宣之       上沼恵美子       松本人志        博多大吉    
+##  Min.   :82.0   Min.   :81.00   Min.   :70.00   Min.   :50.00  
+##  1st Qu.:89.0   1st Qu.:89.00   1st Qu.:85.00   1st Qu.:70.00  
+##  Median :91.0   Median :90.00   Median :89.00   Median :84.00  
+##  Mean   :90.5   Mean   :91.16   Mean   :88.13   Mean   :79.13  
+##  3rd Qu.:93.0   3rd Qu.:95.00   3rd Qu.:93.00   3rd Qu.:91.00  
+##  Max.   :98.0   Max.   :98.00   Max.   :97.00   Max.   :97.00  
+##  NA&#39;s   :119    NA&#39;s   :73      NA&#39;s   :46      NA&#39;s   :82     
+##    春風亭小朝       中川礼二        渡辺正行       オール巨人   
+##  Min.   :65.00   Min.   :87.00   Min.   :75.00   Min.   :79.00  
+##  1st Qu.:80.00   1st Qu.:89.25   1st Qu.:87.00   1st Qu.:86.00  
+##  Median :88.00   Median :91.00   Median :89.00   Median :88.50  
+##  Mean   :84.28   Mean   :91.05   Mean   :88.16   Mean   :88.55  
+##  3rd Qu.:90.00   3rd Qu.:93.00   3rd Qu.:90.50   3rd Qu.:91.00  
+##  Max.   :95.00   Max.   :96.00   Max.   :95.00   Max.   :96.00  
+##  NA&#39;s   :100     NA&#39;s   :91      NA&#39;s   :74      NA&#39;s   :73     
+##     増田英彦       岩尾望          吉田敬         徳井義実    
+##  Min.   :85    Min.   :85.00   Min.   :83.00   Min.   :88.00  
+##  1st Qu.:87    1st Qu.:89.00   1st Qu.:85.00   1st Qu.:89.00  
+##  Median :89    Median :90.00   Median :89.00   Median :89.00  
+##  Mean   :89    Mean   :90.67   Mean   :87.56   Mean   :90.56  
+##  3rd Qu.:91    3rd Qu.:92.00   3rd Qu.:90.00   3rd Qu.:91.00  
+##  Max.   :93    Max.   :96.00   Max.   :93.00   Max.   :96.00  
+##  NA&#39;s   :120   NA&#39;s   :120     NA&#39;s   :120     NA&#39;s   :120    
+##    富澤たけし        石田明       佐藤哲夫          哲夫      
+##  Min.   :86.00   Min.   :83    Min.   :88.00   Min.   :87.00  
+##  1st Qu.:89.00   1st Qu.:87    1st Qu.:89.00   1st Qu.:88.00  
+##  Median :91.00   Median :88    Median :90.00   Median :90.00  
+##  Mean   :90.42   Mean   :89    Mean   :90.56   Mean   :89.78  
+##  3rd Qu.:92.00   3rd Qu.:92    3rd Qu.:92.00   3rd Qu.:91.00  
+##  Max.   :94.00   Max.   :94    Max.   :93.00   Max.   :93.00  
+##  NA&#39;s   :110     NA&#39;s   :120   NA&#39;s   :120     NA&#39;s   :120    
+##     島田紳助         南原清隆       大竹まこと       宮迫博之  
+##  Min.   : 50.00   Min.   :76.00   Min.   :75.00   Min.   :88   
+##  1st Qu.: 80.25   1st Qu.:84.75   1st Qu.:82.00   1st Qu.:90   
+##  Median : 86.00   Median :88.00   Median :85.00   Median :91   
+##  Mean   : 84.77   Mean   :87.78   Mean   :85.18   Mean   :92   
+##  3rd Qu.: 90.00   3rd Qu.:90.25   3rd Qu.:89.00   3rd Qu.:93   
+##  Max.   :100.00   Max.   :98.00   Max.   :97.00   Max.   :98   
+##  NA&#39;s   :47       NA&#39;s   :93      NA&#39;s   :57      NA&#39;s   :120  
+##    中田カウス      東国原英夫     ラサール石井      島田洋七    
+##  Min.   :79.00   Min.   :85.00   Min.   :68.00   Min.   :75.00  
+##  1st Qu.:86.00   1st Qu.:86.00   1st Qu.:82.00   1st Qu.:84.00  
+##  Median :90.00   Median :88.00   Median :86.00   Median :90.00  
+##  Mean   :89.98   Mean   :87.67   Mean   :86.84   Mean   :88.09  
+##  3rd Qu.:95.00   3rd Qu.:89.00   3rd Qu.:92.00   3rd Qu.:92.00  
+##  Max.   :98.00   Max.   :92.00   Max.   :96.00   Max.   :98.00  
+##  NA&#39;s   :48      NA&#39;s   :120     NA&#39;s   :74      NA&#39;s   :84     
+##    西川きよし       立川談志      鴻上尚史        青島幸男    
+##  Min.   :75.00   Min.   :50    Min.   :73.00   Min.   :75.00  
+##  1st Qu.:80.00   1st Qu.:70    1st Qu.:82.25   1st Qu.:76.25  
+##  Median :86.00   Median :70    Median :83.50   Median :80.00  
+##  Mean   :85.68   Mean   :70    Mean   :81.80   Mean   :81.50  
+##  3rd Qu.:90.00   3rd Qu.:70    3rd Qu.:84.00   3rd Qu.:85.00  
+##  Max.   :97.00   Max.   :80    Max.   :85.00   Max.   :90.00  
+##  NA&#39;s   :110     NA&#39;s   :120   NA&#39;s   :119     NA&#39;s   :119</code></pre>
+<pre class="r"><code>str(M1)</code></pre>
+<pre><code>## Classes &#39;spec_tbl_df&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;: 129 obs. of  32 variables:
+##  $ 年代        : num  18 18 18 18 18 18 18 18 18 18 ...
+##  $ 演者        : chr  &quot;見取り図&quot; &quot;スーパーマラドーナ&quot; &quot;かまいたち&quot; &quot;ジャルジャル&quot; ...
+##  $ ネタ順      : num  1 2 3 4 5 6 7 8 9 10 ...
+##  $ 立川志らく  : num  85 88 88 99 86 87 89 97 93 93 ...
+##  $ 塙宣之      : num  85 89 92 93 89 82 90 93 98 94 ...
+##  $ 上沼恵美子  : num  88 89 94 88 89 84 98 86 97 98 ...
+##  $ 松本人志    : num  83 85 90 92 86 80 88 91 94 93 ...
+##  $ 博多大吉    : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ 春風亭小朝  : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ 中川礼二    : num  91 90 92 93 90 91 93 90 96 94 ...
+##  $ 渡辺正行    : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ オール巨人  : num  88 87 89 93 87 84 90 87 93 92 ...
+##  $ 増田英彦    : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ 岩尾望      : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ 吉田敬      : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ 徳井義実    : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ 富澤たけし  : num  86 89 91 90 87 86 90 89 91 92 ...
+##  $ 石田明      : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ 佐藤哲夫    : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ 哲夫        : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ 島田紳助    : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ 南原清隆    : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ 大竹まこと  : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ 宮迫博之    : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ 中田カウス  : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ 東国原英夫  : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ ラサール石井: num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ 島田洋七    : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ 西川きよし  : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ 立川談志    : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ 鴻上尚史    : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ 青島幸男    : num  NA NA NA NA NA NA NA NA NA NA ...
+##  - attr(*, &quot;spec&quot;)=
+##   .. cols(
+##   ..   年代 = col_double(),
+##   ..   演者 = col_character(),
+##   ..   ネタ順 = col_double(),
+##   ..   立川志らく = col_double(),
+##   ..   塙宣之 = col_double(),
+##   ..   上沼恵美子 = col_double(),
+##   ..   松本人志 = col_double(),
+##   ..   博多大吉 = col_double(),
+##   ..   春風亭小朝 = col_double(),
+##   ..   中川礼二 = col_double(),
+##   ..   渡辺正行 = col_double(),
+##   ..   オール巨人 = col_double(),
+##   ..   増田英彦 = col_double(),
+##   ..   岩尾望 = col_double(),
+##   ..   吉田敬 = col_double(),
+##   ..   徳井義実 = col_double(),
+##   ..   富澤たけし = col_double(),
+##   ..   石田明 = col_double(),
+##   ..   佐藤哲夫 = col_double(),
+##   ..   哲夫 = col_double(),
+##   ..   島田紳助 = col_double(),
+##   ..   南原清隆 = col_double(),
+##   ..   大竹まこと = col_double(),
+##   ..   宮迫博之 = col_double(),
+##   ..   中田カウス = col_double(),
+##   ..   東国原英夫 = col_double(),
+##   ..   ラサール石井 = col_double(),
+##   ..   島田洋七 = col_double(),
+##   ..   西川きよし = col_double(),
+##   ..   立川談志 = col_double(),
+##   ..   鴻上尚史 = col_double(),
+##   ..   青島幸男 = col_double()
+##   .. )</code></pre>
+</div>
+<div id="section-10" class="section level4">
+<h4>データの操作1；列選択</h4>
+<pre class="r"><code>M1 %&gt;% dplyr::select(松本人志,富澤たけし) %&gt;% head()</code></pre>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="center">松本人志</th>
+<th align="center">富澤たけし</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">83</td>
+<td align="center">86</td>
+</tr>
+<tr class="even">
+<td align="center">85</td>
+<td align="center">89</td>
+</tr>
+<tr class="odd">
+<td align="center">90</td>
+<td align="center">91</td>
+</tr>
+<tr class="even">
+<td align="center">92</td>
+<td align="center">90</td>
+</tr>
+<tr class="odd">
+<td align="center">86</td>
+<td align="center">87</td>
+</tr>
+<tr class="even">
+<td align="center">80</td>
+<td align="center">86</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="section-11" class="section level4">
+<h4>データの操作2；行選択</h4>
+<pre class="r"><code>M1 %&gt;% dplyr::filter(年代==18) %&gt;% head()</code></pre>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="center">年代</th>
+<th align="left">演者</th>
+<th align="center">ネタ順</th>
+<th align="center">立川志らく</th>
+<th align="center">塙宣之</th>
+<th align="center">上沼恵美子</th>
+<th align="center">松本人志</th>
+<th align="center">博多大吉</th>
+<th align="center">春風亭小朝</th>
+<th align="center">中川礼二</th>
+<th align="center">渡辺正行</th>
+<th align="center">オール巨人</th>
+<th align="center">増田英彦</th>
+<th align="center">岩尾望</th>
+<th align="center">吉田敬</th>
+<th align="center">徳井義実</th>
+<th align="center">富澤たけし</th>
+<th align="center">石田明</th>
+<th align="center">佐藤哲夫</th>
+<th align="center">哲夫</th>
+<th align="center">島田紳助</th>
+<th align="center">南原清隆</th>
+<th align="center">大竹まこと</th>
+<th align="center">宮迫博之</th>
+<th align="center">中田カウス</th>
+<th align="center">東国原英夫</th>
+<th align="center">ラサール石井</th>
+<th align="center">島田洋七</th>
+<th align="center">西川きよし</th>
+<th align="center">立川談志</th>
+<th align="center">鴻上尚史</th>
+<th align="center">青島幸男</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">18</td>
+<td align="left">見取り図</td>
+<td align="center">1</td>
+<td align="center">85</td>
+<td align="center">85</td>
+<td align="center">88</td>
+<td align="center">83</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">91</td>
+<td align="center">NA</td>
+<td align="center">88</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">86</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+</tr>
+<tr class="even">
+<td align="center">18</td>
+<td align="left">スーパーマラドーナ</td>
+<td align="center">2</td>
+<td align="center">88</td>
+<td align="center">89</td>
+<td align="center">89</td>
+<td align="center">85</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">90</td>
+<td align="center">NA</td>
+<td align="center">87</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">89</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+</tr>
+<tr class="odd">
+<td align="center">18</td>
+<td align="left">かまいたち</td>
+<td align="center">3</td>
+<td align="center">88</td>
+<td align="center">92</td>
+<td align="center">94</td>
+<td align="center">90</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">92</td>
+<td align="center">NA</td>
+<td align="center">89</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">91</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+</tr>
+<tr class="even">
+<td align="center">18</td>
+<td align="left">ジャルジャル</td>
+<td align="center">4</td>
+<td align="center">99</td>
+<td align="center">93</td>
+<td align="center">88</td>
+<td align="center">92</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">93</td>
+<td align="center">NA</td>
+<td align="center">93</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">90</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+</tr>
+<tr class="odd">
+<td align="center">18</td>
+<td align="left">ギャロップ</td>
+<td align="center">5</td>
+<td align="center">86</td>
+<td align="center">89</td>
+<td align="center">89</td>
+<td align="center">86</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">90</td>
+<td align="center">NA</td>
+<td align="center">87</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">87</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+</tr>
+<tr class="even">
+<td align="center">18</td>
+<td align="left">ゆにばーす</td>
+<td align="center">6</td>
+<td align="center">87</td>
+<td align="center">82</td>
+<td align="center">84</td>
+<td align="center">80</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">91</td>
+<td align="center">NA</td>
+<td align="center">84</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">86</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre class="r"><code>M1 %&gt;% dplyr::filter(年代&lt;10) %&gt;% head()</code></pre>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="center">年代</th>
+<th align="left">演者</th>
+<th align="center">ネタ順</th>
+<th align="center">立川志らく</th>
+<th align="center">塙宣之</th>
+<th align="center">上沼恵美子</th>
+<th align="center">松本人志</th>
+<th align="center">博多大吉</th>
+<th align="center">春風亭小朝</th>
+<th align="center">中川礼二</th>
+<th align="center">渡辺正行</th>
+<th align="center">オール巨人</th>
+<th align="center">増田英彦</th>
+<th align="center">岩尾望</th>
+<th align="center">吉田敬</th>
+<th align="center">徳井義実</th>
+<th align="center">富澤たけし</th>
+<th align="center">石田明</th>
+<th align="center">佐藤哲夫</th>
+<th align="center">哲夫</th>
+<th align="center">島田紳助</th>
+<th align="center">南原清隆</th>
+<th align="center">大竹まこと</th>
+<th align="center">宮迫博之</th>
+<th align="center">中田カウス</th>
+<th align="center">東国原英夫</th>
+<th align="center">ラサール石井</th>
+<th align="center">島田洋七</th>
+<th align="center">西川きよし</th>
+<th align="center">立川談志</th>
+<th align="center">鴻上尚史</th>
+<th align="center">青島幸男</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">9</td>
+<td align="left">パンクブーブー</td>
+<td align="center">8</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">98</td>
+<td align="center">93</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">91</td>
+<td align="center">90</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">94</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">97</td>
+<td align="center">88</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+</tr>
+<tr class="even">
+<td align="center">9</td>
+<td align="left">笑い飯</td>
+<td align="center">5</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">98</td>
+<td align="center">95</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">92</td>
+<td align="center">93</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">100</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">98</td>
+<td align="center">92</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+</tr>
+<tr class="odd">
+<td align="center">9</td>
+<td align="left">NON STYLE</td>
+<td align="center">9</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">98</td>
+<td align="center">92</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">90</td>
+<td align="center">87</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">90</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">95</td>
+<td align="center">89</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+</tr>
+<tr class="even">
+<td align="center">9</td>
+<td align="left">ナイツ</td>
+<td align="center">1</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">93</td>
+<td align="center">85</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">91</td>
+<td align="center">90</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">91</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">96</td>
+<td align="center">88</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+</tr>
+<tr class="odd">
+<td align="center">9</td>
+<td align="left">ハライチ</td>
+<td align="center">6</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">91</td>
+<td align="center">88</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">89</td>
+<td align="center">89</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">90</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">95</td>
+<td align="center">86</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+</tr>
+<tr class="even">
+<td align="center">9</td>
+<td align="left">東京ダイナマイト</td>
+<td align="center">3</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">90</td>
+<td align="center">88</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">90</td>
+<td align="center">86</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">85</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">90</td>
+<td align="center">85</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre class="r"><code>M1 %&gt;% dplyr::filter(年代&lt;10) %&gt;% dplyr::select(年代,演者,松本人志) %&gt;% head()</code></pre>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="center">年代</th>
+<th align="left">演者</th>
+<th align="center">松本人志</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">9</td>
+<td align="left">パンクブーブー</td>
+<td align="center">93</td>
+</tr>
+<tr class="even">
+<td align="center">9</td>
+<td align="left">笑い飯</td>
+<td align="center">95</td>
+</tr>
+<tr class="odd">
+<td align="center">9</td>
+<td align="left">NON STYLE</td>
+<td align="center">92</td>
+</tr>
+<tr class="even">
+<td align="center">9</td>
+<td align="left">ナイツ</td>
+<td align="center">85</td>
+</tr>
+<tr class="odd">
+<td align="center">9</td>
+<td align="left">ハライチ</td>
+<td align="center">88</td>
+</tr>
+<tr class="even">
+<td align="center">9</td>
+<td align="left">東京ダイナマイト</td>
+<td align="center">88</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="section-12" class="section level4">
+<h4>データの操作3；変数の作成</h4>
+<pre class="r"><code>M1 %&gt;% mutate(松本上沼=松本人志+上沼恵美子) %&gt;% head()</code></pre>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="center">年代</th>
+<th align="left">演者</th>
+<th align="center">ネタ順</th>
+<th align="center">立川志らく</th>
+<th align="center">塙宣之</th>
+<th align="center">上沼恵美子</th>
+<th align="center">松本人志</th>
+<th align="center">博多大吉</th>
+<th align="center">春風亭小朝</th>
+<th align="center">中川礼二</th>
+<th align="center">渡辺正行</th>
+<th align="center">オール巨人</th>
+<th align="center">増田英彦</th>
+<th align="center">岩尾望</th>
+<th align="center">吉田敬</th>
+<th align="center">徳井義実</th>
+<th align="center">富澤たけし</th>
+<th align="center">石田明</th>
+<th align="center">佐藤哲夫</th>
+<th align="center">哲夫</th>
+<th align="center">島田紳助</th>
+<th align="center">南原清隆</th>
+<th align="center">大竹まこと</th>
+<th align="center">宮迫博之</th>
+<th align="center">中田カウス</th>
+<th align="center">東国原英夫</th>
+<th align="center">ラサール石井</th>
+<th align="center">島田洋七</th>
+<th align="center">西川きよし</th>
+<th align="center">立川談志</th>
+<th align="center">鴻上尚史</th>
+<th align="center">青島幸男</th>
+<th align="center">松本上沼</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">18</td>
+<td align="left">見取り図</td>
+<td align="center">1</td>
+<td align="center">85</td>
+<td align="center">85</td>
+<td align="center">88</td>
+<td align="center">83</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">91</td>
+<td align="center">NA</td>
+<td align="center">88</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">86</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">171</td>
+</tr>
+<tr class="even">
+<td align="center">18</td>
+<td align="left">スーパーマラドーナ</td>
+<td align="center">2</td>
+<td align="center">88</td>
+<td align="center">89</td>
+<td align="center">89</td>
+<td align="center">85</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">90</td>
+<td align="center">NA</td>
+<td align="center">87</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">89</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">174</td>
+</tr>
+<tr class="odd">
+<td align="center">18</td>
+<td align="left">かまいたち</td>
+<td align="center">3</td>
+<td align="center">88</td>
+<td align="center">92</td>
+<td align="center">94</td>
+<td align="center">90</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">92</td>
+<td align="center">NA</td>
+<td align="center">89</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">91</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">184</td>
+</tr>
+<tr class="even">
+<td align="center">18</td>
+<td align="left">ジャルジャル</td>
+<td align="center">4</td>
+<td align="center">99</td>
+<td align="center">93</td>
+<td align="center">88</td>
+<td align="center">92</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">93</td>
+<td align="center">NA</td>
+<td align="center">93</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">90</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">180</td>
+</tr>
+<tr class="odd">
+<td align="center">18</td>
+<td align="left">ギャロップ</td>
+<td align="center">5</td>
+<td align="center">86</td>
+<td align="center">89</td>
+<td align="center">89</td>
+<td align="center">86</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">90</td>
+<td align="center">NA</td>
+<td align="center">87</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">87</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">175</td>
+</tr>
+<tr class="even">
+<td align="center">18</td>
+<td align="left">ゆにばーす</td>
+<td align="center">6</td>
+<td align="center">87</td>
+<td align="center">82</td>
+<td align="center">84</td>
+<td align="center">80</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">91</td>
+<td align="center">NA</td>
+<td align="center">84</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">86</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+<td align="center">164</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="long" class="section level4">
+<h4>データの操作4；LONG型への変換</h4>
+<p>とにかく二列にする関数。</p>
+<pre class="r"><code>M1 %&gt;% tidyr::gather(key,val) %&gt;% head()</code></pre>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="left">key</th>
+<th align="left">val</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">年代</td>
+<td align="left">18</td>
+</tr>
+<tr class="even">
+<td align="left">年代</td>
+<td align="left">18</td>
+</tr>
+<tr class="odd">
+<td align="left">年代</td>
+<td align="left">18</td>
+</tr>
+<tr class="even">
+<td align="left">年代</td>
+<td align="left">18</td>
+</tr>
+<tr class="odd">
+<td align="left">年代</td>
+<td align="left">18</td>
+</tr>
+<tr class="even">
+<td align="left">年代</td>
+<td align="left">18</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>二列にしてほしくないところはマイナス。</p>
+<pre class="r"><code>M1 %&gt;% tidyr::gather(key,val,-年代,-演者,-ネタ順) %&gt;% head()</code></pre>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="center">年代</th>
+<th align="left">演者</th>
+<th align="center">ネタ順</th>
+<th align="left">key</th>
+<th align="right">val</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">18</td>
+<td align="left">見取り図</td>
+<td align="center">1</td>
+<td align="left">立川志らく</td>
+<td align="right">85</td>
+</tr>
+<tr class="even">
+<td align="center">18</td>
+<td align="left">スーパーマラドーナ</td>
+<td align="center">2</td>
+<td align="left">立川志らく</td>
+<td align="right">88</td>
+</tr>
+<tr class="odd">
+<td align="center">18</td>
+<td align="left">かまいたち</td>
+<td align="center">3</td>
+<td align="left">立川志らく</td>
+<td align="right">88</td>
+</tr>
+<tr class="even">
+<td align="center">18</td>
+<td align="left">ジャルジャル</td>
+<td align="center">4</td>
+<td align="left">立川志らく</td>
+<td align="right">99</td>
+</tr>
+<tr class="odd">
+<td align="center">18</td>
+<td align="left">ギャロップ</td>
+<td align="center">5</td>
+<td align="left">立川志らく</td>
+<td align="right">86</td>
+</tr>
+<tr class="even">
+<td align="center">18</td>
+<td align="left">ゆにばーす</td>
+<td align="center">6</td>
+<td align="left">立川志らく</td>
+<td align="right">87</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>欠損値を除く。</p>
+<pre class="r"><code>M1 %&gt;% tidyr::gather(key,val,-年代,-演者,-ネタ順) %&gt;% na.omit %&gt;% head()</code></pre>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="center">年代</th>
+<th align="left">演者</th>
+<th align="center">ネタ順</th>
+<th align="left">key</th>
+<th align="right">val</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">18</td>
+<td align="left">見取り図</td>
+<td align="center">1</td>
+<td align="left">立川志らく</td>
+<td align="right">85</td>
+</tr>
+<tr class="even">
+<td align="center">18</td>
+<td align="left">スーパーマラドーナ</td>
+<td align="center">2</td>
+<td align="left">立川志らく</td>
+<td align="right">88</td>
+</tr>
+<tr class="odd">
+<td align="center">18</td>
+<td align="left">かまいたち</td>
+<td align="center">3</td>
+<td align="left">立川志らく</td>
+<td align="right">88</td>
+</tr>
+<tr class="even">
+<td align="center">18</td>
+<td align="left">ジャルジャル</td>
+<td align="center">4</td>
+<td align="left">立川志らく</td>
+<td align="right">99</td>
+</tr>
+<tr class="odd">
+<td align="center">18</td>
+<td align="left">ギャロップ</td>
+<td align="center">5</td>
+<td align="left">立川志らく</td>
+<td align="right">86</td>
+</tr>
+<tr class="even">
+<td align="center">18</td>
+<td align="left">ゆにばーす</td>
+<td align="center">6</td>
+<td align="left">立川志らく</td>
+<td align="right">87</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="section-13" class="section level4">
+<h4>データの操作5；グループ化と要約</h4>
+<pre class="r"><code>M1 %&gt;% tidyr::gather(key,val,-年代,-演者,-ネタ順) %&gt;% 
+  group_by(key) %&gt;% head()</code></pre>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="center">年代</th>
+<th align="left">演者</th>
+<th align="center">ネタ順</th>
+<th align="left">key</th>
+<th align="right">val</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">18</td>
+<td align="left">見取り図</td>
+<td align="center">1</td>
+<td align="left">立川志らく</td>
+<td align="right">85</td>
+</tr>
+<tr class="even">
+<td align="center">18</td>
+<td align="left">スーパーマラドーナ</td>
+<td align="center">2</td>
+<td align="left">立川志らく</td>
+<td align="right">88</td>
+</tr>
+<tr class="odd">
+<td align="center">18</td>
+<td align="left">かまいたち</td>
+<td align="center">3</td>
+<td align="left">立川志らく</td>
+<td align="right">88</td>
+</tr>
+<tr class="even">
+<td align="center">18</td>
+<td align="left">ジャルジャル</td>
+<td align="center">4</td>
+<td align="left">立川志らく</td>
+<td align="right">99</td>
+</tr>
+<tr class="odd">
+<td align="center">18</td>
+<td align="left">ギャロップ</td>
+<td align="center">5</td>
+<td align="left">立川志らく</td>
+<td align="right">86</td>
+</tr>
+<tr class="even">
+<td align="center">18</td>
+<td align="left">ゆにばーす</td>
+<td align="center">6</td>
+<td align="left">立川志らく</td>
+<td align="right">87</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre class="r"><code>M1 %&gt;% tidyr::gather(key,val,-年代,-演者,-ネタ順) %&gt;% na.omit %&gt;% 
+  group_by(key) %&gt;% summarise(mean(val)) %&gt;% head()</code></pre>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="left">key</th>
+<th align="right">mean(val)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">オール巨人</td>
+<td align="right">88.55357</td>
+</tr>
+<tr class="even">
+<td align="left">ラサール石井</td>
+<td align="right">86.83636</td>
+</tr>
+<tr class="odd">
+<td align="left">岩尾望</td>
+<td align="right">90.66667</td>
+</tr>
+<tr class="even">
+<td align="left">吉田敬</td>
+<td align="right">87.55556</td>
+</tr>
+<tr class="odd">
+<td align="left">宮迫博之</td>
+<td align="right">92.00000</td>
+</tr>
+<tr class="even">
+<td align="left">鴻上尚史</td>
+<td align="right">81.80000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="r-1" class="section level3">
+<h3>Rによるグラフィックス</h3>
+<p>「キャンバスに重ね描きする」という考え方をベースにした，グラフィックスの文法を学ぼう。</p>
+<div id="section-14" class="section level4">
+<h4>キャンバスの準備</h4>
+<pre class="r"><code>g &lt;- ggplot()
+
+print(g)</code></pre>
+<p><img src="day1_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+</div>
+<div id="section-15" class="section level4">
+<h4>サンプルデータセットの活用</h4>
+<pre class="r"><code>iris %&gt;% head()</code></pre>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="right">Sepal.Length</th>
+<th align="right">Sepal.Width</th>
+<th align="right">Petal.Length</th>
+<th align="right">Petal.Width</th>
+<th align="left">Species</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">5.1</td>
+<td align="right">3.5</td>
+<td align="right">1.4</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">4.9</td>
+<td align="right">3.0</td>
+<td align="right">1.4</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">4.7</td>
+<td align="right">3.2</td>
+<td align="right">1.3</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">4.6</td>
+<td align="right">3.1</td>
+<td align="right">1.5</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">5.0</td>
+<td align="right">3.6</td>
+<td align="right">1.4</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">5.4</td>
+<td align="right">3.9</td>
+<td align="right">1.7</td>
+<td align="right">0.4</td>
+<td align="left">setosa</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="section-16" class="section level4">
+<h4>書き方の例2</h4>
+<pre class="r"><code>iris %&gt;% ggplot()  + geom_point(data = iris,
+                                mapping = aes(x = Sepal.Length, y = Sepal.Width))</code></pre>
+<p><img src="day1_files/figure-html/unnamed-chunk-26-1.png" width="672" /> #### 書き方の例3</p>
+<p>こちらはキャンパスをirisデータ，x軸をSepal.Length,y軸をSepal.Widthに固定しているので，縦・横軸が異なる図を重ねることができない。</p>
+<pre class="r"><code>iris %&gt;% ggplot( aes(x = Sepal.Length, y = Sepal.Width))  + geom_point()</code></pre>
+<p><img src="day1_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<p>あまり使うシーンはないかもしれないが，<code>geom_</code>の中で軸を指定しておくと，異なる軸データをプロットすることもできる。</p>
+<pre class="r"><code>iris %&gt;% ggplot()  + geom_point( aes(x = Sepal.Length, y = Sepal.Width))　+
+   geom_point(aes(x = Petal.Length, y = Petal.Width,color=&quot;red&quot;))</code></pre>
+<p><img src="day1_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+</div>
+<div id="section-17" class="section level4">
+<h4>色分け</h4>
+<p>色を分ける変数を指定する。</p>
+<pre class="r"><code>iris %&gt;% ggplot() + geom_point(aes(x = Sepal.Length, y = Sepal.Width, color=Species))</code></pre>
+<p><img src="day1_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p>連続値だとグラデーションになる。</p>
+<pre class="r"><code>iris %&gt;% ggplot() + geom_point(aes(x = Sepal.Length, y = Sepal.Width, color=Sepal.Length))</code></pre>
+<p><img src="day1_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+<p>aesで表現するのは<code>変数</code>である。つまり，値に応じて変わる場合はaesで指定する。そうでない場合は，aesの外で指定する。</p>
+<pre class="r"><code>iris %&gt;% ggplot(aes(x = Sepal.Length, y = Sepal.Width)) + 
+  geom_point(colour = &quot;blue&quot;, size = 3, shape = 5)</code></pre>
+<p><img src="day1_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+</div>
+<div id="section-18" class="section level4">
+<h4>実験・調査などで使いそうなデータプロット</h4>
+<div id="section-19" class="section level5">
+<h5>ヒストグラム</h5>
+<p>データ全体の分布を見るためにはヒストグラムを使う。y軸の指定はいらない。</p>
+<pre class="r"><code>iris %&gt;% ggplot(aes(x = Sepal.Width)) +geom_histogram()</code></pre>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="day1_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+<p>binwidthで幅を決める。</p>
+<pre class="r"><code>iris %&gt;% ggplot(aes(x = Sepal.Width)) +geom_histogram(binwidth=1)</code></pre>
+<p><img src="day1_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+</div>
+<div id="section-20" class="section level5">
+<h5>群ごとのデータをポイントする</h5>
+<p>横軸がfactor型だと，群ごとのデータになる。</p>
+<pre class="r"><code>iris %&gt;% ggplot(aes(x = Species, y = Sepal.Width)) + geom_point()</code></pre>
+<p><img src="day1_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
+<p>少し装飾。</p>
+<pre class="r"><code>iris %&gt;% ggplot(aes(x = Species, y = Sepal.Width)) + 
+  geom_point(aes(color=Species,alpha=0.3,size=3))</code></pre>
+<p><img src="day1_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
+</div>
+<div id="boxplot" class="section level5">
+<h5>boxplotはわかりやすい</h5>
+<pre class="r"><code>iris %&gt;% ggplot(aes(x = Species, y = Sepal.Width,fill=Species)) + geom_boxplot()</code></pre>
+<p><img src="day1_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
+</div>
+<div id="violin-plot" class="section level5">
+<h5>violin plotは分布が見れるよ</h5>
+<pre class="r"><code>iris %&gt;% ggplot(aes(x = Species, y = Sepal.Width,fill=Species)) + geom_violin()</code></pre>
+<p><img src="day1_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+</div>
+<div id="section-21" class="section level5">
+<h5>棒グラフをかいてみよう</h5>
+<pre class="r"><code>iris %&gt;% ggplot(aes(x = Species, y = Sepal.Width,fill=Species)) + 
+  geom_bar(stat = &quot;summary&quot;, fun.y = mean)</code></pre>
+<p><img src="day1_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
+<p>別解</p>
+<pre class="r"><code>iris %&gt;% ggplot(aes(x = Species, y = Sepal.Width,fill=Species)) + 
+  stat_summary(geom=&quot;bar&quot;,fun.y=mean)</code></pre>
+<p><img src="day1_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
+</div>
+<div id="section-22" class="section level5">
+<h5>かき分ける；ファセット</h5>
+<p>グラフを分割するときはファセットを使う。</p>
+<pre class="r"><code>iris %&gt;% ggplot(aes(x = Sepal.Width,y=Petal.Length)) +geom_point()+
+  facet_wrap(~Species)</code></pre>
+<p><img src="day1_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
+</div>
+<div id="or" class="section level5">
+<h5>データが集計済みだったら？or集計した後でプロットする技術</h5>
+<p>実験などでありがちな，平均値に標準偏差のバーをつけて表示する方法などがこちら。</p>
+<pre class="r"><code>iris %&gt;% 
+  # データを縦長にする
+  tidyr::gather(key,val,-Species) %&gt;% print %&gt;% 
+  # グルーピングしておく
+  group_by(Species,key) %&gt;% 
+  # 平均値などの統計量を計算する
+  summarise(M=mean(val),U95=quantile(val,probs=0.975),L95=quantile(val,probs=0.025)) %&gt;% 
+  print() %&gt;% 
+  # 変数を限定する
+  dplyr::filter(key==&#39;Sepal.Length&#39;) %&gt;% 
+  # キャンパスの準備
+  ggplot(aes(x=Species,y=M,fill=Species)) +
+    # 棒グラフに点をつけて
+    geom_bar(stat=&#39;identity&#39;) + geom_point(stat=&#39;identity&#39;) +
+    # エラーバーを描く
+    geom_errorbar(stat=&#39;identity&#39;,aes(ymin=L95,ymax=U95,width=0.2))</code></pre>
+<pre><code>##        Species          key val
+## 1       setosa Sepal.Length 5.1
+## 2       setosa Sepal.Length 4.9
+## 3       setosa Sepal.Length 4.7
+## 4       setosa Sepal.Length 4.6
+## 5       setosa Sepal.Length 5.0
+## 6       setosa Sepal.Length 5.4
+## 7       setosa Sepal.Length 4.6
+## 8       setosa Sepal.Length 5.0
+## 9       setosa Sepal.Length 4.4
+## 10      setosa Sepal.Length 4.9
+## 11      setosa Sepal.Length 5.4
+## 12      setosa Sepal.Length 4.8
+## 13      setosa Sepal.Length 4.8
+## 14      setosa Sepal.Length 4.3
+## 15      setosa Sepal.Length 5.8
+## 16      setosa Sepal.Length 5.7
+## 17      setosa Sepal.Length 5.4
+## 18      setosa Sepal.Length 5.1
+## 19      setosa Sepal.Length 5.7
+## 20      setosa Sepal.Length 5.1
+## 21      setosa Sepal.Length 5.4
+## 22      setosa Sepal.Length 5.1
+## 23      setosa Sepal.Length 4.6
+## 24      setosa Sepal.Length 5.1
+## 25      setosa Sepal.Length 4.8
+## 26      setosa Sepal.Length 5.0
+## 27      setosa Sepal.Length 5.0
+## 28      setosa Sepal.Length 5.2
+## 29      setosa Sepal.Length 5.2
+## 30      setosa Sepal.Length 4.7
+## 31      setosa Sepal.Length 4.8
+## 32      setosa Sepal.Length 5.4
+## 33      setosa Sepal.Length 5.2
+## 34      setosa Sepal.Length 5.5
+## 35      setosa Sepal.Length 4.9
+## 36      setosa Sepal.Length 5.0
+## 37      setosa Sepal.Length 5.5
+## 38      setosa Sepal.Length 4.9
+## 39      setosa Sepal.Length 4.4
+## 40      setosa Sepal.Length 5.1
+## 41      setosa Sepal.Length 5.0
+## 42      setosa Sepal.Length 4.5
+## 43      setosa Sepal.Length 4.4
+## 44      setosa Sepal.Length 5.0
+## 45      setosa Sepal.Length 5.1
+## 46      setosa Sepal.Length 4.8
+## 47      setosa Sepal.Length 5.1
+## 48      setosa Sepal.Length 4.6
+## 49      setosa Sepal.Length 5.3
+## 50      setosa Sepal.Length 5.0
+## 51  versicolor Sepal.Length 7.0
+## 52  versicolor Sepal.Length 6.4
+## 53  versicolor Sepal.Length 6.9
+## 54  versicolor Sepal.Length 5.5
+## 55  versicolor Sepal.Length 6.5
+## 56  versicolor Sepal.Length 5.7
+## 57  versicolor Sepal.Length 6.3
+## 58  versicolor Sepal.Length 4.9
+## 59  versicolor Sepal.Length 6.6
+## 60  versicolor Sepal.Length 5.2
+## 61  versicolor Sepal.Length 5.0
+## 62  versicolor Sepal.Length 5.9
+## 63  versicolor Sepal.Length 6.0
+## 64  versicolor Sepal.Length 6.1
+## 65  versicolor Sepal.Length 5.6
+## 66  versicolor Sepal.Length 6.7
+## 67  versicolor Sepal.Length 5.6
+## 68  versicolor Sepal.Length 5.8
+## 69  versicolor Sepal.Length 6.2
+## 70  versicolor Sepal.Length 5.6
+## 71  versicolor Sepal.Length 5.9
+## 72  versicolor Sepal.Length 6.1
+## 73  versicolor Sepal.Length 6.3
+## 74  versicolor Sepal.Length 6.1
+## 75  versicolor Sepal.Length 6.4
+## 76  versicolor Sepal.Length 6.6
+## 77  versicolor Sepal.Length 6.8
+## 78  versicolor Sepal.Length 6.7
+## 79  versicolor Sepal.Length 6.0
+## 80  versicolor Sepal.Length 5.7
+## 81  versicolor Sepal.Length 5.5
+## 82  versicolor Sepal.Length 5.5
+## 83  versicolor Sepal.Length 5.8
+## 84  versicolor Sepal.Length 6.0
+## 85  versicolor Sepal.Length 5.4
+## 86  versicolor Sepal.Length 6.0
+## 87  versicolor Sepal.Length 6.7
+## 88  versicolor Sepal.Length 6.3
+## 89  versicolor Sepal.Length 5.6
+## 90  versicolor Sepal.Length 5.5
+## 91  versicolor Sepal.Length 5.5
+## 92  versicolor Sepal.Length 6.1
+## 93  versicolor Sepal.Length 5.8
+## 94  versicolor Sepal.Length 5.0
+## 95  versicolor Sepal.Length 5.6
+## 96  versicolor Sepal.Length 5.7
+## 97  versicolor Sepal.Length 5.7
+## 98  versicolor Sepal.Length 6.2
+## 99  versicolor Sepal.Length 5.1
+## 100 versicolor Sepal.Length 5.7
+## 101  virginica Sepal.Length 6.3
+## 102  virginica Sepal.Length 5.8
+## 103  virginica Sepal.Length 7.1
+## 104  virginica Sepal.Length 6.3
+## 105  virginica Sepal.Length 6.5
+## 106  virginica Sepal.Length 7.6
+## 107  virginica Sepal.Length 4.9
+## 108  virginica Sepal.Length 7.3
+## 109  virginica Sepal.Length 6.7
+## 110  virginica Sepal.Length 7.2
+## 111  virginica Sepal.Length 6.5
+## 112  virginica Sepal.Length 6.4
+## 113  virginica Sepal.Length 6.8
+## 114  virginica Sepal.Length 5.7
+## 115  virginica Sepal.Length 5.8
+## 116  virginica Sepal.Length 6.4
+## 117  virginica Sepal.Length 6.5
+## 118  virginica Sepal.Length 7.7
+## 119  virginica Sepal.Length 7.7
+## 120  virginica Sepal.Length 6.0
+## 121  virginica Sepal.Length 6.9
+## 122  virginica Sepal.Length 5.6
+## 123  virginica Sepal.Length 7.7
+## 124  virginica Sepal.Length 6.3
+## 125  virginica Sepal.Length 6.7
+## 126  virginica Sepal.Length 7.2
+## 127  virginica Sepal.Length 6.2
+## 128  virginica Sepal.Length 6.1
+## 129  virginica Sepal.Length 6.4
+## 130  virginica Sepal.Length 7.2
+## 131  virginica Sepal.Length 7.4
+## 132  virginica Sepal.Length 7.9
+## 133  virginica Sepal.Length 6.4
+## 134  virginica Sepal.Length 6.3
+## 135  virginica Sepal.Length 6.1
+## 136  virginica Sepal.Length 7.7
+## 137  virginica Sepal.Length 6.3
+## 138  virginica Sepal.Length 6.4
+## 139  virginica Sepal.Length 6.0
+## 140  virginica Sepal.Length 6.9
+## 141  virginica Sepal.Length 6.7
+## 142  virginica Sepal.Length 6.9
+## 143  virginica Sepal.Length 5.8
+## 144  virginica Sepal.Length 6.8
+## 145  virginica Sepal.Length 6.7
+## 146  virginica Sepal.Length 6.7
+## 147  virginica Sepal.Length 6.3
+## 148  virginica Sepal.Length 6.5
+## 149  virginica Sepal.Length 6.2
+## 150  virginica Sepal.Length 5.9
+## 151     setosa  Sepal.Width 3.5
+## 152     setosa  Sepal.Width 3.0
+## 153     setosa  Sepal.Width 3.2
+## 154     setosa  Sepal.Width 3.1
+## 155     setosa  Sepal.Width 3.6
+## 156     setosa  Sepal.Width 3.9
+## 157     setosa  Sepal.Width 3.4
+## 158     setosa  Sepal.Width 3.4
+## 159     setosa  Sepal.Width 2.9
+## 160     setosa  Sepal.Width 3.1
+## 161     setosa  Sepal.Width 3.7
+## 162     setosa  Sepal.Width 3.4
+## 163     setosa  Sepal.Width 3.0
+## 164     setosa  Sepal.Width 3.0
+## 165     setosa  Sepal.Width 4.0
+## 166     setosa  Sepal.Width 4.4
+## 167     setosa  Sepal.Width 3.9
+## 168     setosa  Sepal.Width 3.5
+## 169     setosa  Sepal.Width 3.8
+## 170     setosa  Sepal.Width 3.8
+## 171     setosa  Sepal.Width 3.4
+## 172     setosa  Sepal.Width 3.7
+## 173     setosa  Sepal.Width 3.6
+## 174     setosa  Sepal.Width 3.3
+## 175     setosa  Sepal.Width 3.4
+## 176     setosa  Sepal.Width 3.0
+## 177     setosa  Sepal.Width 3.4
+## 178     setosa  Sepal.Width 3.5
+## 179     setosa  Sepal.Width 3.4
+## 180     setosa  Sepal.Width 3.2
+## 181     setosa  Sepal.Width 3.1
+## 182     setosa  Sepal.Width 3.4
+## 183     setosa  Sepal.Width 4.1
+## 184     setosa  Sepal.Width 4.2
+## 185     setosa  Sepal.Width 3.1
+## 186     setosa  Sepal.Width 3.2
+## 187     setosa  Sepal.Width 3.5
+## 188     setosa  Sepal.Width 3.6
+## 189     setosa  Sepal.Width 3.0
+## 190     setosa  Sepal.Width 3.4
+## 191     setosa  Sepal.Width 3.5
+## 192     setosa  Sepal.Width 2.3
+## 193     setosa  Sepal.Width 3.2
+## 194     setosa  Sepal.Width 3.5
+## 195     setosa  Sepal.Width 3.8
+## 196     setosa  Sepal.Width 3.0
+## 197     setosa  Sepal.Width 3.8
+## 198     setosa  Sepal.Width 3.2
+## 199     setosa  Sepal.Width 3.7
+## 200     setosa  Sepal.Width 3.3
+## 201 versicolor  Sepal.Width 3.2
+## 202 versicolor  Sepal.Width 3.2
+## 203 versicolor  Sepal.Width 3.1
+## 204 versicolor  Sepal.Width 2.3
+## 205 versicolor  Sepal.Width 2.8
+## 206 versicolor  Sepal.Width 2.8
+## 207 versicolor  Sepal.Width 3.3
+## 208 versicolor  Sepal.Width 2.4
+## 209 versicolor  Sepal.Width 2.9
+## 210 versicolor  Sepal.Width 2.7
+## 211 versicolor  Sepal.Width 2.0
+## 212 versicolor  Sepal.Width 3.0
+## 213 versicolor  Sepal.Width 2.2
+## 214 versicolor  Sepal.Width 2.9
+## 215 versicolor  Sepal.Width 2.9
+## 216 versicolor  Sepal.Width 3.1
+## 217 versicolor  Sepal.Width 3.0
+## 218 versicolor  Sepal.Width 2.7
+## 219 versicolor  Sepal.Width 2.2
+## 220 versicolor  Sepal.Width 2.5
+## 221 versicolor  Sepal.Width 3.2
+## 222 versicolor  Sepal.Width 2.8
+## 223 versicolor  Sepal.Width 2.5
+## 224 versicolor  Sepal.Width 2.8
+## 225 versicolor  Sepal.Width 2.9
+## 226 versicolor  Sepal.Width 3.0
+## 227 versicolor  Sepal.Width 2.8
+## 228 versicolor  Sepal.Width 3.0
+## 229 versicolor  Sepal.Width 2.9
+## 230 versicolor  Sepal.Width 2.6
+## 231 versicolor  Sepal.Width 2.4
+## 232 versicolor  Sepal.Width 2.4
+## 233 versicolor  Sepal.Width 2.7
+## 234 versicolor  Sepal.Width 2.7
+## 235 versicolor  Sepal.Width 3.0
+## 236 versicolor  Sepal.Width 3.4
+## 237 versicolor  Sepal.Width 3.1
+## 238 versicolor  Sepal.Width 2.3
+## 239 versicolor  Sepal.Width 3.0
+## 240 versicolor  Sepal.Width 2.5
+## 241 versicolor  Sepal.Width 2.6
+## 242 versicolor  Sepal.Width 3.0
+## 243 versicolor  Sepal.Width 2.6
+## 244 versicolor  Sepal.Width 2.3
+## 245 versicolor  Sepal.Width 2.7
+## 246 versicolor  Sepal.Width 3.0
+## 247 versicolor  Sepal.Width 2.9
+## 248 versicolor  Sepal.Width 2.9
+## 249 versicolor  Sepal.Width 2.5
+## 250 versicolor  Sepal.Width 2.8
+## 251  virginica  Sepal.Width 3.3
+## 252  virginica  Sepal.Width 2.7
+## 253  virginica  Sepal.Width 3.0
+## 254  virginica  Sepal.Width 2.9
+## 255  virginica  Sepal.Width 3.0
+## 256  virginica  Sepal.Width 3.0
+## 257  virginica  Sepal.Width 2.5
+## 258  virginica  Sepal.Width 2.9
+## 259  virginica  Sepal.Width 2.5
+## 260  virginica  Sepal.Width 3.6
+## 261  virginica  Sepal.Width 3.2
+## 262  virginica  Sepal.Width 2.7
+## 263  virginica  Sepal.Width 3.0
+## 264  virginica  Sepal.Width 2.5
+## 265  virginica  Sepal.Width 2.8
+## 266  virginica  Sepal.Width 3.2
+## 267  virginica  Sepal.Width 3.0
+## 268  virginica  Sepal.Width 3.8
+## 269  virginica  Sepal.Width 2.6
+## 270  virginica  Sepal.Width 2.2
+## 271  virginica  Sepal.Width 3.2
+## 272  virginica  Sepal.Width 2.8
+## 273  virginica  Sepal.Width 2.8
+## 274  virginica  Sepal.Width 2.7
+## 275  virginica  Sepal.Width 3.3
+## 276  virginica  Sepal.Width 3.2
+## 277  virginica  Sepal.Width 2.8
+## 278  virginica  Sepal.Width 3.0
+## 279  virginica  Sepal.Width 2.8
+## 280  virginica  Sepal.Width 3.0
+## 281  virginica  Sepal.Width 2.8
+## 282  virginica  Sepal.Width 3.8
+## 283  virginica  Sepal.Width 2.8
+## 284  virginica  Sepal.Width 2.8
+## 285  virginica  Sepal.Width 2.6
+## 286  virginica  Sepal.Width 3.0
+## 287  virginica  Sepal.Width 3.4
+## 288  virginica  Sepal.Width 3.1
+## 289  virginica  Sepal.Width 3.0
+## 290  virginica  Sepal.Width 3.1
+## 291  virginica  Sepal.Width 3.1
+## 292  virginica  Sepal.Width 3.1
+## 293  virginica  Sepal.Width 2.7
+## 294  virginica  Sepal.Width 3.2
+## 295  virginica  Sepal.Width 3.3
+## 296  virginica  Sepal.Width 3.0
+## 297  virginica  Sepal.Width 2.5
+## 298  virginica  Sepal.Width 3.0
+## 299  virginica  Sepal.Width 3.4
+## 300  virginica  Sepal.Width 3.0
+## 301     setosa Petal.Length 1.4
+## 302     setosa Petal.Length 1.4
+## 303     setosa Petal.Length 1.3
+## 304     setosa Petal.Length 1.5
+## 305     setosa Petal.Length 1.4
+## 306     setosa Petal.Length 1.7
+## 307     setosa Petal.Length 1.4
+## 308     setosa Petal.Length 1.5
+## 309     setosa Petal.Length 1.4
+## 310     setosa Petal.Length 1.5
+## 311     setosa Petal.Length 1.5
+## 312     setosa Petal.Length 1.6
+## 313     setosa Petal.Length 1.4
+## 314     setosa Petal.Length 1.1
+## 315     setosa Petal.Length 1.2
+## 316     setosa Petal.Length 1.5
+## 317     setosa Petal.Length 1.3
+## 318     setosa Petal.Length 1.4
+## 319     setosa Petal.Length 1.7
+## 320     setosa Petal.Length 1.5
+## 321     setosa Petal.Length 1.7
+## 322     setosa Petal.Length 1.5
+## 323     setosa Petal.Length 1.0
+## 324     setosa Petal.Length 1.7
+## 325     setosa Petal.Length 1.9
+## 326     setosa Petal.Length 1.6
+## 327     setosa Petal.Length 1.6
+## 328     setosa Petal.Length 1.5
+## 329     setosa Petal.Length 1.4
+## 330     setosa Petal.Length 1.6
+## 331     setosa Petal.Length 1.6
+## 332     setosa Petal.Length 1.5
+## 333     setosa Petal.Length 1.5
+## 334     setosa Petal.Length 1.4
+## 335     setosa Petal.Length 1.5
+## 336     setosa Petal.Length 1.2
+## 337     setosa Petal.Length 1.3
+## 338     setosa Petal.Length 1.4
+## 339     setosa Petal.Length 1.3
+## 340     setosa Petal.Length 1.5
+## 341     setosa Petal.Length 1.3
+## 342     setosa Petal.Length 1.3
+## 343     setosa Petal.Length 1.3
+## 344     setosa Petal.Length 1.6
+## 345     setosa Petal.Length 1.9
+## 346     setosa Petal.Length 1.4
+## 347     setosa Petal.Length 1.6
+## 348     setosa Petal.Length 1.4
+## 349     setosa Petal.Length 1.5
+## 350     setosa Petal.Length 1.4
+## 351 versicolor Petal.Length 4.7
+## 352 versicolor Petal.Length 4.5
+## 353 versicolor Petal.Length 4.9
+## 354 versicolor Petal.Length 4.0
+## 355 versicolor Petal.Length 4.6
+## 356 versicolor Petal.Length 4.5
+## 357 versicolor Petal.Length 4.7
+## 358 versicolor Petal.Length 3.3
+## 359 versicolor Petal.Length 4.6
+## 360 versicolor Petal.Length 3.9
+## 361 versicolor Petal.Length 3.5
+## 362 versicolor Petal.Length 4.2
+## 363 versicolor Petal.Length 4.0
+## 364 versicolor Petal.Length 4.7
+## 365 versicolor Petal.Length 3.6
+## 366 versicolor Petal.Length 4.4
+## 367 versicolor Petal.Length 4.5
+## 368 versicolor Petal.Length 4.1
+## 369 versicolor Petal.Length 4.5
+## 370 versicolor Petal.Length 3.9
+## 371 versicolor Petal.Length 4.8
+## 372 versicolor Petal.Length 4.0
+## 373 versicolor Petal.Length 4.9
+## 374 versicolor Petal.Length 4.7
+## 375 versicolor Petal.Length 4.3
+## 376 versicolor Petal.Length 4.4
+## 377 versicolor Petal.Length 4.8
+## 378 versicolor Petal.Length 5.0
+## 379 versicolor Petal.Length 4.5
+## 380 versicolor Petal.Length 3.5
+## 381 versicolor Petal.Length 3.8
+## 382 versicolor Petal.Length 3.7
+## 383 versicolor Petal.Length 3.9
+## 384 versicolor Petal.Length 5.1
+## 385 versicolor Petal.Length 4.5
+## 386 versicolor Petal.Length 4.5
+## 387 versicolor Petal.Length 4.7
+## 388 versicolor Petal.Length 4.4
+## 389 versicolor Petal.Length 4.1
+## 390 versicolor Petal.Length 4.0
+## 391 versicolor Petal.Length 4.4
+## 392 versicolor Petal.Length 4.6
+## 393 versicolor Petal.Length 4.0
+## 394 versicolor Petal.Length 3.3
+## 395 versicolor Petal.Length 4.2
+## 396 versicolor Petal.Length 4.2
+## 397 versicolor Petal.Length 4.2
+## 398 versicolor Petal.Length 4.3
+## 399 versicolor Petal.Length 3.0
+## 400 versicolor Petal.Length 4.1
+## 401  virginica Petal.Length 6.0
+## 402  virginica Petal.Length 5.1
+## 403  virginica Petal.Length 5.9
+## 404  virginica Petal.Length 5.6
+## 405  virginica Petal.Length 5.8
+## 406  virginica Petal.Length 6.6
+## 407  virginica Petal.Length 4.5
+## 408  virginica Petal.Length 6.3
+## 409  virginica Petal.Length 5.8
+## 410  virginica Petal.Length 6.1
+## 411  virginica Petal.Length 5.1
+## 412  virginica Petal.Length 5.3
+## 413  virginica Petal.Length 5.5
+## 414  virginica Petal.Length 5.0
+## 415  virginica Petal.Length 5.1
+## 416  virginica Petal.Length 5.3
+## 417  virginica Petal.Length 5.5
+## 418  virginica Petal.Length 6.7
+## 419  virginica Petal.Length 6.9
+## 420  virginica Petal.Length 5.0
+## 421  virginica Petal.Length 5.7
+## 422  virginica Petal.Length 4.9
+## 423  virginica Petal.Length 6.7
+## 424  virginica Petal.Length 4.9
+## 425  virginica Petal.Length 5.7
+## 426  virginica Petal.Length 6.0
+## 427  virginica Petal.Length 4.8
+## 428  virginica Petal.Length 4.9
+## 429  virginica Petal.Length 5.6
+## 430  virginica Petal.Length 5.8
+## 431  virginica Petal.Length 6.1
+## 432  virginica Petal.Length 6.4
+## 433  virginica Petal.Length 5.6
+## 434  virginica Petal.Length 5.1
+## 435  virginica Petal.Length 5.6
+## 436  virginica Petal.Length 6.1
+## 437  virginica Petal.Length 5.6
+## 438  virginica Petal.Length 5.5
+## 439  virginica Petal.Length 4.8
+## 440  virginica Petal.Length 5.4
+## 441  virginica Petal.Length 5.6
+## 442  virginica Petal.Length 5.1
+## 443  virginica Petal.Length 5.1
+## 444  virginica Petal.Length 5.9
+## 445  virginica Petal.Length 5.7
+## 446  virginica Petal.Length 5.2
+## 447  virginica Petal.Length 5.0
+## 448  virginica Petal.Length 5.2
+## 449  virginica Petal.Length 5.4
+## 450  virginica Petal.Length 5.1
+## 451     setosa  Petal.Width 0.2
+## 452     setosa  Petal.Width 0.2
+## 453     setosa  Petal.Width 0.2
+## 454     setosa  Petal.Width 0.2
+## 455     setosa  Petal.Width 0.2
+## 456     setosa  Petal.Width 0.4
+## 457     setosa  Petal.Width 0.3
+## 458     setosa  Petal.Width 0.2
+## 459     setosa  Petal.Width 0.2
+## 460     setosa  Petal.Width 0.1
+## 461     setosa  Petal.Width 0.2
+## 462     setosa  Petal.Width 0.2
+## 463     setosa  Petal.Width 0.1
+## 464     setosa  Petal.Width 0.1
+## 465     setosa  Petal.Width 0.2
+## 466     setosa  Petal.Width 0.4
+## 467     setosa  Petal.Width 0.4
+## 468     setosa  Petal.Width 0.3
+## 469     setosa  Petal.Width 0.3
+## 470     setosa  Petal.Width 0.3
+## 471     setosa  Petal.Width 0.2
+## 472     setosa  Petal.Width 0.4
+## 473     setosa  Petal.Width 0.2
+## 474     setosa  Petal.Width 0.5
+## 475     setosa  Petal.Width 0.2
+## 476     setosa  Petal.Width 0.2
+## 477     setosa  Petal.Width 0.4
+## 478     setosa  Petal.Width 0.2
+## 479     setosa  Petal.Width 0.2
+## 480     setosa  Petal.Width 0.2
+## 481     setosa  Petal.Width 0.2
+## 482     setosa  Petal.Width 0.4
+## 483     setosa  Petal.Width 0.1
+## 484     setosa  Petal.Width 0.2
+## 485     setosa  Petal.Width 0.2
+## 486     setosa  Petal.Width 0.2
+## 487     setosa  Petal.Width 0.2
+## 488     setosa  Petal.Width 0.1
+## 489     setosa  Petal.Width 0.2
+## 490     setosa  Petal.Width 0.2
+## 491     setosa  Petal.Width 0.3
+## 492     setosa  Petal.Width 0.3
+## 493     setosa  Petal.Width 0.2
+## 494     setosa  Petal.Width 0.6
+## 495     setosa  Petal.Width 0.4
+## 496     setosa  Petal.Width 0.3
+## 497     setosa  Petal.Width 0.2
+## 498     setosa  Petal.Width 0.2
+## 499     setosa  Petal.Width 0.2
+## 500     setosa  Petal.Width 0.2
+## 501 versicolor  Petal.Width 1.4
+## 502 versicolor  Petal.Width 1.5
+## 503 versicolor  Petal.Width 1.5
+## 504 versicolor  Petal.Width 1.3
+## 505 versicolor  Petal.Width 1.5
+## 506 versicolor  Petal.Width 1.3
+## 507 versicolor  Petal.Width 1.6
+## 508 versicolor  Petal.Width 1.0
+## 509 versicolor  Petal.Width 1.3
+## 510 versicolor  Petal.Width 1.4
+## 511 versicolor  Petal.Width 1.0
+## 512 versicolor  Petal.Width 1.5
+## 513 versicolor  Petal.Width 1.0
+## 514 versicolor  Petal.Width 1.4
+## 515 versicolor  Petal.Width 1.3
+## 516 versicolor  Petal.Width 1.4
+## 517 versicolor  Petal.Width 1.5
+## 518 versicolor  Petal.Width 1.0
+## 519 versicolor  Petal.Width 1.5
+## 520 versicolor  Petal.Width 1.1
+## 521 versicolor  Petal.Width 1.8
+## 522 versicolor  Petal.Width 1.3
+## 523 versicolor  Petal.Width 1.5
+## 524 versicolor  Petal.Width 1.2
+## 525 versicolor  Petal.Width 1.3
+## 526 versicolor  Petal.Width 1.4
+## 527 versicolor  Petal.Width 1.4
+## 528 versicolor  Petal.Width 1.7
+## 529 versicolor  Petal.Width 1.5
+## 530 versicolor  Petal.Width 1.0
+## 531 versicolor  Petal.Width 1.1
+## 532 versicolor  Petal.Width 1.0
+## 533 versicolor  Petal.Width 1.2
+## 534 versicolor  Petal.Width 1.6
+## 535 versicolor  Petal.Width 1.5
+## 536 versicolor  Petal.Width 1.6
+## 537 versicolor  Petal.Width 1.5
+## 538 versicolor  Petal.Width 1.3
+## 539 versicolor  Petal.Width 1.3
+## 540 versicolor  Petal.Width 1.3
+## 541 versicolor  Petal.Width 1.2
+## 542 versicolor  Petal.Width 1.4
+## 543 versicolor  Petal.Width 1.2
+## 544 versicolor  Petal.Width 1.0
+## 545 versicolor  Petal.Width 1.3
+## 546 versicolor  Petal.Width 1.2
+## 547 versicolor  Petal.Width 1.3
+## 548 versicolor  Petal.Width 1.3
+## 549 versicolor  Petal.Width 1.1
+## 550 versicolor  Petal.Width 1.3
+## 551  virginica  Petal.Width 2.5
+## 552  virginica  Petal.Width 1.9
+## 553  virginica  Petal.Width 2.1
+## 554  virginica  Petal.Width 1.8
+## 555  virginica  Petal.Width 2.2
+## 556  virginica  Petal.Width 2.1
+## 557  virginica  Petal.Width 1.7
+## 558  virginica  Petal.Width 1.8
+## 559  virginica  Petal.Width 1.8
+## 560  virginica  Petal.Width 2.5
+## 561  virginica  Petal.Width 2.0
+## 562  virginica  Petal.Width 1.9
+## 563  virginica  Petal.Width 2.1
+## 564  virginica  Petal.Width 2.0
+## 565  virginica  Petal.Width 2.4
+## 566  virginica  Petal.Width 2.3
+## 567  virginica  Petal.Width 1.8
+## 568  virginica  Petal.Width 2.2
+## 569  virginica  Petal.Width 2.3
+## 570  virginica  Petal.Width 1.5
+## 571  virginica  Petal.Width 2.3
+## 572  virginica  Petal.Width 2.0
+## 573  virginica  Petal.Width 2.0
+## 574  virginica  Petal.Width 1.8
+## 575  virginica  Petal.Width 2.1
+## 576  virginica  Petal.Width 1.8
+## 577  virginica  Petal.Width 1.8
+## 578  virginica  Petal.Width 1.8
+## 579  virginica  Petal.Width 2.1
+## 580  virginica  Petal.Width 1.6
+## 581  virginica  Petal.Width 1.9
+## 582  virginica  Petal.Width 2.0
+## 583  virginica  Petal.Width 2.2
+## 584  virginica  Petal.Width 1.5
+## 585  virginica  Petal.Width 1.4
+## 586  virginica  Petal.Width 2.3
+## 587  virginica  Petal.Width 2.4
+## 588  virginica  Petal.Width 1.8
+## 589  virginica  Petal.Width 1.8
+## 590  virginica  Petal.Width 2.1
+## 591  virginica  Petal.Width 2.4
+## 592  virginica  Petal.Width 2.3
+## 593  virginica  Petal.Width 1.9
+## 594  virginica  Petal.Width 2.3
+## 595  virginica  Petal.Width 2.5
+## 596  virginica  Petal.Width 2.3
+## 597  virginica  Petal.Width 1.9
+## 598  virginica  Petal.Width 2.0
+## 599  virginica  Petal.Width 2.3
+## 600  virginica  Petal.Width 1.8
+## # A tibble: 12 x 5
+## # Groups:   Species [3]
+##    Species    key              M   U95   L95
+##    &lt;fct&gt;      &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1 setosa     Petal.Length 1.46  1.85   1.12
+##  2 setosa     Petal.Width  0.246 0.477  0.1 
+##  3 setosa     Sepal.Length 5.01  5.7    4.4 
+##  4 setosa     Sepal.Width  3.43  4.18   2.92
+##  5 versicolor Petal.Length 4.26  4.98   3.3 
+##  6 versicolor Petal.Width  1.33  1.68   1   
+##  7 versicolor Sepal.Length 5.94  6.88   5   
+##  8 versicolor Sepal.Width  2.77  3.28   2.2 
+##  9 virginica  Petal.Length 5.55  6.7    4.8 
+## 10 virginica  Petal.Width  2.03  2.5    1.5 
+## 11 virginica  Sepal.Length 6.59  7.7    5.62
+## 12 virginica  Sepal.Width  2.97  3.76   2.5</code></pre>
+<p><img src="day1_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
+</div>
+</div>
+</div>
+<div id="section-23" class="section level3">
+<h3>課題1</h3>
+<ol style="list-style-type: decimal">
+<li><a href="baseball2019.csv">こちら</a>からデータセットファイルをダウンロードし，プロジェクトフォルダに保存し，</li>
+<li>野球選手に関するデータセットファイル(baseball2019.csv)を読み込み，</li>
+<li>ピッチャーの身長・体重データを選び出し，</li>
+<li>BMIを計算して</li>
+<li>12球団ごとのBMIの平均値を棒グラフで表しなさい</li>
+</ol>
+<p><img src="day1_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
+</div>
+<div id="section-24" class="section level3">
+<h3>多次元尺度構成法</h3>
+<p>ヨーロッパ都市間の距離データ(Rのデフォルト)を使います</p>
+<pre class="r"><code>eurodist</code></pre>
+<pre><code>##                 Athens Barcelona Brussels Calais Cherbourg Cologne
+## Barcelona         3313                                            
+## Brussels          2963      1318                                  
+## Calais            3175      1326      204                         
+## Cherbourg         3339      1294      583    460                  
+## Cologne           2762      1498      206    409       785        
+## Copenhagen        3276      2218      966   1136      1545     760
+## Geneva            2610       803      677    747       853    1662
+## Gibraltar         4485      1172     2256   2224      2047    2436
+## Hamburg           2977      2018      597    714      1115     460
+## Hook of Holland   3030      1490      172    330       731     269
+## Lisbon            4532      1305     2084   2052      1827    2290
+## Lyons             2753       645      690    739       789     714
+## Madrid            3949       636     1558   1550      1347    1764
+## Marseilles        2865       521     1011   1059      1101    1035
+## Milan             2282      1014      925   1077      1209     911
+## Munich            2179      1365      747    977      1160     583
+## Paris             3000      1033      285    280       340     465
+## Rome               817      1460     1511   1662      1794    1497
+## Stockholm         3927      2868     1616   1786      2196    1403
+## Vienna            1991      1802     1175   1381      1588     937
+##                 Copenhagen Geneva Gibraltar Hamburg Hook of Holland Lisbon
+## Barcelona                                                                 
+## Brussels                                                                  
+## Calais                                                                    
+## Cherbourg                                                                 
+## Cologne                                                                   
+## Copenhagen                                                                
+## Geneva                1418                                                
+## Gibraltar             3196   1975                                         
+## Hamburg                460   1118      2897                               
+## Hook of Holland        269    895      2428     550                       
+## Lisbon                2971   1936       676    2671            2280       
+## Lyons                 1458    158      1817    1159             863   1178
+## Madrid                2498   1439       698    2198            1730    668
+## Marseilles            1778    425      1693    1479            1183   1762
+## Milan                 1537    328      2185    1238            1098   2250
+## Munich                1104    591      2565     805             851   2507
+## Paris                 1176    513      1971     877             457   1799
+## Rome                  2050    995      2631    1751            1683   2700
+## Stockholm              650   2068      3886     949            1500   3231
+## Vienna                1455   1019      2974    1155            1205   2937
+##                 Lyons Madrid Marseilles Milan Munich Paris Rome Stockholm
+## Barcelona                                                                
+## Brussels                                                                 
+## Calais                                                                   
+## Cherbourg                                                                
+## Cologne                                                                  
+## Copenhagen                                                               
+## Geneva                                                                   
+## Gibraltar                                                                
+## Hamburg                                                                  
+## Hook of Holland                                                          
+## Lisbon                                                                   
+## Lyons                                                                    
+## Madrid           1281                                                    
+## Marseilles        320   1157                                             
+## Milan             328   1724        618                                  
+## Munich            724   2010       1109   331                            
+## Paris             471   1273        792   856    821                     
+## Rome             1048   2097       1011   586    946  1476               
+## Stockholm        2108   3188       2428  2187   1754  1827 2707          
+## Vienna           1157   2409       1363   898    428  1249 1209      2105</code></pre>
+<p>メトリックなMDSで分析</p>
+<pre class="r"><code>#描画に使うパッケージの読み込み
+library(ggrepel)
+
+# MDSの関数
+result.MDS1 &lt;- cmdscale(eurodist,k=3)
+# 結果と描画
+result.MDS1 %&gt;% as.data.frame %&gt;% 
+  dplyr::mutate(label=rownames(.)) %&gt;% 
+  ggplot(aes(x=V1,y=V2,label=label))+geom_point()+geom_text_repel()+
+  xlim(-2500,2500)+ylim(-2500,2500)+xlab(&quot;dim 1&quot;)+ylab(&quot;dim2&quot;)</code></pre>
+<p><img src="day1_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
+<p>南北反転？</p>
+<pre class="r"><code># y軸反転
+result.MDS1 %&gt;% as.data.frame %&gt;% 
+  dplyr::mutate(label=rownames(.)) %&gt;% 
+  ggplot(aes(x=V1,y=V2,label=label))+geom_point()+geom_text_repel()+
+  xlim(-2500,2500)+ylim(2500,-2500)+xlab(&quot;dim 1&quot;)+ylab(&quot;dim2&quot;)</code></pre>
+<p><img src="day1_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
+<div id="section-25" class="section level4">
+<h4>距離の関数</h4>
+<p>サンプルデータ（あやめ）</p>
+<pre class="r"><code>iris[,-5] %&gt;% head()</code></pre>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="right">Sepal.Length</th>
+<th align="right">Sepal.Width</th>
+<th align="right">Petal.Length</th>
+<th align="right">Petal.Width</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">5.1</td>
+<td align="right">3.5</td>
+<td align="right">1.4</td>
+<td align="right">0.2</td>
+</tr>
+<tr class="even">
+<td align="right">4.9</td>
+<td align="right">3.0</td>
+<td align="right">1.4</td>
+<td align="right">0.2</td>
+</tr>
+<tr class="odd">
+<td align="right">4.7</td>
+<td align="right">3.2</td>
+<td align="right">1.3</td>
+<td align="right">0.2</td>
+</tr>
+<tr class="even">
+<td align="right">4.6</td>
+<td align="right">3.1</td>
+<td align="right">1.5</td>
+<td align="right">0.2</td>
+</tr>
+<tr class="odd">
+<td align="right">5.0</td>
+<td align="right">3.6</td>
+<td align="right">1.4</td>
+<td align="right">0.2</td>
+</tr>
+<tr class="even">
+<td align="right">5.4</td>
+<td align="right">3.9</td>
+<td align="right">1.7</td>
+<td align="right">0.4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre class="r"><code># ユークリッド距離
+iris[,-5] %&gt;% head() %&gt;% dist()</code></pre>
+<pre><code>##           1         2         3         4         5
+## 2 0.5385165                                        
+## 3 0.5099020 0.3000000                              
+## 4 0.6480741 0.3316625 0.2449490                    
+## 5 0.1414214 0.6082763 0.5099020 0.6480741          
+## 6 0.6164414 1.0908712 1.0862780 1.1661904 0.6164414</code></pre>
+<pre class="r"><code># マンハッタン距離
+iris[,-5] %&gt;% head() %&gt;% dist(method=&quot;manhattan&quot;)</code></pre>
+<pre><code>##     1   2   3   4   5
+## 2 0.7                
+## 3 0.8 0.5            
+## 4 1.0 0.5 0.4        
+## 5 0.2 0.7 0.8 1.0    
+## 6 1.2 1.9 2.0 2.0 1.2</code></pre>
+<pre class="r"><code># ミンコフスキー距離
+iris[,-5] %&gt;% head() %&gt;% dist(method=&quot;minkowski&quot;,p=3)</code></pre>
+<pre><code>##           1         2         3         4         5
+## 2 0.5104469                                        
+## 3 0.4514357 0.2571282                              
+## 4 0.5748897 0.3072317 0.2154435                    
+## 5 0.1259921 0.6009245 0.4514357 0.5748897          
+## 6 0.5013298 0.9615398 0.9117793 1.0131594 0.5013298</code></pre>
+</div>
+<div id="mds" class="section level4">
+<h4>非計量MDSの例</h4>
+<div id="m-12019" class="section level5">
+<h5>データ；M-1グランプリ2019の採点結果より</h5>
+<p>+　<a href="M1score.csv">こちら</a>からデータファイルをダウンロードし，プロジェクトフォルダに保存してください。</p>
+<pre class="r"><code>read_csv(&quot;M1score.csv&quot;,na=&quot;.&quot;) %&gt;% dplyr::filter(年代==18) %&gt;% 
+  dplyr::select(&quot;立川志らく&quot;,&quot;塙宣之&quot;,&quot;上沼恵美子&quot;,&quot;松本人志&quot;,&quot;中川礼二&quot;,&quot;オール巨人&quot;,&quot;富澤たけし&quot;) %&gt;% 
+  as.matrix() -&gt; M1_2018</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   .default = col_double(),
+##   演者 = col_character()
+## )</code></pre>
+<pre><code>## See spec(...) for full column specifications.</code></pre>
+<pre class="r"><code>row.names(M1_2018) &lt;- c(&quot;見取り図&quot;,
+                        &quot;スーパーマラドーナ&quot;,
+                        &quot;かまいたち&quot;,
+                        &quot;ジャルジャル&quot;,
+                        &quot;ギャロップ&quot;,
+                        &quot;ゆにばーす&quot;,
+                        &quot;ミキ&quot;,
+                        &quot;トム・ブラウン&quot;,
+                        &quot;霜降り明星&quot;,
+                        &quot;和牛&quot;)
+
+M1_2018</code></pre>
+<pre><code>##                    立川志らく 塙宣之 上沼恵美子 松本人志 中川礼二
+## 見取り図                   85     85         88       83       91
+## スーパーマラドーナ         88     89         89       85       90
+## かまいたち                 88     92         94       90       92
+## ジャルジャル               99     93         88       92       93
+## ギャロップ                 86     89         89       86       90
+## ゆにばーす                 87     82         84       80       91
+## ミキ                       89     90         98       88       93
+## トム・ブラウン             97     93         86       91       90
+## 霜降り明星                 93     98         97       94       96
+## 和牛                       93     94         98       93       94
+##                    オール巨人 富澤たけし
+## 見取り図                   88         86
+## スーパーマラドーナ         87         89
+## かまいたち                 89         91
+## ジャルジャル               93         90
+## ギャロップ                 87         87
+## ゆにばーす                 84         86
+## ミキ                       90         90
+## トム・ブラウン             87         89
+## 霜降り明星                 93         91
+## 和牛                       92         92</code></pre>
+<pre class="r"><code># 距離データ表示
+(dist_M1 &lt;- dist(M1_2018))</code></pre>
+<pre><code>##                     見取り図 スーパーマラドーナ かまいたち ジャルジャル
+## スーパーマラドーナ  6.403124                                           
+## かまいたち         13.038405           8.426150                        
+## ジャルジャル       19.646883          15.264338  13.416408             
+## ギャロップ          5.477226           3.000000   8.831761    16.613248
+## ゆにばーす          7.348469          10.908712  18.761663    22.934690
+## ミキ               13.784049          10.535654   5.291503    15.297059
+## トム・ブラウン     16.941074          11.916375  12.609520     7.416198
+## 霜降り明星         22.583180          18.083141  10.862780    12.489996
+## 和牛               20.149442          15.652476   8.246211    12.000000
+##                    ギャロップ ゆにばーす      ミキ トム・ブラウン
+## スーパーマラドーナ                                               
+## かまいたち                                                       
+## ジャルジャル                                                     
+## ギャロップ                                                       
+## ゆにばーす          11.045361                                    
+## ミキ                11.045361  19.595918                         
+## トム・ブラウン      13.228757  19.104973 15.652476               
+## 霜降り明星          18.601075  28.071338 11.661904      15.716234
+## 和牛                16.431677  25.573424  8.124038      14.662878
+##                    霜降り明星
+## スーパーマラドーナ           
+## かまいたち                   
+## ジャルジャル                 
+## ギャロップ                   
+## ゆにばーす                   
+## ミキ                         
+## トム・ブラウン               
+## 霜降り明星                   
+## 和牛                 4.898979</code></pre>
+</div>
+<div id="isomds" class="section level5">
+<h5>分析；isoMDS関数の例</h5>
+<pre class="r"><code>library(MASS)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;MASS&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:dplyr&#39;:
+## 
+##     select</code></pre>
+<pre class="r"><code>result.MDS2 &lt;- isoMDS(dist_M1,k=2)</code></pre>
+<pre><code>## initial  value 1.421320 
+## iter   5 value 0.721192
+## iter  10 value 0.195694
+## iter  15 value 0.100712
+## iter  20 value 0.074457
+## iter  25 value 0.050977
+## iter  30 value 0.029949
+## iter  35 value 0.018306
+## iter  40 value 0.015114
+## iter  45 value 0.013833
+## iter  50 value 0.013671
+## final  value 0.013671 
+## stopped after 50 iterations</code></pre>
+</div>
+<div id="section-26" class="section level5">
+<h5>結果</h5>
+<pre class="r"><code>result.MDS2$points %&gt;% as.data.frame %&gt;% 
+  dplyr::mutate(label=rownames(.)) %&gt;% 
+  ggplot(aes(x=V1,y=V2,label=label))+geom_point()+
+  geom_text_repel(family = &quot;HiraKakuProN-W3&quot;)+
+  xlim(-15,15) + ylim(-15,15)+
+  xlab(&quot;dim 1&quot;)+ylab(&quot;dim2&quot;) </code></pre>
+<p><img src="day1_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
+</div>
+<div id="mds-1" class="section level5">
+<h5>列データのMDS</h5>
+<pre class="r"><code>result.MDS3 &lt;- dist(t(M1_2018)) %&gt;% isoMDS()</code></pre>
+<pre><code>## initial  value 11.739729 
+## iter   5 value 3.554095
+## iter  10 value 0.528016
+## iter  15 value 0.152710
+## iter  20 value 0.051220
+## final  value 0.006151 
+## converged</code></pre>
+<pre class="r"><code>result.MDS3$points %&gt;% as.data.frame %&gt;% 
+  dplyr::mutate(label=rownames(.)) %&gt;% 
+  ggplot(aes(x=V1,y=V2,label=label))+geom_point()+
+  geom_text_repel(family = &quot;HiraKakuProN-W3&quot;)+
+  xlim(-12,12) + ylim(-12,12)+
+  xlab(&quot;dim 1&quot;)+ylab(&quot;dim2&quot;) </code></pre>
+<p><img src="day1_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
+</div>
+</div>
+</div>
+<div id="section-27" class="section level3">
+<h3>クラスター分析</h3>
+<p>同じ距離データからの分類でも，クラスター分析という方法もある。 クラスター分析は階層的な方法と非階層的な方法の二種類がある。</p>
+<div id="section-28" class="section level4">
+<h4>階層的クラスター分析</h4>
+<pre class="r"><code>result.hcl &lt;- hclust(dist_M1)
+par(family = &quot;HiraKakuProN-W3&quot;)
+plot(result.hcl)</code></pre>
+<p><img src="day1_files/figure-html/unnamed-chunk-54-1.png" width="672" /> 好きな数に切り分ければ良い。</p>
+<pre class="r"><code>cutree(result.hcl,3)</code></pre>
+<pre><code>##           見取り図 スーパーマラドーナ         かまいたち 
+##                  1                  1                  2 
+##       ジャルジャル         ギャロップ         ゆにばーす 
+##                  3                  1                  1 
+##               ミキ     トム・ブラウン         霜降り明星 
+##                  2                  3                  2 
+##               和牛 
+##                  2</code></pre>
+</div>
+<div id="section-29" class="section level4">
+<h4>非階層的クラスター分析</h4>
+<p>k-means法が代表的。</p>
+<pre class="r"><code>set.seed(123)
+kmeans(dist_M1,3) </code></pre>
+<pre><code>## K-means clustering with 3 clusters of sizes 4, 4, 2
+## 
+## Cluster means:
+##    見取り図 スーパーマラドーナ かまいたち ジャルジャル ギャロップ
+## 1 17.388769          13.174355   6.100124    13.300866  13.727468
+## 2  4.807205           5.077959  12.264495    18.614789   4.880647
+## 3 18.293979          13.590356  13.012964     3.708099  14.921002
+##   ゆにばーす      ミキ トム・ブラウン 霜降り明星      和牛
+## 1  23.000586  6.269361      14.660277   6.855916  5.317307
+## 2   7.325636 13.740245      15.297795  21.834683 19.451754
+## 3  21.019832 15.474767       3.708099  14.103115 13.331439
+## 
+## Clustering vector:
+##           見取り図 スーパーマラドーナ         かまいたち 
+##                  2                  2                  1 
+##       ジャルジャル         ギャロップ         ゆにばーす 
+##                  3                  2                  2 
+##               ミキ     トム・ブラウン         霜降り明星 
+##                  1                  3                  1 
+##               和牛 
+##                  1 
+## 
+## Within cluster sum of squares by cluster:
+## [1] 535.86510 559.00091  86.46434
+##  (between_SS / total_SS =  71.2 %)
+## 
+## Available components:
+## 
+## [1] &quot;cluster&quot;      &quot;centers&quot;      &quot;totss&quot;        &quot;withinss&quot;    
+## [5] &quot;tot.withinss&quot; &quot;betweenss&quot;    &quot;size&quot;         &quot;iter&quot;        
+## [9] &quot;ifault&quot;</code></pre>
+</div>
+</div>
+<div id="section-30" class="section level3">
+<h3>課題2</h3>
+<ol style="list-style-type: decimal">
+<li>野球選手に関するデータセットファイル(baseball2019.csv)を読み込み，</li>
+<li>バッター(投手以外)のデータに限定し，</li>
+<li>年俸(saraly)と打数のデータを選び出し，</li>
+<li>欠損値が含まれているのでna.omit関数でそれらのデータを除外した上で，</li>
+<li>階層的クラスタリングを行い，デンドログラムを描画しなさい。</li>
+</ol>
+<pre><code>## Parsed with column specification:
+## cols(
+##   .default = col_double(),
+##   Name = col_character(),
+##   team = col_character(),
+##   position = col_character(),
+##   bloodType = col_character(),
+##   throw.by = col_character(),
+##   batting.by = col_character(),
+##   birth.place = col_character(),
+##   birth.day = col_date(format = &quot;&quot;),
+##   背番号 = col_character()
+## )</code></pre>
+<pre><code>## See spec(...) for full column specifications.</code></pre>
+<p><img src="day1_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

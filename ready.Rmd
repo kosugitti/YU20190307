@@ -1,0 +1,106 @@
+---
+title: "山大集中講義準備"
+output: html_document
+---
+
+## 準備・確認していただきたいもの
+
++ PC環境の確認
++ Rの最新版を準備する
++ RStudioの最新版を準備する
++ 関連するパッケージを準備する
++ 問題なく動くかどうかを確認する
+
+## PC環境の確認
+
+Windowsユーザの方は以下の点にご注意ください
+
++ ユーザー名に2バイト文字(全角文字)が含まれているとRStudioの描画やパッケージのインストールなどでエラーが生じることがあります。
++ 2バイト文字でアカウントを作っている場合→半角英数文字の管理者権限を持ったアカウントを新たに作ってください
++ ウイルス対策ソフトが常駐していると，rstanのコンパイルを阻むことがあります。ウイルス対策ソフトを停止した上で，パッケージのインストールやコードの実行を行っていただくことをお勧めします。
+
+
+## Rの最新版を準備する
+
+Rのサイトは[こちら](https://cloud.r-project.org/)です。Rの最新バージョンは3.5.2ですので，ご準備ください。
+
+### Windowsユーザの場合
+
++ Download and Install Rより，base(基本・R本体)とRtools(コンパイラなど)をダウンロード，インストールしてください。
++ インストールする場所やオプションについて不明な場合は，全てインストーラのデフォルト設定で構いません。「次へ」のボタンを繰り返しクリックし，インストールしてください。
++ Rtoolsをインストールするときも，不明な場合はデフォルトの設定で構いませんので，「次へ」のボタンを繰り返しクリックしてください。
++ デフォルトでPATHにRtoolsへのパスが追記されます。選択するときに除外しないように注意してください。
+
+### Macユーザの場合
+
++ Download R for (Mac) OS Xより，R-3.5.2.pkgをダウンロードし，実行してください。
+
+## RStudioの最新版を準備する
+
+RStudioのサイトは[こちら](https://www.rstudio.com/)です。RStudioの最新バージョンは1.1.463ですので，ご準備ください。OSに応じて最新版のインストーラをダウンロードし，実行してください。
+
+## 関連するパッケージを準備する
+
+RおよびRStudioのインストールが終われば，RStudioを起動し，次のコードを実行してください。
+
+関連パッケージも含め，多くのパッケージが導入されますのでしばらくお待ちください。
+
+```{r eval=F}
+install.packages('tidyverse')
+install.packages('summarytools')
+install.packages('ggrepel')
+install.packages('rstan')
+install.packages('bayesplot')
+install.packages('brms')
+install.packages('MASS')
+install.packages('smacof')
+```
+
+
+すでにRやRStudio，パッケージの導入をしたことがある人も，次のコードでパッケージを最新版にアップデートすることができますので，ご確認ください。
+
+```{r,eval=F}
+update.packages(ask=F)
+```
+
+## 問題なく動くか確認する
+
+環境の準備ができれば，次のコードをコピー＆ペーストで実行してください。
+
+```{r,message=FALSE}
+library(rstan)
+rstan_options(auto_write = TRUE)
+options(mc.cores = parallel::detectCores())
+stancode <- "
+data {
+int<lower=0> J; // number of schools 
+real y[J]; // estimated treatment effects
+real<lower=0> sigma[J]; // s.e. of effect estimates 
+}
+parameters {
+real mu; 
+real<lower=0> tau;
+real eta[J];
+}
+transformed parameters {
+real theta[J];
+for (j in 1:J)
+theta[j] = mu + tau * eta[j];
+}
+model {
+target += normal_lpdf(eta | 0, 1);
+target += normal_lpdf(y | theta, sigma);
+}
+"
+schools_dat <- list(J = 8, y = c(28, 8, -3, 7, -1, 1, 18, 12), 
+                    sigma = c(15, 10, 16, 11, 9, 11, 10, 18))
+model.ex <- stan_model(model_code = stancode, model_name = "school")
+fit.samp <- sampling(model.ex, data = schools_dat, iter = 1000, 
+                     chains = 4)
+fit.samp
+```
+
+なにやら上記のような文字列が出ていたら準備完了です。
+
+Rのコードについては，本サイトからコピー＆ペーストで使ってもらって結構ですが，Rの基本的な使い方，RStudioの基本的な使い方，ggplotによる描画の方法などについて，「[RユーザのためのRStudio入門](https://amzn.to/2GmX9Ot)」 を参考に予習しておいていただけると，理解が進むと思います。
+

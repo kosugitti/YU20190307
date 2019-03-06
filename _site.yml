@@ -2,6 +2,8 @@ name: "山大集中講義2019.03.07-03.09"
 navbar: 
   title: "山大集中講義2019.03.07-03.09"
   left:
+    - text: "Day 0"
+      href: ready.html
     - text: "Day 1"
       href: day1.html
     - text: "Day 2"
