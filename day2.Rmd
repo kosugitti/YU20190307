@@ -78,6 +78,7 @@ baseball_dat2z %>% summary()
 result.lm3 <- lm(height~weight+years,data=baseball_dat2z)
 summary(result.lm3)
 ```
+
 ### 線形モデル2；(重)回帰分析の特徴
 
 #### 残差の平均値
@@ -155,6 +156,7 @@ result.brms1 %>% fitted() %>% head()
 ```{r}
 pp_check(result.brms1)
 ```
+
 ##### 事後予測分布のサンプル
 ```{r}
 predict(result.brms1) %>% head(10)
@@ -175,6 +177,7 @@ brm(height~weight,
 
 ?brms::set_prior
 ```
+
 ### 課題4
 
 + 課題3と同じ分析をベイズ推定しなさい
@@ -397,7 +400,7 @@ pp_check(result.brms9)
 + 勝率（「試合」のうち，「勝利」の回数）を契約年数(「years」）予測する回帰分析を行うコードを書きなさい。
 
 ```{r,echo=F,message=F}
-read_csv('baseball2019.csv') %>% 
+read_csv('baseball2019.csv',na="NA") %>% 
     # 投手のデータ
   dplyr::filter(position=="投手") %>% 
   dplyr::select("years","勝利","被本塁打","試合") %>% 
@@ -405,7 +408,9 @@ read_csv('baseball2019.csv') %>%
   dplyr::rename(win=勝利, HR=被本塁打, Times=試合)-> baseball_dat9
 
 result.brm10 <- brm(win~years,data=baseball_dat9,family="poisson")
+result.brm10
 pp_check(result.brm10)
 result.brm11 <- brm(win|trials(Times)~years,data=baseball_dat9,family="binomial")
+result.brm11
 pp_check(result.brm11)
 ```
